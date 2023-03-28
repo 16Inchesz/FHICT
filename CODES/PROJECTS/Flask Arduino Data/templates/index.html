@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>Arduino Data</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}">
+        <meta http-equiv="refresh" content="2">
+    </head>
+    <body>
+        <h1 class="PageT"><b>Latest Sensor Data</b></h1>
+
+        {% if statistics != None %}
+            <p class="timestamp"><b> Timestamp:</b> {{ time }}</p>
+            <p class="sensor id"><b> Sensor ID:</b> {{LatestData["sensor id"]}}</p>
+            <p class="relative sensor"><b> Relative Humidity:</b> {{ LatestData["relative humidity"] }}%</p>
+            <p class="Temperature"><b> Temperature:</b> {{ LatestData["temperature"] }} &deg;C</p>
+            <p class="brightness"><b> Brightness:</b> {{ LatestData["brightness"] }} W/m2</p>
+
+            <h1 class="statistics"> Statistics for all Sensors</h1>
+            <p class="field"><b>Field</b></p>
+            <p class="fieldH"><b>Relative Humidity[%]</b></p>
+            <p class="fieldT"><b>Temperature [&deg;C]</b></p>
+            <p class="fieldB"><b>Brightness [W/m2]</b></p>
+
+            <p class="average"><b>Average:</b></p>
+            <p class="averageH">{{ statistics["average_humidity"] }}</p>
+            <p class="averageT">{{ statistics["average_temperature"] }}</p>
+            <p class="averageB">{{ statistics["average_brightness"] }}</p>
+
+            <p class="maximum"><b>Maximum:</b></p>
+            <p class="maximumH">{{statistics["maximum_humidity"]}}</p>
+            <p class="maximumT">{{statistics["maximum_temperature"]}}</p>
+            <p class="maximumB">{{statistics["maximum_brightness"]}}</p>
+
+            <p class="minimum"><b>Minimum:</b></p>
+            <p class="minimumH">{{statistics["minimum_humidity"]}}</p>
+            <p class="minimumT">{{statistics["minimum_temperature"]}}</p>
+            <p class="minimumB">{{statistics["minimum_brightness"]}}</p>
+
+            <h1 class="individualSensor">Statistics Per Sensor</h1>
+
+        {% else %}  
+            <p> {{ time }} </p>
+            <p> No Data Available</p>
+        {% endif %}
+        
+    </body>
+</html> 

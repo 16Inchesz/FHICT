@@ -1,0 +1,20 @@
+problem definition: supply context, explain problems that are faced, follwo up with a goal then statement.g
+
+project statements: build a test environments
+
+expected delivery: doensn't need to be in there but this can be included in the deliverables. at the bottom before the risk assesment. 
+
+predifined agreements: keep in appendix(internal)
+
+requirements: feature level is indeed good, but we must try to be a little more specific.
+
+milestones: put real dates there or sprint or both.
+
+-----------------------------------------------------------
+The feedback received was primarily for the project plan. The teacher was thoroughly impressed with our system design so there wwas little to nothing being said here. As for the project plan there were a few aspects that needed to be rearranged. 
+The problem definition: we need to supply more context, explain the problems that are faced and then we follow all of this up with a goal. 
+The project statements: needs to be a little more specific. for example in our case we just need to "build a test environment for specific components"
+The expected delivery: This part did not need to be included into the project plan here but more so in the deliverables part of the plan. Just before the risk assessment.
+the predifined agreements: This does not need to be in the plan but we should keep it as an internal document.
+the requirements: These were indeed good on a feature level, but we must try to be more specific about it. See system design.
+The milestoens: ideally we would put both set hard dates here and the sprints but just the dates would also be sufficient.

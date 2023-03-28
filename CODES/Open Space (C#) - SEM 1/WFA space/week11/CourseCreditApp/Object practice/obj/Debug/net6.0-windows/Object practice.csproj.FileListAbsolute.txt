@@ -1,0 +1,51 @@
+D:\FHICT\CODES\Open space (C#)\WFA space\Object practice\Object practice\bin\Debug\net6.0-windows\Object practice.exe
+D:\FHICT\CODES\Open space (C#)\WFA space\Object practice\Object practice\bin\Debug\net6.0-windows\Object practice.deps.json
+D:\FHICT\CODES\Open space (C#)\WFA space\Object practice\Object practice\bin\Debug\net6.0-windows\Object practice.runtimeconfig.json
+D:\FHICT\CODES\Open space (C#)\WFA space\Object practice\Object practice\bin\Debug\net6.0-windows\Object practice.dll
+D:\FHICT\CODES\Open space (C#)\WFA space\Object practice\Object practice\bin\Debug\net6.0-windows\Object practice.pdb
+D:\FHICT\CODES\Open space (C#)\WFA space\Object practice\Object practice\obj\Debug\net6.0-windows\Object practice.csproj.AssemblyReference.cache
+D:\FHICT\CODES\Open space (C#)\WFA space\Object practice\Object practice\obj\Debug\net6.0-windows\Object_practice.Form1.resources
+D:\FHICT\CODES\Open space (C#)\WFA space\Object practice\Object practice\obj\Debug\net6.0-windows\Object practice.csproj.GenerateResource.cache
+D:\FHICT\CODES\Open space (C#)\WFA space\Object practice\Object practice\obj\Debug\net6.0-windows\Object practice.GeneratedMSBuildEditorConfig.editorconfig
+D:\FHICT\CODES\Open space (C#)\WFA space\Object practice\Object practice\obj\Debug\net6.0-windows\Object practice.AssemblyInfoInputs.cache
+D:\FHICT\CODES\Open space (C#)\WFA space\Object practice\Object practice\obj\Debug\net6.0-windows\Object practice.AssemblyInfo.cs
+D:\FHICT\CODES\Open space (C#)\WFA space\Object practice\Object practice\obj\Debug\net6.0-windows\Object practice.csproj.CoreCompileInputs.cache
+D:\FHICT\CODES\Open space (C#)\WFA space\Object practice\Object practice\obj\Debug\net6.0-windows\Object practice.dll
+D:\FHICT\CODES\Open space (C#)\WFA space\Object practice\Object practice\obj\Debug\net6.0-windows\refint\Object practice.dll
+D:\FHICT\CODES\Open space (C#)\WFA space\Object practice\Object practice\obj\Debug\net6.0-windows\Object practice.pdb
+D:\FHICT\CODES\Open space (C#)\WFA space\Object practice\Object practice\obj\Debug\net6.0-windows\Object practice.genruntimeconfig.cache
+D:\FHICT\CODES\Open space (C#)\WFA space\Object practice\Object practice\obj\Debug\net6.0-windows\ref\Object practice.dll
+D:\FHICT\CODES\Open space (C#)\WFA space\week11\Object practice\Object practice\bin\Debug\net6.0-windows\Object practice.exe
+D:\FHICT\CODES\Open space (C#)\WFA space\week11\Object practice\Object practice\bin\Debug\net6.0-windows\Object practice.deps.json
+D:\FHICT\CODES\Open space (C#)\WFA space\week11\Object practice\Object practice\bin\Debug\net6.0-windows\Object practice.runtimeconfig.json
+D:\FHICT\CODES\Open space (C#)\WFA space\week11\Object practice\Object practice\bin\Debug\net6.0-windows\Object practice.dll
+D:\FHICT\CODES\Open space (C#)\WFA space\week11\Object practice\Object practice\bin\Debug\net6.0-windows\Object practice.pdb
+D:\FHICT\CODES\Open space (C#)\WFA space\week11\Object practice\Object practice\obj\Debug\net6.0-windows\Object practice.csproj.AssemblyReference.cache
+D:\FHICT\CODES\Open space (C#)\WFA space\week11\Object practice\Object practice\obj\Debug\net6.0-windows\Object_practice.Form1.resources
+D:\FHICT\CODES\Open space (C#)\WFA space\week11\Object practice\Object practice\obj\Debug\net6.0-windows\Object practice.csproj.GenerateResource.cache
+D:\FHICT\CODES\Open space (C#)\WFA space\week11\Object practice\Object practice\obj\Debug\net6.0-windows\Object practice.GeneratedMSBuildEditorConfig.editorconfig
+D:\FHICT\CODES\Open space (C#)\WFA space\week11\Object practice\Object practice\obj\Debug\net6.0-windows\Object practice.AssemblyInfoInputs.cache
+D:\FHICT\CODES\Open space (C#)\WFA space\week11\Object practice\Object practice\obj\Debug\net6.0-windows\Object practice.AssemblyInfo.cs
+D:\FHICT\CODES\Open space (C#)\WFA space\week11\Object practice\Object practice\obj\Debug\net6.0-windows\Object practice.csproj.CoreCompileInputs.cache
+D:\FHICT\CODES\Open space (C#)\WFA space\week11\Object practice\Object practice\obj\Debug\net6.0-windows\Object practice.dll
+D:\FHICT\CODES\Open space (C#)\WFA space\week11\Object practice\Object practice\obj\Debug\net6.0-windows\refint\Object practice.dll
+D:\FHICT\CODES\Open space (C#)\WFA space\week11\Object practice\Object practice\obj\Debug\net6.0-windows\Object practice.pdb
+D:\FHICT\CODES\Open space (C#)\WFA space\week11\Object practice\Object practice\obj\Debug\net6.0-windows\Object practice.genruntimeconfig.cache
+D:\FHICT\CODES\Open space (C#)\WFA space\week11\Object practice\Object practice\obj\Debug\net6.0-windows\ref\Object practice.dll
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\Object practice\Object practice\bin\Debug\net6.0-windows\Object practice.exe
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\Object practice\Object practice\bin\Debug\net6.0-windows\Object practice.deps.json
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\Object practice\Object practice\bin\Debug\net6.0-windows\Object practice.runtimeconfig.json
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\Object practice\Object practice\bin\Debug\net6.0-windows\Object practice.dll
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\Object practice\Object practice\bin\Debug\net6.0-windows\Object practice.pdb
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\Object practice\Object practice\obj\Debug\net6.0-windows\Object practice.csproj.AssemblyReference.cache
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\Object practice\Object practice\obj\Debug\net6.0-windows\Object_practice.Form1.resources
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\Object practice\Object practice\obj\Debug\net6.0-windows\Object practice.csproj.GenerateResource.cache
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\Object practice\Object practice\obj\Debug\net6.0-windows\Object practice.GeneratedMSBuildEditorConfig.editorconfig
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\Object practice\Object practice\obj\Debug\net6.0-windows\Object practice.AssemblyInfoInputs.cache
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\Object practice\Object practice\obj\Debug\net6.0-windows\Object practice.AssemblyInfo.cs
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\Object practice\Object practice\obj\Debug\net6.0-windows\Object practice.csproj.CoreCompileInputs.cache
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\Object practice\Object practice\obj\Debug\net6.0-windows\Object practice.dll
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\Object practice\Object practice\obj\Debug\net6.0-windows\refint\Object practice.dll
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\Object practice\Object practice\obj\Debug\net6.0-windows\Object practice.pdb
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\Object practice\Object practice\obj\Debug\net6.0-windows\Object practice.genruntimeconfig.cache
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\Object practice\Object practice\obj\Debug\net6.0-windows\ref\Object practice.dll

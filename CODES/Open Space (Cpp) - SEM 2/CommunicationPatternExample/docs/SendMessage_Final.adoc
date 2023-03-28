@@ -1,0 +1,22 @@
+
+[plantuml, state-diagram, svg]
+-----
+skinparam handwritten true
+skinparam defaultFontName "Ink Free"
+skinparam defaultTextAlignment center
+
+state SendMessage_Final {
+
+  [*] --> LEDON
+
+  LEDON --> LEDON_READ_ACK : / \nSendMessage("$SetLedOn;");\nresult = UNDEFINED
+
+  LEDON_READ_ACK --> LEDON_READ_ACK : result == UNDEFINED / result = ReadAcknowledge(5s)
+  LEDON_READ_ACK --> NEXT_STATE : result == DONE
+  LEDON_READ_ACK --> LEDON_FAILED_ACK : result == FAILED
+  LEDON_READ_ACK --> LEDON_TIMEDOUT_ACK : result == TIMEOUT
+  LEDON_READ_ACK --> LEDON_UNKNOWN_ACK : result == UNKNOWN
+  LEDON_READ_ACK --> LEDON_CORRUPTED_ACK : result == CORRUPT
+}
+
+-----

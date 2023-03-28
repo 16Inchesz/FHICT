@@ -1,0 +1,19 @@
+[plantuml, state-diagram, svg]
+-----
+skinparam handwritten true
+skinparam defaultFontName "Ink Free"
+skinparam defaultTextAlignment center
+
+state "Traffic Light Slave" as TrafficLightSlave {
+
+  [*] --> RECEIVE_MSG
+
+  RECEIVE_MSG --> VALIDATING_MSG : MessageAvailable() /\nmsg = ReadMessage();\nresult = IsValidMessage(msg)
+
+  VALIDATING_MSG --> HANDLE_MSG : result / \nmsg=StripMessage(msg)
+  VALIDATING_MSG --> RECEIVE_MSG : !result / \nSendMessage("$NACK;");
+  HANDLE_MSG --> RECEIVE_MSG : msg == "GotoRed" / \nSendMessage("$ACK;");\nTurnGreenOff();\nTurnRedOn()
+  HANDLE_MSG --> RECEIVE_MSG : msg == "GotoOrange" / \nSendMessage("$ACK;");\nTurnOrangeOn();\nTurnGreenOff()
+  HANDLE_MSG --> RECEIVE_MSG : (msg != "GotoRed") &&\n(msg != "GotoOrange") /\nSendMessage("$NACK;");
+}
+-----

@@ -1,0 +1,15 @@
+D:\FHICT\CODES\Open space (C#)\Open space\Open space\bin\Debug\net6.0\Open space.exe
+D:\FHICT\CODES\Open space (C#)\Open space\Open space\bin\Debug\net6.0\Open space.deps.json
+D:\FHICT\CODES\Open space (C#)\Open space\Open space\bin\Debug\net6.0\Open space.runtimeconfig.json
+D:\FHICT\CODES\Open space (C#)\Open space\Open space\bin\Debug\net6.0\Open space.dll
+D:\FHICT\CODES\Open space (C#)\Open space\Open space\bin\Debug\net6.0\Open space.pdb
+D:\FHICT\CODES\Open space (C#)\Open space\Open space\obj\Debug\net6.0\Open space.csproj.AssemblyReference.cache
+D:\FHICT\CODES\Open space (C#)\Open space\Open space\obj\Debug\net6.0\Open space.GeneratedMSBuildEditorConfig.editorconfig
+D:\FHICT\CODES\Open space (C#)\Open space\Open space\obj\Debug\net6.0\Open space.AssemblyInfoInputs.cache
+D:\FHICT\CODES\Open space (C#)\Open space\Open space\obj\Debug\net6.0\Open space.AssemblyInfo.cs
+D:\FHICT\CODES\Open space (C#)\Open space\Open space\obj\Debug\net6.0\Open space.csproj.CoreCompileInputs.cache
+D:\FHICT\CODES\Open space (C#)\Open space\Open space\obj\Debug\net6.0\Open space.dll
+D:\FHICT\CODES\Open space (C#)\Open space\Open space\obj\Debug\net6.0\refint\Open space.dll
+D:\FHICT\CODES\Open space (C#)\Open space\Open space\obj\Debug\net6.0\Open space.pdb
+D:\FHICT\CODES\Open space (C#)\Open space\Open space\obj\Debug\net6.0\Open space.genruntimeconfig.cache
+D:\FHICT\CODES\Open space (C#)\Open space\Open space\obj\Debug\net6.0\ref\Open space.dll

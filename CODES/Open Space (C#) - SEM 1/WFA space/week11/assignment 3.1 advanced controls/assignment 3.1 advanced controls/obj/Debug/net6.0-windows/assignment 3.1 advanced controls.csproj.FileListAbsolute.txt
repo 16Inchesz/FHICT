@@ -1,0 +1,34 @@
+D:\FHICT\CODES\Open space (C#)\WFA space\assignment 3.1 advanced controls\assignment 3.1 advanced controls\bin\Debug\net6.0-windows\assignment 3.1 advanced controls.exe
+D:\FHICT\CODES\Open space (C#)\WFA space\assignment 3.1 advanced controls\assignment 3.1 advanced controls\bin\Debug\net6.0-windows\assignment 3.1 advanced controls.deps.json
+D:\FHICT\CODES\Open space (C#)\WFA space\assignment 3.1 advanced controls\assignment 3.1 advanced controls\bin\Debug\net6.0-windows\assignment 3.1 advanced controls.runtimeconfig.json
+D:\FHICT\CODES\Open space (C#)\WFA space\assignment 3.1 advanced controls\assignment 3.1 advanced controls\bin\Debug\net6.0-windows\assignment 3.1 advanced controls.dll
+D:\FHICT\CODES\Open space (C#)\WFA space\assignment 3.1 advanced controls\assignment 3.1 advanced controls\bin\Debug\net6.0-windows\assignment 3.1 advanced controls.pdb
+D:\FHICT\CODES\Open space (C#)\WFA space\assignment 3.1 advanced controls\assignment 3.1 advanced controls\obj\Debug\net6.0-windows\assignment 3.1 advanced controls.csproj.AssemblyReference.cache
+D:\FHICT\CODES\Open space (C#)\WFA space\assignment 3.1 advanced controls\assignment 3.1 advanced controls\obj\Debug\net6.0-windows\assignment_3._1_advanced_controls.Form1.resources
+D:\FHICT\CODES\Open space (C#)\WFA space\assignment 3.1 advanced controls\assignment 3.1 advanced controls\obj\Debug\net6.0-windows\assignment 3.1 advanced controls.csproj.GenerateResource.cache
+D:\FHICT\CODES\Open space (C#)\WFA space\assignment 3.1 advanced controls\assignment 3.1 advanced controls\obj\Debug\net6.0-windows\assignment 3.1 advanced controls.GeneratedMSBuildEditorConfig.editorconfig
+D:\FHICT\CODES\Open space (C#)\WFA space\assignment 3.1 advanced controls\assignment 3.1 advanced controls\obj\Debug\net6.0-windows\assignment 3.1 advanced controls.AssemblyInfoInputs.cache
+D:\FHICT\CODES\Open space (C#)\WFA space\assignment 3.1 advanced controls\assignment 3.1 advanced controls\obj\Debug\net6.0-windows\assignment 3.1 advanced controls.AssemblyInfo.cs
+D:\FHICT\CODES\Open space (C#)\WFA space\assignment 3.1 advanced controls\assignment 3.1 advanced controls\obj\Debug\net6.0-windows\assignment 3.1 advanced controls.csproj.CoreCompileInputs.cache
+D:\FHICT\CODES\Open space (C#)\WFA space\assignment 3.1 advanced controls\assignment 3.1 advanced controls\obj\Debug\net6.0-windows\assignment 3.1 advanced controls.dll
+D:\FHICT\CODES\Open space (C#)\WFA space\assignment 3.1 advanced controls\assignment 3.1 advanced controls\obj\Debug\net6.0-windows\refint\assignment 3.1 advanced controls.dll
+D:\FHICT\CODES\Open space (C#)\WFA space\assignment 3.1 advanced controls\assignment 3.1 advanced controls\obj\Debug\net6.0-windows\assignment 3.1 advanced controls.pdb
+D:\FHICT\CODES\Open space (C#)\WFA space\assignment 3.1 advanced controls\assignment 3.1 advanced controls\obj\Debug\net6.0-windows\assignment 3.1 advanced controls.genruntimeconfig.cache
+D:\FHICT\CODES\Open space (C#)\WFA space\assignment 3.1 advanced controls\assignment 3.1 advanced controls\obj\Debug\net6.0-windows\ref\assignment 3.1 advanced controls.dll
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\assignment 3.1 advanced controls\assignment 3.1 advanced controls\bin\Debug\net6.0-windows\assignment 3.1 advanced controls.exe
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\assignment 3.1 advanced controls\assignment 3.1 advanced controls\bin\Debug\net6.0-windows\assignment 3.1 advanced controls.deps.json
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\assignment 3.1 advanced controls\assignment 3.1 advanced controls\bin\Debug\net6.0-windows\assignment 3.1 advanced controls.runtimeconfig.json
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\assignment 3.1 advanced controls\assignment 3.1 advanced controls\bin\Debug\net6.0-windows\assignment 3.1 advanced controls.dll
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\assignment 3.1 advanced controls\assignment 3.1 advanced controls\bin\Debug\net6.0-windows\assignment 3.1 advanced controls.pdb
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\assignment 3.1 advanced controls\assignment 3.1 advanced controls\obj\Debug\net6.0-windows\assignment 3.1 advanced controls.csproj.AssemblyReference.cache
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\assignment 3.1 advanced controls\assignment 3.1 advanced controls\obj\Debug\net6.0-windows\assignment_3._1_advanced_controls.Form1.resources
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\assignment 3.1 advanced controls\assignment 3.1 advanced controls\obj\Debug\net6.0-windows\assignment 3.1 advanced controls.csproj.GenerateResource.cache
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\assignment 3.1 advanced controls\assignment 3.1 advanced controls\obj\Debug\net6.0-windows\assignment 3.1 advanced controls.GeneratedMSBuildEditorConfig.editorconfig
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\assignment 3.1 advanced controls\assignment 3.1 advanced controls\obj\Debug\net6.0-windows\assignment 3.1 advanced controls.AssemblyInfoInputs.cache
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\assignment 3.1 advanced controls\assignment 3.1 advanced controls\obj\Debug\net6.0-windows\assignment 3.1 advanced controls.AssemblyInfo.cs
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\assignment 3.1 advanced controls\assignment 3.1 advanced controls\obj\Debug\net6.0-windows\assignment 3.1 advanced controls.csproj.CoreCompileInputs.cache
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\assignment 3.1 advanced controls\assignment 3.1 advanced controls\obj\Debug\net6.0-windows\assignment 3.1 advanced controls.dll
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\assignment 3.1 advanced controls\assignment 3.1 advanced controls\obj\Debug\net6.0-windows\refint\assignment 3.1 advanced controls.dll
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\assignment 3.1 advanced controls\assignment 3.1 advanced controls\obj\Debug\net6.0-windows\assignment 3.1 advanced controls.pdb
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\assignment 3.1 advanced controls\assignment 3.1 advanced controls\obj\Debug\net6.0-windows\assignment 3.1 advanced controls.genruntimeconfig.cache
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\assignment 3.1 advanced controls\assignment 3.1 advanced controls\obj\Debug\net6.0-windows\ref\assignment 3.1 advanced controls.dll

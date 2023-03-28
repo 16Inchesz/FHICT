@@ -1,0 +1,11 @@
+D:\FHICT\CODES\Open Space (C#) - SEM 2\Assignments\Assignment 1\PoloClubApp\obj\Debug\PoloClubApp.csproj.AssemblyReference.cache
+D:\FHICT\CODES\Open Space (C#) - SEM 2\Assignments\Assignment 1\PoloClubApp\obj\Debug\PoloClubApp.csproj.SuggestedBindingRedirects.cache
+D:\FHICT\CODES\Open Space (C#) - SEM 2\Assignments\Assignment 1\PoloClubApp\obj\Debug\PoloClubApp.PoloClubAppForm.resources
+D:\FHICT\CODES\Open Space (C#) - SEM 2\Assignments\Assignment 1\PoloClubApp\obj\Debug\PoloClubApp.Properties.Resources.resources
+D:\FHICT\CODES\Open Space (C#) - SEM 2\Assignments\Assignment 1\PoloClubApp\obj\Debug\PoloClubApp.csproj.GenerateResource.cache
+D:\FHICT\CODES\Open Space (C#) - SEM 2\Assignments\Assignment 1\PoloClubApp\obj\Debug\PoloClubApp.csproj.CoreCompileInputs.cache
+D:\FHICT\CODES\Open Space (C#) - SEM 2\Assignments\Assignment 1\PoloClubApp\bin\Debug\PoloClubApp.exe.config
+D:\FHICT\CODES\Open Space (C#) - SEM 2\Assignments\Assignment 1\PoloClubApp\bin\Debug\PoloClubApp.exe
+D:\FHICT\CODES\Open Space (C#) - SEM 2\Assignments\Assignment 1\PoloClubApp\bin\Debug\PoloClubApp.pdb
+D:\FHICT\CODES\Open Space (C#) - SEM 2\Assignments\Assignment 1\PoloClubApp\obj\Debug\PoloClubApp.exe
+D:\FHICT\CODES\Open Space (C#) - SEM 2\Assignments\Assignment 1\PoloClubApp\obj\Debug\PoloClubApp.pdb

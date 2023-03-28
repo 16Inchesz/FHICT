@@ -1,0 +1,24 @@
+D:\FHICT\CODES\Open space (C#)\WFA space\assignment 2.1 extending course\assignment 2.1 extending course\obj\Debug\net6.0-windows\assignment 2.1 extending course.csproj.AssemblyReference.cache
+D:\FHICT\CODES\Open space (C#)\WFA space\assignment 2.1 extending course\assignment 2.1 extending course\obj\Debug\net6.0-windows\assignment_2._1_extending_course.Form1.resources
+D:\FHICT\CODES\Open space (C#)\WFA space\assignment 2.1 extending course\assignment 2.1 extending course\obj\Debug\net6.0-windows\assignment 2.1 extending course.csproj.GenerateResource.cache
+D:\FHICT\CODES\Open space (C#)\WFA space\assignment 2.1 extending course\assignment 2.1 extending course\obj\Debug\net6.0-windows\assignment 2.1 extending course.GeneratedMSBuildEditorConfig.editorconfig
+D:\FHICT\CODES\Open space (C#)\WFA space\assignment 2.1 extending course\assignment 2.1 extending course\obj\Debug\net6.0-windows\assignment 2.1 extending course.AssemblyInfoInputs.cache
+D:\FHICT\CODES\Open space (C#)\WFA space\assignment 2.1 extending course\assignment 2.1 extending course\obj\Debug\net6.0-windows\assignment 2.1 extending course.AssemblyInfo.cs
+D:\FHICT\CODES\Open space (C#)\WFA space\assignment 2.1 extending course\assignment 2.1 extending course\obj\Debug\net6.0-windows\assignment 2.1 extending course.csproj.CoreCompileInputs.cache
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week 12\assignment 2.1 extending course\assignment 2.1 extending course\bin\Debug\net6.0-windows\assignment 2.1 extending course.exe
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week 12\assignment 2.1 extending course\assignment 2.1 extending course\bin\Debug\net6.0-windows\assignment 2.1 extending course.deps.json
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week 12\assignment 2.1 extending course\assignment 2.1 extending course\bin\Debug\net6.0-windows\assignment 2.1 extending course.runtimeconfig.json
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week 12\assignment 2.1 extending course\assignment 2.1 extending course\bin\Debug\net6.0-windows\assignment 2.1 extending course.dll
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week 12\assignment 2.1 extending course\assignment 2.1 extending course\bin\Debug\net6.0-windows\assignment 2.1 extending course.pdb
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week 12\assignment 2.1 extending course\assignment 2.1 extending course\obj\Debug\net6.0-windows\assignment 2.1 extending course.csproj.AssemblyReference.cache
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week 12\assignment 2.1 extending course\assignment 2.1 extending course\obj\Debug\net6.0-windows\assignment_2._1_extending_course.Form1.resources
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week 12\assignment 2.1 extending course\assignment 2.1 extending course\obj\Debug\net6.0-windows\assignment 2.1 extending course.csproj.GenerateResource.cache
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week 12\assignment 2.1 extending course\assignment 2.1 extending course\obj\Debug\net6.0-windows\assignment 2.1 extending course.GeneratedMSBuildEditorConfig.editorconfig
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week 12\assignment 2.1 extending course\assignment 2.1 extending course\obj\Debug\net6.0-windows\assignment 2.1 extending course.AssemblyInfoInputs.cache
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week 12\assignment 2.1 extending course\assignment 2.1 extending course\obj\Debug\net6.0-windows\assignment 2.1 extending course.AssemblyInfo.cs
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week 12\assignment 2.1 extending course\assignment 2.1 extending course\obj\Debug\net6.0-windows\assignment 2.1 extending course.csproj.CoreCompileInputs.cache
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week 12\assignment 2.1 extending course\assignment 2.1 extending course\obj\Debug\net6.0-windows\assignment 2.1 extending course.dll
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week 12\assignment 2.1 extending course\assignment 2.1 extending course\obj\Debug\net6.0-windows\refint\assignment 2.1 extending course.dll
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week 12\assignment 2.1 extending course\assignment 2.1 extending course\obj\Debug\net6.0-windows\assignment 2.1 extending course.pdb
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week 12\assignment 2.1 extending course\assignment 2.1 extending course\obj\Debug\net6.0-windows\assignment 2.1 extending course.genruntimeconfig.cache
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week 12\assignment 2.1 extending course\assignment 2.1 extending course\obj\Debug\net6.0-windows\ref\assignment 2.1 extending course.dll

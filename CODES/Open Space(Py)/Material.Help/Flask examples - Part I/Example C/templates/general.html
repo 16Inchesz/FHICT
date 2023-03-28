@@ -1,0 +1,21 @@
+
+<html>
+    <head>
+        <title>Greetings</title>
+    </head>
+    <body>
+        {% if people_names == [] %}
+            <h1>Hello, world!</h1>
+            <p>How is everyone?</p>
+        {% else %}
+            <h1>Hello to:</h1>
+            <ul>
+                {% for name in people_names %}
+                    <li>{{ name }}</li>
+                {% endfor %}
+            </ul>
+            <p>How are you?</p>
+        {% endif %}
+        <p>{{ time }}</p>
+    </body>
+</html>

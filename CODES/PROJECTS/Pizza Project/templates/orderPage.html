@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" type="text/css" href="../static/styles/grid.css">
+    <link rel="stylesheet" type="text/css" href="../static/styles/orderStyle.css">
+
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,300italic' rel='stylesheet' type='text/css'>
+    
+    <title>Order</title>
+</head>
+<body>
+    <header>
+        <div class="hero-text-box">
+            <h1>Order Page</h1>
+        </div>
+    </header>
+    
+    <section class="section-features js--section-features">
+        <form method="post" action="/add">
+            <ul class="meals-showcase clearfix">
+                {% for pizza in pizzas %}
+                    <li class="span-1-of-4 box-order">
+                        <figure class="meal-photo">
+                            <img src={{ pizza[2] }} alt="Pizza">
+                        </figure>
+                        <h2>{{ pizza[0] }}</h2>
+                        <p class="long-copy">{{ pizza[1] }}</p>
+                        <input type="submit" class="btn btn-full js--scroll-to-plans" name={{ pizza[0] }} onclick="return confirm('Confirm order')">Order now</input>
+                    </li>
+                {% endfor %}
+            </ul>
+        </form>
+    </section>
+
+    <footer>
+        <div class="row">
+            <p>
+                Copyright &copy; 2022 by Mario & Luigi. (Not) All rights reserved.
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

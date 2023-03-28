@@ -1,0 +1,11 @@
+D:\FHICT\CODES\Open space (C#)\Serial exercise 2 + 3\Serial exercise 2 + 3\bin\Debug\Serial exercise 2 + 3.exe.config
+D:\FHICT\CODES\Open space (C#)\Serial exercise 2 + 3\Serial exercise 2 + 3\bin\Debug\Serial exercise 2 + 3.exe
+D:\FHICT\CODES\Open space (C#)\Serial exercise 2 + 3\Serial exercise 2 + 3\bin\Debug\Serial exercise 2 + 3.pdb
+D:\FHICT\CODES\Open space (C#)\Serial exercise 2 + 3\Serial exercise 2 + 3\obj\Debug\Serial exercise 2 + 3.csproj.AssemblyReference.cache
+D:\FHICT\CODES\Open space (C#)\Serial exercise 2 + 3\Serial exercise 2 + 3\obj\Debug\Serial exercise 2 + 3.csproj.SuggestedBindingRedirects.cache
+D:\FHICT\CODES\Open space (C#)\Serial exercise 2 + 3\Serial exercise 2 + 3\obj\Debug\Serial_exercise_2___3.Form1.resources
+D:\FHICT\CODES\Open space (C#)\Serial exercise 2 + 3\Serial exercise 2 + 3\obj\Debug\Serial_exercise_2___3.Properties.Resources.resources
+D:\FHICT\CODES\Open space (C#)\Serial exercise 2 + 3\Serial exercise 2 + 3\obj\Debug\Serial exercise 2 + 3.csproj.GenerateResource.cache
+D:\FHICT\CODES\Open space (C#)\Serial exercise 2 + 3\Serial exercise 2 + 3\obj\Debug\Serial exercise 2 + 3.csproj.CoreCompileInputs.cache
+D:\FHICT\CODES\Open space (C#)\Serial exercise 2 + 3\Serial exercise 2 + 3\obj\Debug\Serial exercise 2 + 3.exe
+D:\FHICT\CODES\Open space (C#)\Serial exercise 2 + 3\Serial exercise 2 + 3\obj\Debug\Serial exercise 2 + 3.pdb

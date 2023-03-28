@@ -1,0 +1,34 @@
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\method practice\method practice\bin\Debug\net6.0-windows\BankAccountApp.exe
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\method practice\method practice\bin\Debug\net6.0-windows\BankAccountApp.deps.json
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\method practice\method practice\bin\Debug\net6.0-windows\BankAccountApp.runtimeconfig.json
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\method practice\method practice\bin\Debug\net6.0-windows\BankAccountApp.dll
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\method practice\method practice\bin\Debug\net6.0-windows\BankAccountApp.pdb
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\method practice\method practice\obj\Debug\net6.0-windows\BankAccountApp.csproj.AssemblyReference.cache
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\method practice\method practice\obj\Debug\net6.0-windows\method_practice.Form1.resources
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\method practice\method practice\obj\Debug\net6.0-windows\BankAccountApp.csproj.GenerateResource.cache
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\method practice\method practice\obj\Debug\net6.0-windows\BankAccountApp.GeneratedMSBuildEditorConfig.editorconfig
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\method practice\method practice\obj\Debug\net6.0-windows\BankAccountApp.AssemblyInfoInputs.cache
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\method practice\method practice\obj\Debug\net6.0-windows\BankAccountApp.AssemblyInfo.cs
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\method practice\method practice\obj\Debug\net6.0-windows\BankAccountApp.csproj.CoreCompileInputs.cache
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\method practice\method practice\obj\Debug\net6.0-windows\BankAccountApp.dll
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\method practice\method practice\obj\Debug\net6.0-windows\refint\BankAccountApp.dll
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\method practice\method practice\obj\Debug\net6.0-windows\BankAccountApp.pdb
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\method practice\method practice\obj\Debug\net6.0-windows\BankAccountApp.genruntimeconfig.cache
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\method practice\method practice\obj\Debug\net6.0-windows\ref\BankAccountApp.dll
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\BankAccountApp\method practice\bin\Debug\net6.0-windows\BankAccountApp.exe
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\BankAccountApp\method practice\bin\Debug\net6.0-windows\BankAccountApp.deps.json
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\BankAccountApp\method practice\bin\Debug\net6.0-windows\BankAccountApp.runtimeconfig.json
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\BankAccountApp\method practice\bin\Debug\net6.0-windows\BankAccountApp.dll
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\BankAccountApp\method practice\bin\Debug\net6.0-windows\BankAccountApp.pdb
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\BankAccountApp\method practice\obj\Debug\net6.0-windows\BankAccountApp.csproj.AssemblyReference.cache
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\BankAccountApp\method practice\obj\Debug\net6.0-windows\method_practice.Form1.resources
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\BankAccountApp\method practice\obj\Debug\net6.0-windows\BankAccountApp.csproj.GenerateResource.cache
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\BankAccountApp\method practice\obj\Debug\net6.0-windows\BankAccountApp.GeneratedMSBuildEditorConfig.editorconfig
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\BankAccountApp\method practice\obj\Debug\net6.0-windows\BankAccountApp.AssemblyInfoInputs.cache
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\BankAccountApp\method practice\obj\Debug\net6.0-windows\BankAccountApp.AssemblyInfo.cs
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\BankAccountApp\method practice\obj\Debug\net6.0-windows\BankAccountApp.csproj.CoreCompileInputs.cache
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\BankAccountApp\method practice\obj\Debug\net6.0-windows\BankAccountApp.dll
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\BankAccountApp\method practice\obj\Debug\net6.0-windows\refint\BankAccountApp.dll
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\BankAccountApp\method practice\obj\Debug\net6.0-windows\BankAccountApp.pdb
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\BankAccountApp\method practice\obj\Debug\net6.0-windows\BankAccountApp.genruntimeconfig.cache
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\BankAccountApp\method practice\obj\Debug\net6.0-windows\ref\BankAccountApp.dll

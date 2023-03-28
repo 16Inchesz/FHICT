@@ -1,0 +1,24 @@
+Step 1:
+
+the current is calculated by combining the resistors in one equivalent resistor with a value of 5700ohms in this case.
+ohms law is used to calculate this current with the provided cvoltage of (5V). 5V / 5700ohms = 0.88mA.
+
+The voltage divider is used to calculate the voltage on the first resistor(R1). In this case it is R1/ R1 + R2 * U => 1000/5700 * 5 = 0.87V. This is the first voltage drop from 5V.
+the same is done to get the value of the second resistor(R2) in this case it is R2/ R1 + R2 * U => 4700/5700 * 5 = 4.12V. This is the second voltage drop on the second node. 
+
+step 2:
+
+circuit has been built.
+the measured voltage on the first and second ressitor is as follows : Ur1 = 0.899V and Ur2 = 4.219V.
+the measured voltage provided by the arduino is: 5.112V 
+so these measurements are plauible.
+the measured current is around 0.89mA. This also checks out with the calculations provided in step 1.
+
+step 3:
+if the analog0 returns total voltage then it would be a simple voltage drop equation. So 5.112V from the first node - the voltage drop on Ur1. So 5.112V - 0.899V = 4.213V.
+that is the theory.
+
+step 4: 
+Using the follow program, we first found the value of the analog and we convert this into a voltage and display this.
+The previous theory was not completely correct, we initially thought iit would return a voltage immedietly but it returns an analog value with range of 0 - 1023 that needs to be converted.
+ 

@@ -1,0 +1,24 @@
+
+[plantuml, state-diagram, svg]
+-----
+skinparam handwritten true
+skinparam defaultFontName "Ink Free"
+skinparam defaultTextAlignment center
+
+state SendMessage_Simplification {
+
+[*] --> LEDON
+
+state READ_ACK {
+    LEDON --> WAIT_FOR_ACK : / \nSendMessage("$SetLedOn;"); \n ResetTimer()
+    WAIT_FOR_ACK --> VALIDATING_ACK : !HasTimerExpired(5s) &&\nMessageAvailable() / \nmsg = ReadMessage()
+    VALIDATING_ACK --> VALIDATED_ACK : IsValidMessage(msg) / \nmsg=StripMessage(msg)
+}
+
+WAIT_FOR_ACK --> TIMEDOUT_ACK : HasTimerExpired(5s)
+VALIDATING_ACK --> CORRUPTED_ACK : !IsValidMessage(msg)
+VALIDATED_ACK --> NEXT_STATE : msg == "ACK"
+VALIDATED_ACK --> FAILED_ACK : msg == "NACK"
+VALIDATED_ACK --> UNKNOWN_ACK : msg != "ACK" && msg != "NACK"
+}
+-----

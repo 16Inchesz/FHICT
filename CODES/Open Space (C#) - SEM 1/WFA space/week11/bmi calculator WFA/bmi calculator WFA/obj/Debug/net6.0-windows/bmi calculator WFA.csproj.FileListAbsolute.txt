@@ -1,0 +1,34 @@
+D:\FHICT\CODES\Open space (C#)\bmi calculator WFA\bmi calculator WFA\bin\Debug\net6.0-windows\bmi calculator WFA.exe
+D:\FHICT\CODES\Open space (C#)\bmi calculator WFA\bmi calculator WFA\bin\Debug\net6.0-windows\bmi calculator WFA.deps.json
+D:\FHICT\CODES\Open space (C#)\bmi calculator WFA\bmi calculator WFA\bin\Debug\net6.0-windows\bmi calculator WFA.runtimeconfig.json
+D:\FHICT\CODES\Open space (C#)\bmi calculator WFA\bmi calculator WFA\bin\Debug\net6.0-windows\bmi calculator WFA.dll
+D:\FHICT\CODES\Open space (C#)\bmi calculator WFA\bmi calculator WFA\bin\Debug\net6.0-windows\bmi calculator WFA.pdb
+D:\FHICT\CODES\Open space (C#)\bmi calculator WFA\bmi calculator WFA\obj\Debug\net6.0-windows\bmi calculator WFA.csproj.AssemblyReference.cache
+D:\FHICT\CODES\Open space (C#)\bmi calculator WFA\bmi calculator WFA\obj\Debug\net6.0-windows\bmi_calculator_WFA.Form1.resources
+D:\FHICT\CODES\Open space (C#)\bmi calculator WFA\bmi calculator WFA\obj\Debug\net6.0-windows\bmi calculator WFA.csproj.GenerateResource.cache
+D:\FHICT\CODES\Open space (C#)\bmi calculator WFA\bmi calculator WFA\obj\Debug\net6.0-windows\bmi calculator WFA.GeneratedMSBuildEditorConfig.editorconfig
+D:\FHICT\CODES\Open space (C#)\bmi calculator WFA\bmi calculator WFA\obj\Debug\net6.0-windows\bmi calculator WFA.AssemblyInfoInputs.cache
+D:\FHICT\CODES\Open space (C#)\bmi calculator WFA\bmi calculator WFA\obj\Debug\net6.0-windows\bmi calculator WFA.AssemblyInfo.cs
+D:\FHICT\CODES\Open space (C#)\bmi calculator WFA\bmi calculator WFA\obj\Debug\net6.0-windows\bmi calculator WFA.csproj.CoreCompileInputs.cache
+D:\FHICT\CODES\Open space (C#)\bmi calculator WFA\bmi calculator WFA\obj\Debug\net6.0-windows\bmi calculator WFA.dll
+D:\FHICT\CODES\Open space (C#)\bmi calculator WFA\bmi calculator WFA\obj\Debug\net6.0-windows\refint\bmi calculator WFA.dll
+D:\FHICT\CODES\Open space (C#)\bmi calculator WFA\bmi calculator WFA\obj\Debug\net6.0-windows\bmi calculator WFA.pdb
+D:\FHICT\CODES\Open space (C#)\bmi calculator WFA\bmi calculator WFA\obj\Debug\net6.0-windows\bmi calculator WFA.genruntimeconfig.cache
+D:\FHICT\CODES\Open space (C#)\bmi calculator WFA\bmi calculator WFA\obj\Debug\net6.0-windows\ref\bmi calculator WFA.dll
+D:\FHICT\CODES\Open space (C#)\WFA space\bmi calculator WFA\bmi calculator WFA\bin\Debug\net6.0-windows\bmi calculator WFA.exe
+D:\FHICT\CODES\Open space (C#)\WFA space\bmi calculator WFA\bmi calculator WFA\bin\Debug\net6.0-windows\bmi calculator WFA.deps.json
+D:\FHICT\CODES\Open space (C#)\WFA space\bmi calculator WFA\bmi calculator WFA\bin\Debug\net6.0-windows\bmi calculator WFA.runtimeconfig.json
+D:\FHICT\CODES\Open space (C#)\WFA space\bmi calculator WFA\bmi calculator WFA\bin\Debug\net6.0-windows\bmi calculator WFA.dll
+D:\FHICT\CODES\Open space (C#)\WFA space\bmi calculator WFA\bmi calculator WFA\bin\Debug\net6.0-windows\bmi calculator WFA.pdb
+D:\FHICT\CODES\Open space (C#)\WFA space\bmi calculator WFA\bmi calculator WFA\obj\Debug\net6.0-windows\bmi calculator WFA.csproj.AssemblyReference.cache
+D:\FHICT\CODES\Open space (C#)\WFA space\bmi calculator WFA\bmi calculator WFA\obj\Debug\net6.0-windows\bmi_calculator_WFA.Form1.resources
+D:\FHICT\CODES\Open space (C#)\WFA space\bmi calculator WFA\bmi calculator WFA\obj\Debug\net6.0-windows\bmi calculator WFA.csproj.GenerateResource.cache
+D:\FHICT\CODES\Open space (C#)\WFA space\bmi calculator WFA\bmi calculator WFA\obj\Debug\net6.0-windows\bmi calculator WFA.GeneratedMSBuildEditorConfig.editorconfig
+D:\FHICT\CODES\Open space (C#)\WFA space\bmi calculator WFA\bmi calculator WFA\obj\Debug\net6.0-windows\bmi calculator WFA.AssemblyInfoInputs.cache
+D:\FHICT\CODES\Open space (C#)\WFA space\bmi calculator WFA\bmi calculator WFA\obj\Debug\net6.0-windows\bmi calculator WFA.AssemblyInfo.cs
+D:\FHICT\CODES\Open space (C#)\WFA space\bmi calculator WFA\bmi calculator WFA\obj\Debug\net6.0-windows\bmi calculator WFA.csproj.CoreCompileInputs.cache
+D:\FHICT\CODES\Open space (C#)\WFA space\bmi calculator WFA\bmi calculator WFA\obj\Debug\net6.0-windows\bmi calculator WFA.dll
+D:\FHICT\CODES\Open space (C#)\WFA space\bmi calculator WFA\bmi calculator WFA\obj\Debug\net6.0-windows\refint\bmi calculator WFA.dll
+D:\FHICT\CODES\Open space (C#)\WFA space\bmi calculator WFA\bmi calculator WFA\obj\Debug\net6.0-windows\bmi calculator WFA.pdb
+D:\FHICT\CODES\Open space (C#)\WFA space\bmi calculator WFA\bmi calculator WFA\obj\Debug\net6.0-windows\bmi calculator WFA.genruntimeconfig.cache
+D:\FHICT\CODES\Open space (C#)\WFA space\bmi calculator WFA\bmi calculator WFA\obj\Debug\net6.0-windows\ref\bmi calculator WFA.dll

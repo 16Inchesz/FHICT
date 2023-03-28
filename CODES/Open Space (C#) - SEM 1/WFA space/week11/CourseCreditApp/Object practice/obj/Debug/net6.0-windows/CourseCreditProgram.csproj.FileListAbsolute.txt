@@ -1,0 +1,17 @@
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\CourseCreditApp\Object practice\bin\Debug\net6.0-windows\CourseCreditProgram.exe
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\CourseCreditApp\Object practice\bin\Debug\net6.0-windows\CourseCreditProgram.deps.json
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\CourseCreditApp\Object practice\bin\Debug\net6.0-windows\CourseCreditProgram.runtimeconfig.json
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\CourseCreditApp\Object practice\bin\Debug\net6.0-windows\CourseCreditProgram.dll
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\CourseCreditApp\Object practice\bin\Debug\net6.0-windows\CourseCreditProgram.pdb
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\CourseCreditApp\Object practice\obj\Debug\net6.0-windows\CourseCreditProgram.csproj.AssemblyReference.cache
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\CourseCreditApp\Object practice\obj\Debug\net6.0-windows\Object_practice.Form1.resources
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\CourseCreditApp\Object practice\obj\Debug\net6.0-windows\CourseCreditProgram.csproj.GenerateResource.cache
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\CourseCreditApp\Object practice\obj\Debug\net6.0-windows\CourseCreditProgram.GeneratedMSBuildEditorConfig.editorconfig
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\CourseCreditApp\Object practice\obj\Debug\net6.0-windows\CourseCreditProgram.AssemblyInfoInputs.cache
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\CourseCreditApp\Object practice\obj\Debug\net6.0-windows\CourseCreditProgram.AssemblyInfo.cs
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\CourseCreditApp\Object practice\obj\Debug\net6.0-windows\CourseCreditProgram.csproj.CoreCompileInputs.cache
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\CourseCreditApp\Object practice\obj\Debug\net6.0-windows\CourseCreditProgram.dll
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\CourseCreditApp\Object practice\obj\Debug\net6.0-windows\refint\CourseCreditProgram.dll
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\CourseCreditApp\Object practice\obj\Debug\net6.0-windows\CourseCreditProgram.pdb
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\CourseCreditApp\Object practice\obj\Debug\net6.0-windows\CourseCreditProgram.genruntimeconfig.cache
+D:\FHICT\CODES\Open Space (C#) - SEM 1\WFA space\week11\CourseCreditApp\Object practice\obj\Debug\net6.0-windows\ref\CourseCreditProgram.dll

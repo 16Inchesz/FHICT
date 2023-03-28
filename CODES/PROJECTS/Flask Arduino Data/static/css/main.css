@@ -1,0 +1,91 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #000;
+}
+.PageT {
+    font-size: 3em;
+    font-weight: 100;
+    margin-top: 30px;
+}
+.field {  
+    left: 100;
+    top: 350px;
+}
+.fieldH {
+    position: absolute;
+    left: 100px;
+    top: 337px;
+}
+.fieldT {
+    position: absolute;
+    left: 300px;
+    top: 337px;
+}
+.fieldB {
+    position: absolute;
+    left: 500px;
+    top: 337px;
+}
+.average {
+    left: 100;
+    top: 350px;
+}
+.averageH {
+    position: absolute;
+    left: 150px;
+    top: 370px;
+}
+.averageT {
+    position: absolute;
+    left: 350px;
+    top: 370px;
+}
+
+.averageB {
+    position: absolute;
+    left: 550px;
+    top: 370px;
+}
+.maximum {
+    left: 100;
+    top: 350px;
+}
+.maximumH {
+    position: absolute;
+    left: 150px;
+    top: 405px;
+}
+.maximumT {
+    position: absolute;
+    left: 350px;
+    top: 405px;
+}
+.maximumB {
+    position: absolute;
+    left: 550px;
+    top: 405px;
+}
+.minimum {
+    left: 100;
+    top: 350px;
+}
+.minimumH {
+    position: absolute;
+    left: 150px;
+    top: 440px;
+}
+.minimumT {
+    position: absolute;
+    left: 350px;
+    top: 440px;
+}
+.minimumB {
+    position: absolute;
+    left: 550px;
+    top: 440px;
+}
+.individualSensor {
+    text-align: center;
+}

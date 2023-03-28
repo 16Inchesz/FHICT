@@ -1,0 +1,19 @@
+[plantuml, state-diagram, svg]
+-----
+skinparam handwritten true
+skinparam defaultFontName "Ink Free"
+skinparam defaultTextAlignment center
+
+state ReceiveMessage {
+
+  [*] --> RECEIVE_MSG
+
+  RECEIVE_MSG --> VALIDATING_MSG : MessageAvailable() /\nmsg = ReadMessage();\nresult = IsValidMessage(msg)
+
+  VALIDATING_MSG --> HANDLE_MSG : result / \nmsg=TrimMessage(msg)
+  VALIDATING_MSG --> CORRUPTED_MSG : !result / \nSendMessage("$NACK;");\nYellowLedOn()
+  HANDLE_MSG --> LED_IS_ON : msg == "LedOn" / \nSendMessage("$ACK;");\nRedLedOn()
+  HANDLE_MSG --> LED_IS_OFF : msg == "LedOff" / \nSendMessage("$ACK;");\nRedLedOff()
+  HANDLE_MSG --> UNKNOWN_MSG : (msg != "LedOn") && (msg != "Ledoff") / \nSendMessage("$NACK;");\nBlueLedOn()
+}
+-----

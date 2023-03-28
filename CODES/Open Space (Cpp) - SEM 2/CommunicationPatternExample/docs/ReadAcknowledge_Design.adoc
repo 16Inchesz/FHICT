@@ -1,0 +1,20 @@
+
+[plantuml, state-diagram, svg]
+-----
+skinparam handwritten true
+skinparam defaultFontName "Ink Free"
+skinparam defaultTextAlignment center
+
+state "ReadAcknowledge(delay) -> result" as ReadAcknowledge {
+    [*] --> WAIT_FOR_ACK : / \nResetTimer();\n result = UNDEFINED
+    WAIT_FOR_ACK --> VALIDATING_ACK : !HasTimerExpired(delay) && MessageAvailable() / \nmsg = ReadMessage()
+    WAIT_FOR_ACK --> TIMEDOUT : HasTimerExpired(delay)
+    VALIDATING_ACK --> VALIDATED_ACK : IsValidMessage(msg) / \nmsg=StripMessage(msg)    
+    VALIDATING_ACK --> CORRUPTED : IsValidMessage(msg)    
+    TIMEDOUT --> [*] : result = TIMEOUT
+    CORRUPTED --> [*] : result = CORRUPT
+    VALIDATED_ACK --> [*] : msg == "ACK"/\nresult = DONE
+    VALIDATED_ACK --> [*] : msg == "NACK"/\nresult = FAILED
+    VALIDATED_ACK --> [*] : msg != "ACK" &&\nmsg != "NACK"/\nresult = UNKNOWN
+}
+-----

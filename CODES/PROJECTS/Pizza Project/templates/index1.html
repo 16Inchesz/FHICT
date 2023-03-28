@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="title">{% block title %} Order list: {% endblock %}</h1>
+    <div class="content">
+        {% for pizza in pizza %}
+            <div class="pizza">
+                <p><b>#{{ pizza.id }}</b></p>
+                <b>
+                    <p class="name">{{ pizza.pizzaname }}</p>
+                </b>
+                <p>{{ pizza.status }}</p>
+                <p>Ordered at: {{ pizza.created_at }}</p>
+                <div class="bio">
+                    <h4>Bio</h4>
+                    <p>Order#{{ pizza.bio }}</p>
+                </div>
+                <hr>
+                
+                </form>
+            </div>
+        {% endfor %} 
+    </div>
+{% endblock %}

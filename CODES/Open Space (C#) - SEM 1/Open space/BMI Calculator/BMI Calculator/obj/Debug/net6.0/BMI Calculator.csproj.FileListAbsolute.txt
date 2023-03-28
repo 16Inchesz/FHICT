@@ -1,0 +1,15 @@
+D:\FHICT\CODES\Open space (C#)\Open space\BMI Calculator\BMI Calculator\bin\Debug\net6.0\BMI Calculator.exe
+D:\FHICT\CODES\Open space (C#)\Open space\BMI Calculator\BMI Calculator\bin\Debug\net6.0\BMI Calculator.deps.json
+D:\FHICT\CODES\Open space (C#)\Open space\BMI Calculator\BMI Calculator\bin\Debug\net6.0\BMI Calculator.runtimeconfig.json
+D:\FHICT\CODES\Open space (C#)\Open space\BMI Calculator\BMI Calculator\bin\Debug\net6.0\BMI Calculator.dll
+D:\FHICT\CODES\Open space (C#)\Open space\BMI Calculator\BMI Calculator\bin\Debug\net6.0\BMI Calculator.pdb
+D:\FHICT\CODES\Open space (C#)\Open space\BMI Calculator\BMI Calculator\obj\Debug\net6.0\BMI Calculator.csproj.AssemblyReference.cache
+D:\FHICT\CODES\Open space (C#)\Open space\BMI Calculator\BMI Calculator\obj\Debug\net6.0\BMI Calculator.GeneratedMSBuildEditorConfig.editorconfig
+D:\FHICT\CODES\Open space (C#)\Open space\BMI Calculator\BMI Calculator\obj\Debug\net6.0\BMI Calculator.AssemblyInfoInputs.cache
+D:\FHICT\CODES\Open space (C#)\Open space\BMI Calculator\BMI Calculator\obj\Debug\net6.0\BMI Calculator.AssemblyInfo.cs
+D:\FHICT\CODES\Open space (C#)\Open space\BMI Calculator\BMI Calculator\obj\Debug\net6.0\BMI Calculator.csproj.CoreCompileInputs.cache
+D:\FHICT\CODES\Open space (C#)\Open space\BMI Calculator\BMI Calculator\obj\Debug\net6.0\BMI Calculator.dll
+D:\FHICT\CODES\Open space (C#)\Open space\BMI Calculator\BMI Calculator\obj\Debug\net6.0\refint\BMI Calculator.dll
+D:\FHICT\CODES\Open space (C#)\Open space\BMI Calculator\BMI Calculator\obj\Debug\net6.0\BMI Calculator.pdb
+D:\FHICT\CODES\Open space (C#)\Open space\BMI Calculator\BMI Calculator\obj\Debug\net6.0\BMI Calculator.genruntimeconfig.cache
+D:\FHICT\CODES\Open space (C#)\Open space\BMI Calculator\BMI Calculator\obj\Debug\net6.0\ref\BMI Calculator.dll

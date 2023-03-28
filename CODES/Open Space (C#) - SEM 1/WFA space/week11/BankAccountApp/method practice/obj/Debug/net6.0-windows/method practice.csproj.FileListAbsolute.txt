@@ -1,0 +1,17 @@
+D:\FHICT\CODES\Open space (C#)\WFA space\method practice\method practice\obj\Debug\net6.0-windows\method practice.csproj.AssemblyReference.cache
+D:\FHICT\CODES\Open space (C#)\WFA space\method practice\method practice\obj\Debug\net6.0-windows\method_practice.Form1.resources
+D:\FHICT\CODES\Open space (C#)\WFA space\method practice\method practice\obj\Debug\net6.0-windows\method practice.csproj.GenerateResource.cache
+D:\FHICT\CODES\Open space (C#)\WFA space\method practice\method practice\obj\Debug\net6.0-windows\method practice.GeneratedMSBuildEditorConfig.editorconfig
+D:\FHICT\CODES\Open space (C#)\WFA space\method practice\method practice\obj\Debug\net6.0-windows\method practice.AssemblyInfoInputs.cache
+D:\FHICT\CODES\Open space (C#)\WFA space\method practice\method practice\obj\Debug\net6.0-windows\method practice.AssemblyInfo.cs
+D:\FHICT\CODES\Open space (C#)\WFA space\method practice\method practice\obj\Debug\net6.0-windows\method practice.csproj.CoreCompileInputs.cache
+D:\FHICT\CODES\Open space (C#)\WFA space\method practice\method practice\bin\Debug\net6.0-windows\method practice.exe
+D:\FHICT\CODES\Open space (C#)\WFA space\method practice\method practice\bin\Debug\net6.0-windows\method practice.deps.json
+D:\FHICT\CODES\Open space (C#)\WFA space\method practice\method practice\bin\Debug\net6.0-windows\method practice.runtimeconfig.json
+D:\FHICT\CODES\Open space (C#)\WFA space\method practice\method practice\bin\Debug\net6.0-windows\method practice.dll
+D:\FHICT\CODES\Open space (C#)\WFA space\method practice\method practice\bin\Debug\net6.0-windows\method practice.pdb
+D:\FHICT\CODES\Open space (C#)\WFA space\method practice\method practice\obj\Debug\net6.0-windows\method practice.dll
+D:\FHICT\CODES\Open space (C#)\WFA space\method practice\method practice\obj\Debug\net6.0-windows\refint\method practice.dll
+D:\FHICT\CODES\Open space (C#)\WFA space\method practice\method practice\obj\Debug\net6.0-windows\method practice.pdb
+D:\FHICT\CODES\Open space (C#)\WFA space\method practice\method practice\obj\Debug\net6.0-windows\method practice.genruntimeconfig.cache
+D:\FHICT\CODES\Open space (C#)\WFA space\method practice\method practice\obj\Debug\net6.0-windows\ref\method practice.dll

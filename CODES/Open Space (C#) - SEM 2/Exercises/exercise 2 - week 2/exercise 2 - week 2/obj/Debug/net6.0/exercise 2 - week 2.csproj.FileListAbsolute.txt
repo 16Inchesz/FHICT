@@ -1,0 +1,15 @@
+D:\FHICT\CODES\Open Space (C#) - SEM 2\exercise 2 - week 2\exercise 2 - week 2\obj\Debug\net6.0\exercise 2 - week 2.csproj.AssemblyReference.cache
+D:\FHICT\CODES\Open Space (C#) - SEM 2\exercise 2 - week 2\exercise 2 - week 2\obj\Debug\net6.0\exercise 2 - week 2.GeneratedMSBuildEditorConfig.editorconfig
+D:\FHICT\CODES\Open Space (C#) - SEM 2\exercise 2 - week 2\exercise 2 - week 2\obj\Debug\net6.0\exercise 2 - week 2.AssemblyInfoInputs.cache
+D:\FHICT\CODES\Open Space (C#) - SEM 2\exercise 2 - week 2\exercise 2 - week 2\obj\Debug\net6.0\exercise 2 - week 2.AssemblyInfo.cs
+D:\FHICT\CODES\Open Space (C#) - SEM 2\exercise 2 - week 2\exercise 2 - week 2\obj\Debug\net6.0\exercise 2 - week 2.csproj.CoreCompileInputs.cache
+D:\FHICT\CODES\Open Space (C#) - SEM 2\exercise 2 - week 2\exercise 2 - week 2\bin\Debug\net6.0\exercise 2 - week 2.exe
+D:\FHICT\CODES\Open Space (C#) - SEM 2\exercise 2 - week 2\exercise 2 - week 2\bin\Debug\net6.0\exercise 2 - week 2.deps.json
+D:\FHICT\CODES\Open Space (C#) - SEM 2\exercise 2 - week 2\exercise 2 - week 2\bin\Debug\net6.0\exercise 2 - week 2.runtimeconfig.json
+D:\FHICT\CODES\Open Space (C#) - SEM 2\exercise 2 - week 2\exercise 2 - week 2\bin\Debug\net6.0\exercise 2 - week 2.dll
+D:\FHICT\CODES\Open Space (C#) - SEM 2\exercise 2 - week 2\exercise 2 - week 2\bin\Debug\net6.0\exercise 2 - week 2.pdb
+D:\FHICT\CODES\Open Space (C#) - SEM 2\exercise 2 - week 2\exercise 2 - week 2\obj\Debug\net6.0\exercise 2 - week 2.dll
+D:\FHICT\CODES\Open Space (C#) - SEM 2\exercise 2 - week 2\exercise 2 - week 2\obj\Debug\net6.0\refint\exercise 2 - week 2.dll
+D:\FHICT\CODES\Open Space (C#) - SEM 2\exercise 2 - week 2\exercise 2 - week 2\obj\Debug\net6.0\exercise 2 - week 2.pdb
+D:\FHICT\CODES\Open Space (C#) - SEM 2\exercise 2 - week 2\exercise 2 - week 2\obj\Debug\net6.0\exercise 2 - week 2.genruntimeconfig.cache
+D:\FHICT\CODES\Open Space (C#) - SEM 2\exercise 2 - week 2\exercise 2 - week 2\obj\Debug\net6.0\ref\exercise 2 - week 2.dll

@@ -1,0 +1,22 @@
+D:\FHICT\CODES\Open Space (C#) - SEM 2\Starter Assignment\Starter Assignment\Starter Assignment\bin\Debug\Starter Assignment.exe.config
+D:\FHICT\CODES\Open Space (C#) - SEM 2\Starter Assignment\Starter Assignment\Starter Assignment\bin\Debug\Starter Assignment.exe
+D:\FHICT\CODES\Open Space (C#) - SEM 2\Starter Assignment\Starter Assignment\Starter Assignment\bin\Debug\Starter Assignment.pdb
+D:\FHICT\CODES\Open Space (C#) - SEM 2\Starter Assignment\Starter Assignment\Starter Assignment\obj\Debug\Starter Assignment.csproj.AssemblyReference.cache
+D:\FHICT\CODES\Open Space (C#) - SEM 2\Starter Assignment\Starter Assignment\Starter Assignment\obj\Debug\Starter Assignment.csproj.SuggestedBindingRedirects.cache
+D:\FHICT\CODES\Open Space (C#) - SEM 2\Starter Assignment\Starter Assignment\Starter Assignment\obj\Debug\Starter_Assignment.Form1.resources
+D:\FHICT\CODES\Open Space (C#) - SEM 2\Starter Assignment\Starter Assignment\Starter Assignment\obj\Debug\Starter_Assignment.Properties.Resources.resources
+D:\FHICT\CODES\Open Space (C#) - SEM 2\Starter Assignment\Starter Assignment\Starter Assignment\obj\Debug\Starter Assignment.csproj.GenerateResource.cache
+D:\FHICT\CODES\Open Space (C#) - SEM 2\Starter Assignment\Starter Assignment\Starter Assignment\obj\Debug\Starter Assignment.csproj.CoreCompileInputs.cache
+D:\FHICT\CODES\Open Space (C#) - SEM 2\Starter Assignment\Starter Assignment\Starter Assignment\obj\Debug\Starter Assignment.exe
+D:\FHICT\CODES\Open Space (C#) - SEM 2\Starter Assignment\Starter Assignment\Starter Assignment\obj\Debug\Starter Assignment.pdb
+D:\FHICT\CODES\Open Space (C#) - SEM 2\Assignments\Starter Assignment\Starter Assignment\Starter Assignment\bin\Debug\Starter Assignment.exe.config
+D:\FHICT\CODES\Open Space (C#) - SEM 2\Assignments\Starter Assignment\Starter Assignment\Starter Assignment\bin\Debug\Starter Assignment.exe
+D:\FHICT\CODES\Open Space (C#) - SEM 2\Assignments\Starter Assignment\Starter Assignment\Starter Assignment\bin\Debug\Starter Assignment.pdb
+D:\FHICT\CODES\Open Space (C#) - SEM 2\Assignments\Starter Assignment\Starter Assignment\Starter Assignment\obj\Debug\Starter Assignment.csproj.AssemblyReference.cache
+D:\FHICT\CODES\Open Space (C#) - SEM 2\Assignments\Starter Assignment\Starter Assignment\Starter Assignment\obj\Debug\Starter Assignment.csproj.SuggestedBindingRedirects.cache
+D:\FHICT\CODES\Open Space (C#) - SEM 2\Assignments\Starter Assignment\Starter Assignment\Starter Assignment\obj\Debug\Starter_Assignment.Form1.resources
+D:\FHICT\CODES\Open Space (C#) - SEM 2\Assignments\Starter Assignment\Starter Assignment\Starter Assignment\obj\Debug\Starter_Assignment.Properties.Resources.resources
+D:\FHICT\CODES\Open Space (C#) - SEM 2\Assignments\Starter Assignment\Starter Assignment\Starter Assignment\obj\Debug\Starter Assignment.csproj.GenerateResource.cache
+D:\FHICT\CODES\Open Space (C#) - SEM 2\Assignments\Starter Assignment\Starter Assignment\Starter Assignment\obj\Debug\Starter Assignment.csproj.CoreCompileInputs.cache
+D:\FHICT\CODES\Open Space (C#) - SEM 2\Assignments\Starter Assignment\Starter Assignment\Starter Assignment\obj\Debug\Starter Assignment.exe
+D:\FHICT\CODES\Open Space (C#) - SEM 2\Assignments\Starter Assignment\Starter Assignment\Starter Assignment\obj\Debug\Starter Assignment.pdb

@@ -1,0 +1,22 @@
+
+[plantuml, state-diagram, svg]
+-----
+skinparam handwritten true
+skinparam defaultFontName "Ink Free"
+skinparam defaultTextAlignment center
+
+state "Traffic Licht Master" as TrafficLichtMaster {
+    [*] --> RED : /\nTurnRedOn();\nResetTimer()
+    'RED --> GREEN : HasTimerExpired(delay) && MessageAvailable() / \nmsg = ReadMessage()
+    RED --> SLAVE_GREEN : HasTimerExpired(delay) /\nSendMessage("$GotoGreen;");\nResetTimer()
+    SLAVE_GREEN --> SLAVE_ORANGE : HasTimerExpired(delay) /\nSendMessage("$GotoOrange;");\nResetTimer()
+    SLAVE_ORANGE --> SLAVE_RED : HasTimerExpired(delay) /\nSendMessage("$GotoRed;");\nResetTimer()
+    SLAVE_RED --> GREEN : HasTimerExpired(delay) /\nTurnRedOff();\nTurnGreenOn();\nResetTimer()
+    GREEN --> ORANGE : HasTimerExpired(delay) /\nTurnGreenOff();\nTurnOrangeOn();\nResetTimer()
+    ORANGE --> RED : HasTimerExpired(delay) /\nTurnOrangeOff();\nTurnRedOn();\nResetTimer()
+
+    state SLAVE_GREEN #lightblue
+    state SLAVE_ORANGE #lightblue
+    state SLAVE_RED #lightblue
+}
+-----
