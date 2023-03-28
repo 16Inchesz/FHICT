@@ -6,7 +6,7 @@
 #include <stdbool.h>
 #include <string.h>
 
-//constants for the bit_handler program.
+//constant for the bit_handler program.
 #define BYTESIZE 8
 
 /// @brief Function that combines two nibbles; One being high and the other low.
