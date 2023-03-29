@@ -49,7 +49,7 @@ bool bubble_sort(int *a, int size_array){
         return false;
     }
     for (int i = 0; i < size_array - 1; i++){
-        for (int j = 0; j < size_array - 1; j++){
+        for (int j = 0; j < size_array - i - 1; j++){
             if (a[j] > a[j+1]){
                 swap(&a[j], &a[j+1]);
             }
