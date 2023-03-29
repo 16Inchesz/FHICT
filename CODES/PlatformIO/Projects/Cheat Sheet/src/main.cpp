@@ -1,4 +1,6 @@
 #include <Arduino.h>
+#include <stdbool.h>
+#include <stdio.h>
 
 //I am keeping all the code in functions for the sake that it doesn't look like a bunch of errors when we open it.
 
@@ -61,6 +63,30 @@ void sequence_state(){
   } else if (state == 2){
     //do something third
   }
+}
+//---------------------------------------------------------------------------------------------------------------------------------------
+
+//Swapping 2 values
+void swap(int* x, int* y){
+  int temp = *x;
+  *x = *y;
+  *y = temp;
+}
+//---------------------------------------------------------------------------------------------------------------------------------------
+
+//bubble sort 
+bool bubble_sort(int* a, int array_size){ //note sizeof array must always be divided by the first value to get actual size
+  if(a == NULL){
+    return false;
+  }
+  for (int i = 0; i < array_size - 1; i++){
+    for (int j = 0; j < array_size - i - 1; j++){
+      if (a[j] > a[j+1]){
+        swap(&a[j], &a[j+1]);
+      }
+    }
+  }
+  return true;
 }
 //---------------------------------------------------------------------------------------------------------------------------------------
 
