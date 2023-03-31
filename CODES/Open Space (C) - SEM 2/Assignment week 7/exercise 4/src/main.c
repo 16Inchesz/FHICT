@@ -53,16 +53,15 @@ bool bubble_sort(int *a, int size_array){
         return false;
     }
     for (int i = 0; i < size_array - 1; i++){
+        int *pa = a;
         for (int j = 0; j < size_array - i - 1; j++){
-            if (a[j] > a[j+1]){
-                swap(&a[j], &a[j+1]);
+            if (*pa > *(pa + 1)){
+                swap(pa, (pa + 1));
             }
-            // if (*a > *(a + 1)){
-            //  swap(*a, *(a + 1))
-            // }
+            pa++;
         }
     }
-    return true;
+    return true;    //when use exchange and when bubble.
 }
 
 
