@@ -6,6 +6,19 @@
  */
 bool getStudentData(struct student* students, int size)
 {
+	if (students == NULL){
+		return false;
+	}
+	if ((size < 0) || size > MAX_STUDENTS){
+		return false;
+	}
+	for (int i = 0; i < size; i++){
+		printf("Get Name:");
+		scanf("%s", students->name);
+		printf("Get ID:");
+		scanf("%d", &students->id);
+		students++;
+	}
 	return true;
 }
 
@@ -14,6 +27,18 @@ bool getStudentData(struct student* students, int size)
  */
 bool printStudentData(struct student* students, int size)
 {
+	if (students == NULL){
+		return false;
+	}
+	if ((size < 0) || size > MAX_STUDENTS){
+		return false;
+	}
+
+	for (int i = 0; i < size; i++){
+		printf("name: %s\n", students->name);
+		printf("Id: %d\n", students->id);
+		students++;
+	}
 	return true;
 }
 

@@ -40,9 +40,8 @@ int main ()
 	 */
 	int size=0;	// Number of students to be entered
 	printf("Please input the number of students:\n");
-    // scanf("%d", &size);
+    scanf("%d", &size);
 	
-
 	/*
 	 * getStudentData
 	 */
@@ -50,14 +49,12 @@ int main ()
 	printf("--------------------\n");
     getStudentData(students, size);
 
-
 	/*
 	 * printStudentData
 	 */
 	printf("\n\nPrint student data\n");
 	printf("----------------------\n");
 	printStudentData(students, size);
-
 
 	/*
 	 * updateStudentNameById
@@ -72,14 +69,12 @@ int main ()
 	// Use here scanf to read the name of a student from the terminal
 	updateStudentNameById(students, size, id, newName);
 
-
 	/*
 	 * printStudentData
 	 */
 	printf("\n\nPrint student data\n");
 	printf("----------------------\n");
 	printStudentData(students, size);
-
 
 	/*
 	 * updateStudentIdByName
@@ -94,7 +89,6 @@ int main ()
 	// Use here scanf to read the id of a student from the terminal
 	updateStudentIdByName(students, size, newId, name);
 
-
 	/*
 	 * printStudentData
 	 */
@@ -102,14 +96,12 @@ int main ()
 	printf("----------------------\n");
 	printStudentData(students, size);
 
-
 	/*
 	 * sortStudentByName
 	 */
 	printf("\n\nSort student by name\n");
 	printf("------------------------\n");
 	sortStudentByName(students, size);
-
 
 	/*
 	 * printStudentData
