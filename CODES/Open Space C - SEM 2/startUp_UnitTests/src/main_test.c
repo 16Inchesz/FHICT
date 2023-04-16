@@ -17,6 +17,8 @@
 
 #include "statistics.h"
 #include "unity.h"
+#include "/Repositories/FHICT/CODES/Unity-master/src/unity.h"
+
 
 /*
  * Unity calls automatically function setUp before calling each unit tests
@@ -24,7 +26,7 @@
  */
 void setUp(void)
 {
-     
+    printf("\nRUN BEFORE TEST \n");
 }
 
 
@@ -34,12 +36,42 @@ void setUp(void)
  */
 void tearDown(void)
 {
-    
+    printf("\nRUN AFTER TEST \n");
+}
+
+void test_find_maximum_1(void){
+    //ARRANGE
+    int firstInput = 1;
+    int secondInput = 2;
+    int expectedResult = 2;
+
+    //ACT
+    int actualResult = find_maximum(firstInput, secondInput);
+
+    //ASSERT
+    TEST_ASSERT_EQUAL_INT(expectedResult, actualResult);
+}
+
+void test_find_maximum_array_1(void){
+    //ARRANGE
+    int a[4] = {4,3,7,6};
+    int array_size = sizeof(a) / sizeof(a[0]);
+    int expectedResult = 7;
+    int actual_result = 0;
+    bool expected_status = true;
+    bool actual_status = false;
+
+    //ACT
+    actual_status = find_maximum_array(a, array_size, &actual_result);
+
+    //ASSERT
+    TEST_ASSERT_EQUAL_INT(expectedResult, actual_result);
+    TEST_ASSERT_EQUAL_INT(expected_status, actual_status);
 }
 
 int main(void)
 {
     UnityBegin(0);
-
+    test_find_maximum_array_1();
     return UnityEnd();
 }

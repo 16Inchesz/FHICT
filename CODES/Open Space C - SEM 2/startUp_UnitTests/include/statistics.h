@@ -3,6 +3,7 @@
 
 #include "stdbool.h"
 #include "stdint.h"
+#include <limits.h>
 
 /*
  *	Function finds and returns the maximum value of the two inputs variables
