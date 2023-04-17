@@ -3,6 +3,7 @@
 
 #include <stdbool.h>
 #include <stdio.h>
+#include <string.h>
 
 #define MAX_LENGTH_NAME 30
 #define MAX_NUMBER_ANIMAL 20
@@ -36,4 +37,6 @@ bool show_animals(Animal*, int);
 /// @param new_animal
 /// @return bool
 bool add_animal(Animal*, int*, Animal);
+
+bool search_animal_by_name(Animal*, int);
 #endif

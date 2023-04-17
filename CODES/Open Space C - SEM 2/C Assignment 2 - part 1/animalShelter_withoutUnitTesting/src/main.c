@@ -35,8 +35,11 @@ int main()
                 show_animals(animals, number_of_animals);
                 break;
             case 2: 
+                Animal new_animal;
+                add_animal(animals, &number_of_animals, new_animal);
                 break;
             case 3: 
+                search_animal_by_name(animals, number_of_animals);
                 break;
             case 4:
                 break;
