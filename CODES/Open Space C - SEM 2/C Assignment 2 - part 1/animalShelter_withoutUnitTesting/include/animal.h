@@ -23,13 +23,40 @@ typedef struct
     int chip_number;
 } Animal;
 
-// To do : declare your functions
-
+/// @brief function that shows all animals in the shelter.
+/// @param Animal*
+/// @param number_of_animals
+/// @return true on success and false on failure.
 bool show_animals(Animal*, int);
 
+/// @brief function that adds a new animal to the shelter by using a new_animal object.
+/// @param Animal*
+/// @param number_of_animals*
+/// @param Animal 
+/// @return true on success and false on failure.
 bool add_animal(Animal*, int*, Animal);
 
+/// @brief function that allows u to search for an animal within the shelter by its name.
+/// @param Animal*
+/// @param number_of_animals
+/// @return true on success and false on failure.
 bool search_animal_by_name(Animal*, int);
 
+/// @brief function that allows you to update the species of the specific animal using its chip number.
+/// @param Animal*
+/// @param number_of_animals
+/// @return true on success and false on failure.
 bool update_animal_species(Animal*, int);
+
+/// @brief function that allows you to remove an animal from the shelter using their specific chip number.
+/// @param Animal*
+/// @param number_of_animals*
+/// @return true on success and false on failure.
+bool remove_animal_by_chip_number(Animal*, int*);
+
+/// @brief function that sorts all the animals first by species and then within the species, the names in alphabetical order.
+/// @param Animal*
+/// @param number_of_animals
+/// @return true on success and false on failure.
+bool sort_animals(Animal*, int);
 #endif

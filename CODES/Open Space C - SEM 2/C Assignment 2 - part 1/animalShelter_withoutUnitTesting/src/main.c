@@ -45,8 +45,10 @@ int main()
                 update_animal_species(animals, number_of_animals);
                 break;
             case 5:
+                remove_animal_by_chip_number(animals, &number_of_animals);
                 break;
             case 6:
+                sort_animals(animals, number_of_animals);
                 break;
             default:
                 printf("ERROR: option %d is not available\n", option);
