@@ -32,6 +32,7 @@ int main()
                 printf("Quit program\n");
                 break;
             case 1: 
+                show_animals(animals, number_of_animals);
                 break;
             case 2: 
                 break;
