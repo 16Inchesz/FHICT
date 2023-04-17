@@ -29,11 +29,13 @@ bool add_animal(Animal *animals, int *number_of_animals, Animal new_animal){
     if ((animals == NULL) || (number_of_animals == NULL)){
         return false;
     }
-
+    
+    int add_animal_species;
     printf("Enter the name of the animal: ");
     scanf("%s", new_animal.name);   //char array; already a pointer.
     printf("Enter the species of the animal (0 = cat, 1 = chinchilla, 2 = dog, 3 = turtle): ");
-    scanf("%d", &new_animal.species);   //??
+    scanf("%d", &add_animal_species);   //??
+    new_animal.species = add_animal_species;
     printf("Enter the chip number of the animal: ");
     scanf("%d", &new_animal.chip_number);
 
@@ -82,6 +84,32 @@ bool search_animal_by_name(Animal *animals, int number_of_animals){
 
     //total animals with this name in shelter
     printf("the number of animals with this name: '%s' are '%d'.\n", searched_name, name_count);
+    return true;
+}
+
+bool update_animal_species(Animal *animals, int number_of_animals){
+    if ((animals == NULL) || (number_of_animals < 0)){
+        return false;
+    }
+    
+    int searched_chip_number;
+    int new_animal_species;
+
+    printf("Enter the chip number of the animal you want to update: ");
+    scanf("%d", &searched_chip_number);
+
+    for (int i = 0; i < number_of_animals; i++) {
+        if (animals->chip_number == searched_chip_number) {
+            printf("Enter the new species of the animal (0 = cat, 1 = chinchilla, 2 = dog, 3 = turtle): ");
+            //test case here for species
+            scanf("%d", &new_animal_species);
+            animals->species = new_animal_species;
+            printf("Species updated successfully.\n");
+        } else {
+            printf("ERROR: animal species with chipnumber '%d' was not found.\n", searched_chip_number);
+        }
+        return true;
+    }
     return true;
 }
 

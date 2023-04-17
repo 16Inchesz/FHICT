@@ -42,6 +42,7 @@ int main()
                 search_animal_by_name(animals, number_of_animals);
                 break;
             case 4:
+                update_animal_species(animals, number_of_animals);
                 break;
             case 5:
                 break;
