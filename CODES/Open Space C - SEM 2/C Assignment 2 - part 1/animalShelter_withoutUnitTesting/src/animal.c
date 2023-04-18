@@ -77,9 +77,10 @@ bool search_animal_by_name(Animal *animals, int number_of_animals){
 
     //if animals with the same name were found.
     for (int i = 0; i < number_of_animals; i++){
-        if (strcmp(animals->name, searched_name) == 0){
+        if (strcmp((animals)->name, searched_name) == 0){
             name_count++;
         }
+        animals++;
     }
 
     //no animals with this name in shelter
@@ -114,9 +115,8 @@ bool update_animal_species(Animal *animals, int number_of_animals){
             scanf("%d", &new_animal_species);
             animals->species = new_animal_species;
             printf("Species updated successfully.\n");
-        } else {
-            printf("ERROR: animal species with chipnumber '%d' was not found.\n", searched_chip_number);
         }
+        animals++;
     }
     return true;
 }
@@ -141,6 +141,7 @@ bool remove_animal_by_chip_number(Animal *animals, int *number_of_animals){
         if (animals->chip_number == chip_number) {
             animal_to_remove = i;
         }
+        animals++;
     }
 
     //if animals was not found in shelter (same value as start).
