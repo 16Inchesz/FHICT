@@ -59,4 +59,5 @@ bool remove_animal_by_chip_number(Animal*, int*);
 /// @param number_of_animals
 /// @return true on success and false on failure.
 bool sort_animals(Animal*, int);
+
 #endif

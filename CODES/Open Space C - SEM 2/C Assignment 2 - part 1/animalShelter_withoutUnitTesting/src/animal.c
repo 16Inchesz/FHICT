@@ -30,6 +30,9 @@ bool add_animal(Animal *animals, int *number_of_animals, Animal new_animal){
     if ((animals == NULL) || (number_of_animals == NULL)){
         return false;
     }
+    if (*number_of_animals > MAX_NUMBER_ANIMAL){
+        return false;
+    }
     
     // adding an animal to new_animal
     int add_animal_species;
@@ -130,6 +133,7 @@ bool remove_animal_by_chip_number(Animal *animals, int *number_of_animals){
 
     if (*number_of_animals == 0){
         printf("there are no animals in the shelter.\n");
+        return true;
     }
 
     //if animal with same chip number found and removed.
