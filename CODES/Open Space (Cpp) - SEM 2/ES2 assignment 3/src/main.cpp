@@ -58,7 +58,7 @@ int statesSweepA = 0;                         // variable to switch states of sw
 //SweepB
 bool remeberResetSweepB = false;                        // to Reset sweep B so it will begin from the start.
 bool sweepBGoBack = false;                              // bool value to decide if sweep B should go from left to right or the opposite.
-const uint16_t SWEEPB_MASK_16BIT = 0b0000000001111000;  //mask used to control the LEDs for sweep B. 
+const uint16_t SWEEPB_MASK_16BIT = 0b0000000001111000;  // mask used to control the LEDs for sweep B. 
 static uint16_t SWEEPING_LED_MASK = SWEEPING_LED_MASK_CONSTANT_FOR_RESTARTING;
 static int counterBitShift = 0;                         // variable used as value to shift binary.
 bool btnSweepStatePrev = false;
