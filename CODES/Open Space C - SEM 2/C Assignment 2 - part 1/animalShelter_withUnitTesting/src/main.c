@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "animal.h"
 
 int main()
@@ -32,16 +31,23 @@ int main()
                 printf("Quit program\n");
                 break;
             case 1: 
+                show_animals(animals, number_of_animals);
                 break;
             case 2: 
+                Animal new_animal;
+                add_animal(animals, &number_of_animals, new_animal);
                 break;
             case 3: 
+                search_animal_by_name(animals, number_of_animals);
                 break;
             case 4:
+                update_animal_species(animals, number_of_animals);
                 break;
             case 5:
+                remove_animal_by_chip_number(animals, &number_of_animals);
                 break;
             case 6:
+                sort_animals(animals, number_of_animals);
                 break;
             default:
                 printf("ERROR: option %d is not available\n", option);
