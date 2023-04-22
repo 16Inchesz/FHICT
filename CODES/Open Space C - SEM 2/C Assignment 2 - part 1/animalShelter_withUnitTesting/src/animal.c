@@ -30,10 +30,7 @@ bool add_animal(Animal *animals, int *number_of_animals, Animal new_animal){
     if ((animals == NULL) || (number_of_animals == NULL)){
         return false;
     }
-    if (*number_of_animals > MAX_NUMBER_ANIMAL){
-        return false;
-    }
-    
+
     // adding an animal to new_animal
     int add_animal_species;
     printf("Enter the name of the animal: ");
@@ -62,6 +59,30 @@ bool add_animal(Animal *animals, int *number_of_animals, Animal new_animal){
     animals[*number_of_animals] = new_animal;
     (*number_of_animals)++;
     printf("animal was added succesfully.\n");
+    return true;
+}
+
+bool add_animal_unit_test(Animal *animals, int *number_of_animals, Animal new_animal){
+    //idiot proof
+    if ((animals == NULL) || (number_of_animals == NULL)){
+        return false;
+    }
+
+    //shelter at max capacity.
+    if (*number_of_animals == MAX_NUMBER_ANIMAL){
+        return true;
+    }
+
+    //if an animal with chip num already exists.
+    for (int i = 0; i < *number_of_animals; i++){
+        if (animals->chip_number == new_animal.chip_number){
+            return true;
+        }
+    }
+
+    //adding new animal to animal.
+    animals[*number_of_animals] = new_animal;
+    (*number_of_animals)++;
     return true;
 }
 
@@ -97,6 +118,31 @@ bool search_animal_by_name(Animal *animals, int number_of_animals){
     return true;
 }
 
+bool search_animal_by_name_unit_test(Animal *animals, int number_of_animals, char searched_name[]){
+    //idiot proof
+    if ((animals == NULL) || (number_of_animals < 0)){
+        return false;
+    }
+
+    int name_count = 0;
+
+    //if animals with the same name were found.
+    for (int i = 0; i < number_of_animals; i++){
+        if (strcmp((animals)->name, searched_name) == 0){
+            name_count++;
+        }
+        animals++;
+    }
+
+    //no animals with this name in shelter
+    if (name_count == 0){
+        return true;
+    }
+
+    //total animals with this name in shelter
+    return true;
+}
+
 //-----------------------------------------------------------------------------------------------------------------------------
 bool update_animal_species(Animal *animals, int number_of_animals){
     //idiot proofing
@@ -106,6 +152,7 @@ bool update_animal_species(Animal *animals, int number_of_animals){
     
     int searched_chip_number;
     int new_animal_species;
+    int count = 0; //no chip number in shelter.
 
     printf("Enter the chip number of the animal you want to update: ");
     scanf("%d", &searched_chip_number);
@@ -118,9 +165,42 @@ bool update_animal_species(Animal *animals, int number_of_animals){
             scanf("%d", &new_animal_species);
             animals->species = new_animal_species;
             printf("Species updated successfully.\n");
+            count++;
         }
         animals++;
     }
+
+    //if there are no animals with this chip number
+    if (count == 0){
+        printf("there are no animals in the shelter with this chip number: '%d' \n", searched_chip_number);
+        return true;
+    }
+
+    return true;
+}
+
+bool update_animal_species_unit_test(Animal *animals, int number_of_animals, int searched_chip_number, int new_animal_species){
+    //idiot proofing
+    if ((animals == NULL) || (number_of_animals < 0)){
+        return false;
+    }
+
+    int count = 0; //no chip number in shelter.
+
+    //checks if searched num == to existing chip num. if true, switches the species.
+    for (int i = 0; i < number_of_animals; i++) {
+        if (animals->chip_number == searched_chip_number) { 
+            animals->species = new_animal_species;
+            count++;
+        }
+        animals++;
+    }
+
+    //if there are no animals with this chip number
+    if (count == 0){
+        return true;
+    }
+    
     return true;
 }
 
@@ -163,6 +243,39 @@ bool remove_animal_by_chip_number(Animal *animals, int *number_of_animals){
     printf("Animal with chip number %d removed successfully from the shelter.\n", chip_number);
     return true; 
 }
+
+bool remove_animal_by_chip_number_unit_test(Animal *animals, int *number_of_animals, int chip_number){
+    //idiot proofing
+    if ((animals == NULL) || (number_of_animals == NULL)){
+        return false;
+    }
+
+    if (*number_of_animals == 0){
+        return true;
+    }
+
+    int animal_to_remove = -1;
+    for (int i = 0; i < *number_of_animals; i++) {
+        if (animals->chip_number == chip_number) {
+            animal_to_remove = i;
+        }
+        animals++;
+    }
+
+    //if animals was not found in shelter (same value as start).
+    if (animal_to_remove == -1) {
+        return true;
+    }
+    
+    //shift them to the left.
+    for (int i = animal_to_remove; i < *number_of_animals - 1; i++) {
+        animals[i] = animals[i + 1];
+    }
+
+    (*number_of_animals)--; //remove an animal
+    return true; 
+}
+
 
 //-----------------------------------------------------------------------------------------------------------------------------
 bool sort_animals(Animal *animals, int number_of_animals){
