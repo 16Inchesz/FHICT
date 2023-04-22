@@ -1,7 +1,6 @@
 #include "animal.h"
 
-
-//-----------------------------------------------------------------------------------------------------------------------------
+//show animal-------------------------------------------------------------------------------------------------------------------
 bool show_animals(Animal *animals, int number_of_animals){
     //idiot proof
     if ((animals == NULL) || (number_of_animals < 0)){
@@ -24,7 +23,7 @@ bool show_animals(Animal *animals, int number_of_animals){
 
 }
 
-//-----------------------------------------------------------------------------------------------------------------------------
+//add animal--------------------------------------------------------------------------------------------------------------------
 bool add_animal(Animal *animals, int *number_of_animals, Animal new_animal){
     //idiot proof
     if ((animals == NULL) || (number_of_animals == NULL)){
@@ -86,7 +85,7 @@ bool add_animal_unit_test(Animal *animals, int *number_of_animals, Animal new_an
     return true;
 }
 
-//-----------------------------------------------------------------------------------------------------------------------------
+//search animal-----------------------------------------------------------------------------------------------------------------
 bool search_animal_by_name(Animal *animals, int number_of_animals){
     //idiot proof
     if ((animals == NULL) || (number_of_animals < 0)){
@@ -143,7 +142,7 @@ bool search_animal_by_name_unit_test(Animal *animals, int number_of_animals, cha
     return true;
 }
 
-//-----------------------------------------------------------------------------------------------------------------------------
+//update species----------------------------------------------------------------------------------------------------------------
 bool update_animal_species(Animal *animals, int number_of_animals){
     //idiot proofing
     if ((animals == NULL) || (number_of_animals < 0)){
@@ -204,7 +203,7 @@ bool update_animal_species_unit_test(Animal *animals, int number_of_animals, int
     return true;
 }
 
-//-----------------------------------------------------------------------------------------------------------------------------
+//remove animal-----------------------------------------------------------------------------------------------------------------
 bool remove_animal_by_chip_number(Animal *animals, int *number_of_animals){
     //idiot proofing
     if ((animals == NULL) || (number_of_animals == NULL)){
@@ -276,8 +275,7 @@ bool remove_animal_by_chip_number_unit_test(Animal *animals, int *number_of_anim
     return true; 
 }
 
-
-//-----------------------------------------------------------------------------------------------------------------------------
+//sort animal-------------------------------------------------------------------------------------------------------------------
 bool sort_animals(Animal *animals, int number_of_animals){
     //idiot proofing.
     if ((animals == NULL) || (number_of_animals < 0)){

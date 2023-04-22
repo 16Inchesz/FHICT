@@ -1,7 +1,6 @@
 #include "animal.h"
 #include "unity.h"
 
-
 //animals array for testing
 Animal animal_test[MAX_NUMBER_ANIMAL] = {{"Crouton", 1, 1}, {"Casper", 1, 2}, {"Nova", 2, 3},
                                      {"Mocha", 2, 4}, {"Taco", 0, 20}, {"Sambal", 3, 5}};

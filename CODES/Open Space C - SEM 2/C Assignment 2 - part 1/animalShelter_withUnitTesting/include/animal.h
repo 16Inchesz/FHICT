@@ -70,7 +70,6 @@ bool update_animal_species(Animal*, int);
 /// @return true on successes and false on failure.
 bool update_animal_species_unit_test(Animal*, int, int, int);
 
-
 /// @brief function that allows you to remove an animal from the shelter using their specific chip number.
 /// @param Animal*
 /// @param number_of_animals*
