@@ -1,0 +1,17 @@
+C:\Repositories\FHICT\CODES\Open Space (C#) - SEM 2\Assignments\Container shipping assignment\Container shipping assignment\bin\Debug\net6.0-windows\Container shipping assignment.exe
+C:\Repositories\FHICT\CODES\Open Space (C#) - SEM 2\Assignments\Container shipping assignment\Container shipping assignment\bin\Debug\net6.0-windows\Container shipping assignment.deps.json
+C:\Repositories\FHICT\CODES\Open Space (C#) - SEM 2\Assignments\Container shipping assignment\Container shipping assignment\bin\Debug\net6.0-windows\Container shipping assignment.runtimeconfig.json
+C:\Repositories\FHICT\CODES\Open Space (C#) - SEM 2\Assignments\Container shipping assignment\Container shipping assignment\bin\Debug\net6.0-windows\Container shipping assignment.dll
+C:\Repositories\FHICT\CODES\Open Space (C#) - SEM 2\Assignments\Container shipping assignment\Container shipping assignment\bin\Debug\net6.0-windows\Container shipping assignment.pdb
+C:\Repositories\FHICT\CODES\Open Space (C#) - SEM 2\Assignments\Container shipping assignment\Container shipping assignment\obj\Debug\net6.0-windows\Container shipping assignment.csproj.AssemblyReference.cache
+C:\Repositories\FHICT\CODES\Open Space (C#) - SEM 2\Assignments\Container shipping assignment\Container shipping assignment\obj\Debug\net6.0-windows\Container_shipping_assignment.Form1.resources
+C:\Repositories\FHICT\CODES\Open Space (C#) - SEM 2\Assignments\Container shipping assignment\Container shipping assignment\obj\Debug\net6.0-windows\Container shipping assignment.csproj.GenerateResource.cache
+C:\Repositories\FHICT\CODES\Open Space (C#) - SEM 2\Assignments\Container shipping assignment\Container shipping assignment\obj\Debug\net6.0-windows\Container shipping assignment.GeneratedMSBuildEditorConfig.editorconfig
+C:\Repositories\FHICT\CODES\Open Space (C#) - SEM 2\Assignments\Container shipping assignment\Container shipping assignment\obj\Debug\net6.0-windows\Container shipping assignment.AssemblyInfoInputs.cache
+C:\Repositories\FHICT\CODES\Open Space (C#) - SEM 2\Assignments\Container shipping assignment\Container shipping assignment\obj\Debug\net6.0-windows\Container shipping assignment.AssemblyInfo.cs
+C:\Repositories\FHICT\CODES\Open Space (C#) - SEM 2\Assignments\Container shipping assignment\Container shipping assignment\obj\Debug\net6.0-windows\Container shipping assignment.csproj.CoreCompileInputs.cache
+C:\Repositories\FHICT\CODES\Open Space (C#) - SEM 2\Assignments\Container shipping assignment\Container shipping assignment\obj\Debug\net6.0-windows\Container shipping assignment.dll
+C:\Repositories\FHICT\CODES\Open Space (C#) - SEM 2\Assignments\Container shipping assignment\Container shipping assignment\obj\Debug\net6.0-windows\refint\Container shipping assignment.dll
+C:\Repositories\FHICT\CODES\Open Space (C#) - SEM 2\Assignments\Container shipping assignment\Container shipping assignment\obj\Debug\net6.0-windows\Container shipping assignment.pdb
+C:\Repositories\FHICT\CODES\Open Space (C#) - SEM 2\Assignments\Container shipping assignment\Container shipping assignment\obj\Debug\net6.0-windows\Container shipping assignment.genruntimeconfig.cache
+C:\Repositories\FHICT\CODES\Open Space (C#) - SEM 2\Assignments\Container shipping assignment\Container shipping assignment\obj\Debug\net6.0-windows\ref\Container shipping assignment.dll
