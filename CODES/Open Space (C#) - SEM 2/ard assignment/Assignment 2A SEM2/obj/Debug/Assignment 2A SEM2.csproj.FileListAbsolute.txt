@@ -1,0 +1,11 @@
+C:\Users\31657\source\repos\Assignment 2A SEM2\Assignment 2A SEM2\obj\Debug\Assignment 2A SEM2.csproj.AssemblyReference.cache
+C:\Users\31657\source\repos\Assignment 2A SEM2\Assignment 2A SEM2\obj\Debug\Assignment 2A SEM2.csproj.SuggestedBindingRedirects.cache
+C:\Users\31657\source\repos\Assignment 2A SEM2\Assignment 2A SEM2\obj\Debug\Assignment_2A_SEM2.Form1.resources
+C:\Users\31657\source\repos\Assignment 2A SEM2\Assignment 2A SEM2\obj\Debug\Assignment_2A_SEM2.Properties.Resources.resources
+C:\Users\31657\source\repos\Assignment 2A SEM2\Assignment 2A SEM2\obj\Debug\Assignment 2A SEM2.csproj.GenerateResource.cache
+C:\Users\31657\source\repos\Assignment 2A SEM2\Assignment 2A SEM2\obj\Debug\Assignment 2A SEM2.csproj.CoreCompileInputs.cache
+C:\Users\31657\source\repos\Assignment 2A SEM2\Assignment 2A SEM2\bin\Debug\Assignment 2A SEM2.exe.config
+C:\Users\31657\source\repos\Assignment 2A SEM2\Assignment 2A SEM2\bin\Debug\Assignment 2A SEM2.exe
+C:\Users\31657\source\repos\Assignment 2A SEM2\Assignment 2A SEM2\bin\Debug\Assignment 2A SEM2.pdb
+C:\Users\31657\source\repos\Assignment 2A SEM2\Assignment 2A SEM2\obj\Debug\Assignment 2A SEM2.exe
+C:\Users\31657\source\repos\Assignment 2A SEM2\Assignment 2A SEM2\obj\Debug\Assignment 2A SEM2.pdb

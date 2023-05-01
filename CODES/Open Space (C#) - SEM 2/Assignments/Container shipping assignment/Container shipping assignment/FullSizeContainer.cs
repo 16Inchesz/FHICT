@@ -8,13 +8,15 @@ namespace Container_shipping_assignment
 {
     public class FullSizeContainer : Container, IRefrigerated
     {
+        //instance variables
         private const decimal FixedFeePerKg = 0.91m;
-        private const decimal RefrigerationFeePercentage = 0.08m;
+        private const decimal RefrigerationFeePercentage = 1.08m;
+        private const int MaxPossibleWeight = 20000;
         private int weight;
 
         //constructor
-        public FullSizeContainer(int serialNumber, string originCountry, string description, int weight)
-        : base(serialNumber, originCountry, description)
+        public FullSizeContainer(int serialNumber, string originCountry, string description, decimal price, int weight)
+        : base(serialNumber, originCountry, description, price)
         {
             this.weight = weight;
         }
@@ -29,41 +31,36 @@ namespace Container_shipping_assignment
         }
 
         /// <summary>
-        /// If container is in need of refrigeration, this method will calculate the extra fee. 
-        /// </summary>
-        /// <returns>calculated refrigeration fee or 0</returns>
-        public decimal GetRefrigerationFee()
-        {
-            if (!NeedsRefrigeration())
-            {
-                return 0m;
-            }
-
-            decimal totalFee = GetTotalFee();
-            decimal refrigerationFee = totalFee * RefrigerationFeePercentage;
-            return refrigerationFee;
-        }
-
-        /// <summary>
         /// this method calculates the fixed fee.
         /// </summary>
         /// <returns>fixed fee</returns>
-        public decimal GetFixedFee()
+        public override decimal GetTotalFee(Container container)
         {
-            decimal fixedFee = weight * FixedFeePerKg;
-            return fixedFee;
+            if (weight >= MaxPossibleWeight)
+            {
+                MessageBox.Show("Weight exceeded");
+                return 0;
+            }
+            else
+            {
+                if (!NeedsRefrigeration())
+                {
+                    container.price = weight * FixedFeePerKg;
+                    return container.price;
+                } else
+                {
+                    container.price = (weight * FixedFeePerKg) * RefrigerationFeePercentage;
+                    return container.price;
+                }
+            }
+        }
+        public override string GetInfo(Container container)
+        {
+            FullSizeContainer fullsizecontainer = (FullSizeContainer)container;
+            string info = fullsizecontainer.description + " Fee:" + fullsizecontainer.price + " Country of Origin: " + fullsizecontainer.originCountry + " Serial number: " + fullsizecontainer.serialNumber + " Weight:" + fullsizecontainer.weight;
+            return info;
         }
 
-        /// <summary>
-        /// this method calculates the total fee (include refrigeration costs)
-        /// </summary>
-        /// <returns>total fee</returns>
-        public override decimal GetTotalFee()
-        {
-            decimal totalFee = GetFixedFee();
-            totalFee += GetRefrigerationFee();
-            return totalFee;
-        }
     }
 
 }

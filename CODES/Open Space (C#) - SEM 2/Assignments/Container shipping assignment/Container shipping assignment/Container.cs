@@ -8,33 +8,25 @@ namespace Container_shipping_assignment
 {
     public abstract class Container
     {
-        private int serialNumber;
-        private string originCountry;
-        private string description;
-
-        public Container(int serialNumber, string originCountry, string description)
+        public int serialNumber { get; set; }
+        public string originCountry { get; set; }
+        public string description { get; set; }
+        public decimal price { get; set; }
+        
+        public Container(int serialNumber, string originCountry, string description, decimal price)
         {
             this.serialNumber = serialNumber;
             this.originCountry = originCountry;
             this.description = description;
+            this.price = price;
         }
 
-        public int getSerialNumber() { return serialNumber; }
+        public abstract decimal GetTotalFee(Container container);
 
-        public string GetOriginCountry(){ return originCountry; }
-
-        public string GetDescription(){ return description; }
-
-        public virtual double GetWeight()
+        public virtual string GetInfo(Container container)
         {
-            return 0.0;
+            string info = container.description + " price:" + container.price + " origin country:" + container.originCountry + " serial #:" + container.serialNumber;
+            return info;
         }
-
-        public virtual double GetVolume()
-        {
-            return 0.0;
-        }
-
-        public abstract decimal GetTotalFee();
     }
 }
