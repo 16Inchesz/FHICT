@@ -34,6 +34,7 @@ namespace Container_shipping_assignment
         /// this method calculates the fixed fee.
         /// </summary>
         /// <returns>fixed fee</returns>
+       
         public override decimal GetTotalFee(Container container)
         {
             if (weight >= MaxPossibleWeight)
@@ -54,6 +55,12 @@ namespace Container_shipping_assignment
                 }
             }
         }
+
+        /// <summary>
+        /// this method overrides then displays the container information
+        /// </summary>
+        /// <param name="container"></param>
+        /// <returns></returns>
         public override string GetInfo(Container container)
         {
             FullSizeContainer fullsizecontainer = (FullSizeContainer)container;

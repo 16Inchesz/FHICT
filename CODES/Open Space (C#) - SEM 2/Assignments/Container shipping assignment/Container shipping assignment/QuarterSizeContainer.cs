@@ -8,18 +8,31 @@ namespace Container_shipping_assignment
 {
     public class QuarterSizeContainer : Container
     {
-
+        //instance variables
         private const decimal FixedFee = 1692.72m;
 
-        public QuarterSizeContainer(int serialNumber, string originCountry, string description)
-            : base(serialNumber, originCountry, description)
+        //constructor
+        public QuarterSizeContainer(int serialNumber, string originCountry, decimal price, string description)
+            : base(serialNumber, originCountry, description, price)
         {
         }
 
-        public override decimal GetTotalFee()
+        public override decimal GetTotalFee(Container container)
         {
-            decimal totalFee = FixedFee;
-            return totalFee;
+            container.price = FixedFee;
+            return container.price;
+        }
+
+        /// <summary>
+        /// this method overrides then displays the container information
+        /// </summary>
+        /// <param name="container"></param>
+        /// <returns></returns>
+        public override string GetInfo(Container container)
+        {
+            QuarterSizeContainer quartersizecontainer = (QuarterSizeContainer)container;
+            string info = quartersizecontainer.description + " Fee:" + quartersizecontainer.price + " Country of Origin: " + quartersizecontainer.originCountry + " Serial number: " + quartersizecontainer.serialNumber;
+            return info;
         }
     }
 }
