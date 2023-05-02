@@ -22,7 +22,7 @@ namespace Container_shipping_assignment
         }
         
         /// <summary>
-        /// this method calculates the total fee
+        /// this method calculates the total fee to be paid.
         /// </summary>
         /// <returns>total fee</returns>
         public override decimal GetTotalFee(Container container)

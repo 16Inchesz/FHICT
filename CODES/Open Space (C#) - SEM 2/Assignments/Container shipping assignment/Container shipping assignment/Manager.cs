@@ -10,21 +10,20 @@ namespace Container_shipping_assignment
 {
     public class Manager
     {
+        //instance variables
         private const int MaxPossibleWeight = 20000;
         private const int MaxPossibleVolume = 40;
 
-        private string? response;
-        private List<Container> Containers = new List<Container>();
+        private string? response;   //removal of '?' results in NULL warnings
+        private List<Container> Containers = new List<Container>(); //list of containers
 
         public bool isRefrigerated;
         public int serialNumber = 1;
         public int weight = 0;
         public int volume = 0;
         public decimal price = 0;
-        
-        Commands currentState = Commands.WELCOME;
-        ContainerType containerType;
 
+        //states
         public enum Commands
         {
             WELCOME,
@@ -36,13 +35,23 @@ namespace Container_shipping_assignment
             ERR
         }
 
+        //container types
         public enum ContainerType
         {
             FULL,
             HALF,
             QUARTER
         }
-
+        
+        //init enum and state
+        Commands currentState = Commands.WELCOME;
+        ContainerType containerType;
+        
+        /// <summary>
+        /// this method functions like sequence state pattern
+        /// </summary>
+        /// <param name="input"></param>
+        /// <param name="commands"></param>
         public void StateChange(string input, Commands commands)
         {
             if (commands != Commands.ERR)
@@ -137,6 +146,10 @@ namespace Container_shipping_assignment
                 }
             }
         }
+        /// <summary>
+        /// this method adds a container depending on which type.
+        /// </summary>
+        /// <param name="containerType"></param>
         public void AddContainer(ContainerType containerType)
         {
             switch (containerType)
@@ -171,28 +184,46 @@ namespace Container_shipping_assignment
                         serialNumber++;
                         break;
                     }
-
-
             }
-            serialNumber++;
         }
+
+        /// <summary>
+        /// methos that returns the list of containers.
+        /// </summary>
+        /// <returns></returns>
         public List<Container> GetListOfContainers()
         {
             return Containers;
         }
+
+        /// <summary>
+        /// method that returns the response if it isnt null. (gives warning if removed)
+        /// </summary>
+        /// <returns></returns>
         public string GetResponse()
         {
-            return response;
+            if (response != null)
+            {
+                return response;
+            }
+            return "";
         }
+
+        /// <summary>
+        /// this method returns the current state
+        /// </summary>
+        /// <returns></returns>
         public Commands GetCommand()
         {
             return currentState;
         }
 
+        /// <summary>
+        /// this methods puts the current state back in the initial state.
+        /// </summary>
         public void ResetState()
         {
             currentState = Commands.WELCOME;
         }
-
     }
 }

@@ -16,7 +16,12 @@ namespace Container_shipping_assignment
             : base(serialNumber, originCountry, description, price)
         {
         }
-
+        
+        /// <summary>
+        /// Method that gets the total fees to be paid.
+        /// </summary>
+        /// <param name="container"></param>
+        /// <returns></returns>
         public override decimal GetTotalFee(Container container)
         {
             container.price = FixedFee;

@@ -36,7 +36,6 @@ namespace Container_shipping_assignment
         /// this method calculates the fixed fee.
         /// </summary>
         /// <returns>fixed fee</returns>
-       
         public override decimal GetTotalFee(Container container)
         {
             if (weight >= MaxPossibleWeight)

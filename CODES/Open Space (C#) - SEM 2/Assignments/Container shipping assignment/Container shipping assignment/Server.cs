@@ -13,7 +13,11 @@ namespace Container_shipping_assignment
     public class Server
     {
         string output = "";
-        Manager manager = new Manager();
+        Manager manager = new Manager();    //new manager object.
+       
+        /// <summary>
+        /// method that establishes a connection with PuTTY
+        /// </summary>
         public async void Start_server()
         {
             //local host 127.0.0.1
@@ -31,6 +35,11 @@ namespace Container_shipping_assignment
             }
         }
 
+        /// <summary>
+        /// method that handles the connection between program and PuTTY. 
+        /// Method also processes and handles messages.
+        /// </summary>
+        /// <param name="clientSocket"></param>
         private async void HandleConnectionAsync(Socket clientSocket)
         {
 
@@ -62,26 +71,37 @@ namespace Container_shipping_assignment
                     }
                     else
                     {
-                        // reading from PuTTY
+                        // reading messages from PuTTY
                         line = await streamReader.ReadLineAsync();
                         if (line != null)
                         {
                             manager.StateChange(line, commands);
                         }
 
-                        // sending to PuTTY
+                        // sending messages to PuTTY
                         string response = manager.GetResponse();
                         output = response;
                         streamWriter.WriteLine(response);
                         streamWriter.Flush();
                     }
                 }
+
             }
         }
+
+        /// <summary>
+        /// method that returns list of containers
+        /// </summary>
+        /// <returns></returns>
         public List<Container> GetListOfContainers()
         {
             return manager.GetListOfContainers();
         }
+
+        /// <summary>
+        /// method that returns the output.
+        /// </summary>
+        /// <returns></returns>
         public string GetOutput()
         {
             return output;
