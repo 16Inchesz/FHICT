@@ -31,7 +31,7 @@ namespace Container_shipping_assignment
         public override string GetInfo(Container container)
         {
             QuarterSizeContainer quartersizecontainer = (QuarterSizeContainer)container;
-            string info = quartersizecontainer.description + " Fee:" + quartersizecontainer.price + " Country of Origin: " + quartersizecontainer.originCountry + " Serial number: " + quartersizecontainer.serialNumber;
+            string info = quartersizecontainer.description + " Fee: " + quartersizecontainer.price + " Country of Origin: " + quartersizecontainer.originCountry + " Serial #: " + quartersizecontainer.serialNumber;
             return info;
         }
     }

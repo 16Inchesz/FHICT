@@ -9,7 +9,7 @@ using System.Runtime.Remoting.Messaging;
 
 namespace PoloClubApp
 {
-    class Club
+    public class Club
     {
         //instance variables
         private string name;            // the name of the club

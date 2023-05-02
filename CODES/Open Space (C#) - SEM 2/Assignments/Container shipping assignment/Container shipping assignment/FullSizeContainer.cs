@@ -13,12 +13,14 @@ namespace Container_shipping_assignment
         private const decimal RefrigerationFeePercentage = 1.08m;
         private const int MaxPossibleWeight = 20000;
         private int weight;
+        public bool isRefrigerated;
 
         //constructor
-        public FullSizeContainer(int serialNumber, string originCountry, string description, decimal price, int weight)
+        public FullSizeContainer(int serialNumber, string originCountry, string description, decimal price, int weight, bool isRefrigerated)
         : base(serialNumber, originCountry, description, price)
         {
             this.weight = weight;
+            this.isRefrigerated = isRefrigerated;
         }
 
         /// <summary>
@@ -27,7 +29,7 @@ namespace Container_shipping_assignment
         /// <returns>boolean result true if yes and false if not</returns>
         public bool NeedsRefrigeration()
         {
-            return true;
+            return isRefrigerated;
         }
 
         /// <summary>
@@ -64,7 +66,7 @@ namespace Container_shipping_assignment
         public override string GetInfo(Container container)
         {
             FullSizeContainer fullsizecontainer = (FullSizeContainer)container;
-            string info = fullsizecontainer.description + " Fee:" + fullsizecontainer.price + " Country of Origin: " + fullsizecontainer.originCountry + " Serial number: " + fullsizecontainer.serialNumber + " Weight:" + fullsizecontainer.weight;
+            string info = fullsizecontainer.description + " Fee: " + fullsizecontainer.price + " Country of Origin: " + fullsizecontainer.originCountry + " Serial #: " + fullsizecontainer.serialNumber + " Weight: " + fullsizecontainer.weight;
             return info;
         }
 

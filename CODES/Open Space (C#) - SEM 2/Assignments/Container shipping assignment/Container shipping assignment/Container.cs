@@ -25,7 +25,7 @@ namespace Container_shipping_assignment
 
         public virtual string GetInfo(Container container)
         {
-            string info = container.description + " price:" + container.price + " origin country:" + container.originCountry + " serial #:" + container.serialNumber;
+            string info = container.description + " price: " + container.price + " origin country: " + container.originCountry + " serial #: " + container.serialNumber;
             return info;
         }
     }

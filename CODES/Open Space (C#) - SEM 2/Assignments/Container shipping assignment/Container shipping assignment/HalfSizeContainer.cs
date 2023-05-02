@@ -46,7 +46,7 @@ namespace Container_shipping_assignment
         public override string GetInfo(Container container)
         {
             HalfSizeContainer halfsizecontainer = (HalfSizeContainer)container;
-            string info = halfsizecontainer.description + " Fee:" + halfsizecontainer.price + " Country of Origin: " + halfsizecontainer.originCountry + " Serial number: " + halfsizecontainer.serialNumber + " Volume:" + halfsizecontainer.volume;
+            string info = halfsizecontainer.description + " Fee: " + halfsizecontainer.price + " Country of Origin: " + halfsizecontainer.originCountry + " Serial #: " + halfsizecontainer.serialNumber + " Volume: " + halfsizecontainer.volume;
             return info;
         }
     }
