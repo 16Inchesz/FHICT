@@ -26,8 +26,8 @@ ALLOBJECTS  := $(SOURCES:.c=.o)
 TESTOBJECTS :=  $(filter-out src/main.o, $(ALLOBJECTS))
 RELEASEOBJECTS := $(filter-out src/main_test.o, $(ALLOBJECTS))
 
-INCLUDETEST	:= -I/c/Unity-master/src
-LIBUNITY := /c/Unity-master/src/libunity.a
+INCLUDETEST	:= -I/c/Repositories/FHICT/CODES/Unity-master/src
+LIBUNITY := /c/Repositories/FHICT/CODES/Unity-master/src/libunity.a
 
 .SUFFIXES=.c .h
 

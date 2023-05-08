@@ -33,14 +33,14 @@
 
 int main ()
 {
-	struct student students[MAX_STUDENTS];
+	student students[MAX_STUDENTS];
 		
 	/*
 	 * Exercises : manipulating array of structures in functions using pointers
 	 */
-	int size=0;	// Number of students to be entered
+	int size = 0;	// Number of students to be entered
 	printf("Please input the number of students:\n");
-    // scanf("%d", &size);
+    scanf("%d", &size);
 	
 
 	/*
@@ -48,9 +48,9 @@ int main ()
 	 */
 	printf("\n\nGet student data\n");
 	printf("--------------------\n");
+	printf("please enter the names of the students below.\n");
     getStudentData(students, size);
 
-
 	/*
 	 * printStudentData
 	 */
@@ -58,63 +58,45 @@ int main ()
 	printf("----------------------\n");
 	printStudentData(students, size);
 
+	// /*
+	//  * updateStudentNameById
+	//  */
+	// printf("\n\nUpdate student name by Id\n");
+	// printf("-----------------------------\n");
+	// int id=0;
+	// char newName[MAX_SIZE_NAME];
+	// printf("Enter student id:\n");
+	// // Use here scanf to read the id of a student from the terminal
+	// printf("Enter new student name:\n");
+	// // Use here scanf to read the name of a student from the terminal
+	// updateStudentNameById(students, size, id, newName);
 
-	/*
-	 * updateStudentNameById
-	 */
-	printf("\n\nUpdate student name by Id\n");
-	printf("-----------------------------\n");
-	int id=0;
-	char newName[MAX_SIZE_NAME];
-	printf("Enter student id:\n");
-	// Use here scanf to read the id of a student from the terminal
-	printf("Enter new student name:\n");
-	// Use here scanf to read the name of a student from the terminal
-	updateStudentNameById(students, size, id, newName);
-
-
-	/*
-	 * printStudentData
-	 */
-	printf("\n\nPrint student data\n");
-	printf("----------------------\n");
-	printStudentData(students, size);
-
-
-	/*
-	 * updateStudentIdByName
-	 */
-	printf("\n\nUpdate student Id by name\n");
-	printf("-----------------------------\n");
-	int newId=0;
-	char name[MAX_SIZE_NAME];
-	printf("Enter student name:\n");
-	// Use here scanf to read the name of a student from the terminal
-	printf("Enter new student id:\n");
-	// Use here scanf to read the id of a student from the terminal
-	updateStudentIdByName(students, size, newId, name);
+	// /*
+	//  * updateStudentIdByName
+	//  */
+	// printf("\n\nUpdate student Id by name\n");
+	// printf("-----------------------------\n");
+	// int newId=0;
+	// char name[MAX_SIZE_NAME];
+	// printf("Enter student name:\n");
+	// // Use here scanf to read the name of a student from the terminal
+	// printf("Enter new student id:\n");
+	// // Use here scanf to read the id of a student from the terminal
+	// updateStudentIdByName(students, size, newId, name);
 
 
-	/*
-	 * printStudentData
-	 */
-	printf("\n\nPrint student data\n");
-	printf("----------------------\n");
-	printStudentData(students, size);
+	// /*
+	//  * printStudentData
+	//  */
+	// printf("\n\nPrint student data\n");
+	// printf("----------------------\n");
+	// printStudentData(students, size);
 
 
-	/*
-	 * sortStudentByName
-	 */
-	printf("\n\nSort student by name\n");
-	printf("------------------------\n");
-	sortStudentByName(students, size);
-
-
-	/*
-	 * printStudentData
-	 */
-	printf("\n\nPrint students data\n");
-	printf("-----------------------\n");
-	printStudentData(students, size);
+	// /*
+	//  * sortStudentByName
+	//  */
+	// printf("\n\nSort student by name\n");
+	// printf("------------------------\n");
+	// sortStudentByName(students, size);
 }

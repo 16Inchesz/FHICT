@@ -1,6 +1,8 @@
 #ifndef OPERATIONS_H
 #define OPERATIONS_H
 
+#define NUMBER_OF_STUDENTS 3
+
 typedef struct{
     char name[50];
     int pcn;

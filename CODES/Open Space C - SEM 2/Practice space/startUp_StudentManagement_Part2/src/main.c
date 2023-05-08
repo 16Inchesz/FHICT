@@ -19,10 +19,10 @@
 
 
 int main(){
-	student studentArray[3] = {	{"Lisa", 123, 1, {5.5, 4.7, 8.4, 9.2}},
-								{"Eric", 234, 18, {6.3, 9.7, 7.2, 6.8}},
-								{"Emilia", 345, 17, {8.3, 6.7, 5.7, 5.5}}
-								}; 
+	student studentArray[NUMBER_OF_STUDENTS] = {	{"Lisa", 123, 1, {5.5, 4.7, 8.4, 9.2}},
+													{"Eric", 234, 18, {6.3, 9.7, 7.2, 6.8}},
+													{"Emilia", 345, 17, {8.3, 6.7, 5.7, 5.5}}
+												}; 
 	
 	// Calculate and print average grade of first student
 	float averageGrade = calculateAverageGrade(studentArray[1].grades);

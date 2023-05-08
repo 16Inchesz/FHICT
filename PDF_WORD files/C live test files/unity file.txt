@@ -1,0 +1,8 @@
+SEPERATE INCLUDE PATH IN CASE UNITY DOESN'T WORK
+
+#include "C:\Repositories\FHICT\CODES\Unity-master\src\unity.h"
+
+INCLUDE PATH FOR UNITY IN MAKEFILE
+
+INCLUDETEST	:= -I/c/Repositories/FHICT/CODES/Unity-master/src
+LIBUNITY := /c/Repositories/FHICT/CODES/Unity-master/src/libunity.a

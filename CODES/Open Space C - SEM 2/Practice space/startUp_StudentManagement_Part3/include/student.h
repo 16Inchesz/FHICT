@@ -18,27 +18,27 @@ typedef struct
 /*
  *  Read the list of students from the terminal
  */
-bool getStudentData(struct student*, int);
+bool getStudentData(student*, int);
 
 /*
  *  Write the list of students to the terminal
  */
-bool printStudentData(struct student*, int);
+bool printStudentData(student*, int);
 
 /*
  *  Update the name of a student given by id
  */
-bool updateStudentNameById(struct student*, int, int, char[]);
+bool updateStudentNameById(student*, int, int, char[]);
 
 /*
  *  Update the id of a student given by name
  */
-bool updateStudentIdByName(struct student*, int, int, char[]);
+bool updateStudentIdByName(student*, int, int, char[]);
 
 /*
  *  Sort the list of student by alphabetical order
  */
-bool sortStudentByName(struct student*, int);
+bool sortStudentByName(student*, int);
 
 #endif
 
