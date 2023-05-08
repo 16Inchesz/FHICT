@@ -23,9 +23,9 @@
 
 int main()
 {
-	uint8_t value1=4; 
-	uint8_t value2=15; 
-	uint8_t value3=7; 
+	int value1 = 4; 
+	int value2 = 15; 
+	int value3 = 7; 
 	
 	/*
 	 * Swap function
@@ -33,7 +33,7 @@ int main()
 	printf("\nBefore Swap:\n");
 	printf("The first value is: %d\n", value1);
 	printf("The second value is: %d\n", value2);
-	swap(value1, value2);
+	//swap(&value1, &value2);
 	printf("\nAfter Swap:\n");
 	printf("The first value is: %d\n", value1);
 	printf("The second value is: %d\n", value2);
@@ -49,7 +49,7 @@ int main()
 	printf("\nAfter Sort3:\n");
 	printf("The first value is: %d\n", value1);
 	printf("The second value is: %d\n", value2);
-	printf("The second value is: %d\n", value3);
+	printf("The third value is: %d\n", value3);
 
 	return (0);
 }

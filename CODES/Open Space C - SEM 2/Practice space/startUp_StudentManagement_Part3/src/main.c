@@ -4,7 +4,7 @@
  * 			Perform the following exercises to practice the manipulation of (arrays of) structures with pointers. 
  *
  * 			1. A student structure is declared in a header file (student.h). The structure is used to represent the personal data of a student. 
- * 			Can you refactor the code to take advantage of the typedef keyword?
+ * 			Can you refactor the code to take advantage of the typedef keyword? {done}
  *
  * 			2. The program can handle the details of maximally 30 students as defined by macro MAX_STUDENTS. 
  * 			Can you read the details of e.g. 3 students from the terminal by implementing the function getStudentData? 

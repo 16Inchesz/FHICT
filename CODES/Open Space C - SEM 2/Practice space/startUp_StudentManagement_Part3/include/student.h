@@ -9,11 +9,11 @@
 /*
  * Declaration of structure to hold student data
  */
-struct student
+typedef struct
 {
     char name[MAX_SIZE_NAME];   // First name (e.g. Anna)
     int id;                     // student id (e.g. 541278)
-};
+}student;
 
 /*
  *  Read the list of students from the terminal

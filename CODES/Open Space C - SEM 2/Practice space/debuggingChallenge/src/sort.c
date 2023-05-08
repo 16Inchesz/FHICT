@@ -5,7 +5,7 @@
  */
 void swap(int* x, int* y)
 {
-	int* temp = x;
+	int temp = *x;
 	*x = *y;
 	*y = temp;
 }
@@ -15,15 +15,15 @@ void swap(int* x, int* y)
  */
 void sort3(int* a, int* b, int* c)
 {
-	if (*a < *b) {
+	if (*a > *b) {
 		swap(a,b);
 	}
 
-	if (*a < *c) {
+	if (*a > *c) {
 		swap(a,c);
 	}
 
-	if (*b < *c) {
+	if (*b > *c) {
 		swap(b,c);
 	}
 }
