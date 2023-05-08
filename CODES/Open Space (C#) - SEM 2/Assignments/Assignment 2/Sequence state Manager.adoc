@@ -1,0 +1,35 @@
+[plantuml, state-diagram, svg]
+-----
+skinparam handwritten true
+skinparam defaultFontName "Ink Free"
+skinparam defaultTextAlignment center
+
+state Manager{
+
+    [*] --> StateChange 
+
+    StateChange --> WELCOME
+
+    WELCOME --> TYPE : input == "START" \n input != NULL
+    WELCOME --> ERR : CustomException()
+
+    TYPE --> FRIDGE : if (input == "FULL")
+    TYPE --> VOLUME : if (input == "HALF")
+    TYPE --> ACK : if (input == "QUARTER") \n AddContainer(QUARTER)
+    TYPE --> ERR : CustomException() 
+
+    FRIDGE --> WEIGHT : if (input == "YES") \n if (input == "NO")
+    FRIDGE --> ERR : CustomException()
+
+    WEIGHT --> ACK : AddContainer(FULL)
+    WEIGHT --> ERR : LimitExceededException()
+    
+    VOLUME --> ACK : AddContainer(HALF)
+    VOLUME --> ERR : LimitExceededException()
+
+    ACK --> WELCOME : ResetState() 
+
+
+    
+}
+-----
