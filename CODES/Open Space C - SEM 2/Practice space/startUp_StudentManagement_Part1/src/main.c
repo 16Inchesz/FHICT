@@ -1,7 +1,7 @@
 /*
  *	Description:	Exercises to practice functions and structures:
- *						- Exercise 1 : 	Refactor the following code using function(s)
- *						- Exercise 2 : 	Refactor your code from exercise 1 using structure(s) in addition to function(s)
+ *						- Exercise 1 : 	Refactor the following code using function(s) {done}
+ *						- Exercise 2 : 	Refactor your code from exercise 1 using structure(s) in addition to function(s) {done}
  *		
  *						- Note:	You are not expected to read inputs from the terminal (i.e. no scanf needed)
  * 								Remember to	both declare and define your function(s)
@@ -13,41 +13,40 @@
 #include <stdio.h>
 #include <string.h>
 
+float CalculateAverageGrade(float studentgrades[]){
+	float sum = 0;
+	for (int i = 0; i < 5; i++){
+		sum += studentgrades[i];
+	}
+	float averageGrade = sum / 5;
+	return averageGrade;
+}
+
 int main()
 {
-	// Declare and initialize student1
-	char studentName1[50] = "Lisa";
-	int numberStudent1 = 875922;
-	int ageStudent1 = 18;
-	float gradesStudent1[5] = {9.0, 6.5, 8.5, 7.0, 8.0};
-	float averageGradeStudent1;
+	typedef struct
+	{
+		char studentName[50];
+		float studentGrades[5];
+	}Students;
 
-	// Declare and initialize student2
-	char studentName2[50] = "Eric";
-	int numberStudent2 = 458216;
-	int ageStudent2 = 20;
-	float gradesStudent2[5] = {6.0, 6.0, 8.0, 7.5, 7.0};
+	Students student1 = {"Lisa", {9.0, 6.5, 8.5, 7.0, 8.0}};
+	Students student2 = {"Eric", {6.0, 6.0, 8.0, 7.5, 7.0}};
+
+	float averageGradeStudent1;
 	float averageGradeStudent2;
 
 	// Calculate average grade student1
-	float sum = 0;
-	for( int i=0; i<5; i++) {
-		sum += gradesStudent1[i];
-	}
-	averageGradeStudent1 = sum / 5;
-	
+	averageGradeStudent1 = CalculateAverageGrade(student1.studentGrades);
+
 	// print average grade of student 1
-	printf("The average grade of %s is: %.1f \n", studentName1, averageGradeStudent1);
+	printf("The average grade of %s is: %.1f \n", student1.studentName, averageGradeStudent1);
 
 	// Calculate average grade student2
-	sum = 0;
-	for( int i=0; i<5; i++) {
-		sum += gradesStudent2[i];
-	}
-	averageGradeStudent2 = sum / 5;
-		
+	averageGradeStudent2 = CalculateAverageGrade(student2.studentGrades);	
+
 	// print average grade of student 2
-	printf("The average grade of %s is: %.1f \n", studentName2, averageGradeStudent2);
+	printf("The average grade of %s is: %.1f \n", student2.studentName, averageGradeStudent2);
 
 	return (0);
 }
