@@ -3,7 +3,9 @@
 
 #include "stdbool.h"
 #include "stdint.h"
+#include <stdio.h>
 
+#define MAX_ARRAY_SIZE 4
 /*
  *	Function finds and returns the maximum value of the two inputs variables
  *  Input(s):
@@ -37,5 +39,6 @@ bool find_maximum_array(int* array, int size, int* maximum);
  */
 bool sort_array(int* array, int size);
 
+void PrintArray(int* array, int size);
 
 #endif

@@ -15,12 +15,13 @@
  * 	Date: 7 April 2023
  */
  
-#include <stdio.h>
 #include "statistics.h"
 
 int main()
 {
     int option = -1;
+    int array1[MAX_ARRAY_SIZE] = {2, 6, 1, 3};
+    int maximum = 0;
 
     while (option != 0)
     {
@@ -41,7 +42,7 @@ int main()
                 // Read inputs from terminal
                 printf("\nEnter first value: \n");
                 scanf("%d", &first_value);
-                printf("\nEnter first value: \n");
+                printf("\nEnter second value: \n");
                 scanf("%d", &second_value);
 
                 // Find minimum of two numbers
@@ -52,8 +53,18 @@ int main()
                 break;
             }
             case 2:
+            {
+                find_maximum_array(array1, MAX_ARRAY_SIZE, &maximum);
+                printf("the maximum value of this array is: %d\n", maximum);
+
+            }
                 break;
             case 3:
+            {
+                sort_array(array1, MAX_ARRAY_SIZE);
+                printf("Sorted array: \n");
+                PrintArray(array1, MAX_ARRAY_SIZE);
+            }
                 break;
             case 0:
                 printf("Stop program");
