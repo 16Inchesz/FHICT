@@ -172,7 +172,7 @@ bool update_animal_species(Animal *animals, int number_of_animals){
     //if there are no animals with this chip number
     if (count == 0){
         printf("there are no animals in the shelter with this chip number: '%d' \n", searched_chip_number);
-        return true;
+        return false;
     }
 
     return true;
