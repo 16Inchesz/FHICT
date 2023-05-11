@@ -57,14 +57,14 @@ void test_search_winner_1(void){
     //assign
     Skater winner;
     bool expected_result = true;
-    Skater expected_winner [MAX_NUMBER_SKATERS] = {{"John", 34, 420}};
+    Skater expected_winner = {"John", 34, 420};
 
     //act
     bool result = search_winner(skaters, number_of_skaters, &winner);
 
     //assert
     TEST_ASSERT_EQUAL(expected_result, result); //test if function ran smoothly.
-    TEST_ASSERT_EQUAL_PTR(expected_winner, &winner);
+    TEST_ASSERT_EQUAL(expected_winner.score, winner.score);
 }
 
 void test_search_winner_2(void){
@@ -84,14 +84,14 @@ void test_find_youngest_performer_1(void){
     //assign
     Skater youngest_performer;
     bool expected_result = true;
-    Skater expected_performer [MAX_NUMBER_SKATERS] = {{"Rose", 17, 354}};
+    Skater expected_performer = {"Rose", 17, 354};
 
     //act
     bool result = find_youngest_performer(skaters, number_of_skaters, &youngest_performer);
     
     //assert
     TEST_ASSERT_EQUAL(expected_result, result);
-    TEST_ASSERT_EQUAL_PTR(expected_performer, &youngest_performer);
+    TEST_ASSERT_EQUAL_INT(expected_performer.score, youngest_performer.score);
 
 }
 

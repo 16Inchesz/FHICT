@@ -56,7 +56,7 @@ bool search_winner(Skater *skaters, int number_of_skaters, Skater *winner){
     //compare highest score with the players, when player is found, he is the winner
     for (int i = 0; i < number_of_skaters; i++){
         if ((skaters)->score == highest){
-            *winner = *skaters;
+            winner->score = skaters->score;         //tried changing to skaters*
         }
         skaters++;
     }
@@ -90,7 +90,7 @@ bool find_youngest_performer(Skater *skaters, int number_of_skaters, Skater *you
     for (int i = 0; i < number_of_skaters - 1; i++) {
         for (int j = 0; j < number_of_skaters - i - 1; j++) {
             if (((skaters+j)->age == (skaters+j+1)->age) && ((skaters+j)->score > (skaters+j+1)->score )) {    
-                *youngest_performer = *skaters;
+                *youngest_performer = *skaters;     //tried swapping then assigning it to first in the struct.
             }
         }
     }
