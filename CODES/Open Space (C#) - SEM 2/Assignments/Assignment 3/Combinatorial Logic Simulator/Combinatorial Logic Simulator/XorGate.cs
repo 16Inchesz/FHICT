@@ -8,8 +8,10 @@ namespace Combinatorial_Logic_Simulator
 {
     public class XorGate : LogicGate
     {
+        //list of outputs.
         private List<bool> outputs;
 
+        //constructor.
         public XorGate()
         {
             inputs = new List<bool> { false, false };
@@ -17,6 +19,12 @@ namespace Combinatorial_Logic_Simulator
             connections = new List<Connection>();
         }
 
+        /// <summary>
+        /// Gets the value of the output depending on the provided pin.
+        /// </summary>
+        /// <param name="pin"></param>
+        /// <returns></returns>
+        /// <exception cref="InvalidPinException"></exception>
         public override bool GetOutput(int pin)
         {
             if (pin >= 0 && pin < outputs.Count)
@@ -27,10 +35,13 @@ namespace Combinatorial_Logic_Simulator
             throw new InvalidPinException($"{pin} is not a valid output pin for {GetType().Name}");
         }
 
+        /// <summary>
+        /// method to calculate the boolean value of the outputs.
+        /// </summary>
         private void CalculateOutput()
         {
-            bool result = inputs[0] ^ inputs[1]; 
-            outputs[0] = result; 
+            bool result = inputs[0] ^ inputs[1];    //result compares the two outputs with an XOR(^) operation.
+            outputs[0] = result;    //Update the output value.
         }
     }
 }

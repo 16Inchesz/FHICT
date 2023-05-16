@@ -5,7 +5,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        // Create the logic gates
+        // Create instances of the logic gates.
         AndGate andGate = new AndGate();
         OrGate orGate = new OrGate();
         NotGate notGate = new NotGate();
@@ -40,12 +40,12 @@ class Program
                     }
                     catch (InvalidPinException ex)
                     {
-                        Console.WriteLine($"Error: {ex.Message}");
+                        Console.WriteLine($"Error: {ex.Message}");  //exception in case of wrong output pin.
                     }
                 }
                 catch (InvalidPinException ex) 
                 {
-                    Console.WriteLine($"Error: {ex.Message}");
+                    Console.WriteLine($"Error: {ex.Message}");  //exception in case of wrong input pin.
                 }
 
             }
