@@ -13,12 +13,20 @@ namespace Combinatorial_Logic_Simulator
         protected List<bool> inputs;
         protected List<Connection> connections;
 
+        //constructor
+        public LogicGate()
+        {
+            inputs = new List<bool>();
+            connections = new List<Connection>();
+        }
+
         /// <summary>
         /// this method is used to get the input of the provided pin.
         /// </summary>
         /// <param name="pin"></param>
         /// <returns></returns>
         /// <exception cref="InvalidPinException"></exception>
+
         public bool GetInput(int pin)
         {
             if (pin >= 0 && pin < inputs.Count)
@@ -53,7 +61,12 @@ namespace Combinatorial_Logic_Simulator
             }
         }
 
-        
+        /// <summary>
+        /// method used to connect the output value of one component to the input of another.
+        /// </summary>
+        /// <param name="outputPin"></param>
+        /// <param name="other"></param>
+        /// <param name="inputPin"></param>
         public void ConnectOutput(int outputPin, ILogicComponent other, int inputPin)
         {
             Connection connection = new Connection(this, outputPin, other, inputPin);
