@@ -15,24 +15,39 @@ class Program
         Console.WriteLine("A    B    AND    OR    NOT    XOR");
 
         // Iterate through all possible input combinations
-        for (int a = 0; a <= 1; a++)
+        for (int input0 = 0; input0 <= 1; input0++)
         {
-            for (int b = 0; b <= 1; b++)
+            for (int input1 = 0; input1 <= 1; input1++)
             {
-                // Set the input values and check boolean value.
-                andGate.SetInput(0, a == 1);
-                andGate.SetInput(1, b == 1);
+                try
+                {
+                    // Set the input values and check boolean value.
+                    andGate.SetInput(0, input0 == 1);
+                    andGate.SetInput(1, input1 == 1);
 
-                orGate.SetInput(0, a == 1);
-                orGate.SetInput(1, b == 1);
+                    orGate.SetInput(0, input0 == 1);
+                    orGate.SetInput(1, input1 == 1);
 
-                notGate.SetInput(0, a == 1);
+                    notGate.SetInput(0, input0 == 1);
 
-                xorGate.SetInput(0, a == 1);
-                xorGate.SetInput(1, b == 1);
+                    xorGate.SetInput(0, input0 == 1);
+                    xorGate.SetInput(1, input1 == 1);
 
-                // Print the current row of the truth table
-                Console.WriteLine($"{a}    {b}    {andGate.GetOutput(0)}    {orGate.GetOutput(0)}    {notGate.GetOutput(0)}    {xorGate.GetOutput(0)}");
+                    try
+                    {
+                        // Print the current row of the truth table
+                        Console.WriteLine($"{input0}    {input1}    {andGate.GetOutput(0)}    {orGate.GetOutput(0)}    {notGate.GetOutput(0)}    {xorGate.GetOutput(0)}");
+                    }
+                    catch (InvalidPinException ex)
+                    {
+                        Console.WriteLine($"Error: {ex.Message}");
+                    }
+                }
+                catch (InvalidPinException ex) 
+                {
+                    Console.WriteLine($"Error: {ex.Message}");
+                }
+
             }
         }
     }

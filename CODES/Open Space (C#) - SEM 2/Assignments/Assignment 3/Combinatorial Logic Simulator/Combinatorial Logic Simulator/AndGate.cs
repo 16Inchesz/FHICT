@@ -13,7 +13,7 @@ namespace Combinatorial_Logic_Simulator
         public AndGate()
         {
             inputs = new List<bool> { false, false };
-            outputs = new List<bool> {  false };
+            outputs = new List<bool> { false };
             connections = new List<Connection>();
         }
 

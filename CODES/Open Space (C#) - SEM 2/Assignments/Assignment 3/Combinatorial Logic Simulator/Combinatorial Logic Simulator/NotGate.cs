@@ -20,7 +20,7 @@ namespace Combinatorial_Logic_Simulator
             {
                 return !inputs[0];
             }
-            throw new InvalidPinException($"{pin} is not a valid input pin for {GetType().Name}");
+            throw new InvalidPinException($"{pin} is not a valid output pin for {GetType().Name}");
         }
     }
 }
