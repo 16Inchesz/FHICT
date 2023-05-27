@@ -18,6 +18,7 @@ int main(int argc, char const *argv[])
     printf("\nNumber of arguments: %d\n", argc);
 	printf("Executable file: %s\n", argv[0]);
 	printf("Name of input file: %s\n", argv[1]);
+    printf("Name of output file: %s\n", argv[2]);
 
     FILE * inputFile = NULL;
     FILE * outputFile = NULL;
@@ -30,23 +31,23 @@ int main(int argc, char const *argv[])
     //idiot proof
     if (inputFile == NULL || outputFile == NULL){
         exit(EXIT_FAILURE);
-        //does this need to return something? i.e. return 0;
+        //does this need to return something? i.e. return 0; --------------------
     }
 
     //read byte from file
     while (fread(&byte, sizeof(byte), 1, inputFile) != EOF){
         //use testbit in byte function. to checks bits.
-        //update byte if condition checks out.
-        //write byte to output file.
+        //update byte if condition checks out. 
+        //write byte to output file. 
     }
 
+    char c = fgetc(inputFile);
     
-    //fgetc || fread 
+    //fgetc || fread ------------------------------------
     //fputc || fwrite
-    //use test bit in byte function to check bits in position 6(0), 2(1) and 3(1).
-    //if true flip(invert) bit1
-    //write ever byte to output file.
 
+    //why does my make clean not work?
+    
     //close files
     fclose(inputFile);
     fclose(outputFile);
