@@ -1,4 +1,6 @@
 #include "unity.h"
+#include "encoder.h"
+
 
 void setUp(void){}
 
