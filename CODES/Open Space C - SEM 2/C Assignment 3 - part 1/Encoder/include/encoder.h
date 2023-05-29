@@ -11,4 +11,8 @@
 /// @return returns true on functions success.
 bool encodeByte(uint8_t*, uint8_t*, uint8_t*);
 
+/// @brief Function that calculates the parity bits for the nibble provided
+/// @param  nibble
+/// @return returns the parity bits
+uint8_t CalculateParity(uint8_t);
 #endif

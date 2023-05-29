@@ -18,26 +18,22 @@ int main(int argc, char const *argv[])
     printf("Name of output file: %s\n\n", argv[2]);
 
     //Open both files.
-    inputFile = fopen(argv[1], "r");
-    outputFile = fopen(argv[2], "w");
+    inputFile = fopen(argv[1], "rb");
+    outputFile = fopen(argv[2], "wb");
 
     //NULL pointer; return failure.
     if (inputFile == NULL || outputFile == NULL){
-
         printf("ERROR: cannot open input file\n");
         exit(EXIT_FAILURE);
     }
 
     //If scanned byte is equal to the EOF macro, perform the algorithm.
     while(fscanf(inputFile, "%c", &inputByte) != EOF){
-
         //Encode byte if function returns true.
-        if(encodeByte(inputByte, &encodedByteHigh, &encodedByteLow)){
-
+        if(encodeByte(&inputByte, &encodedByteHigh, &encodedByteLow)){
             //Print the encoded data to the output file.
             fprintf(outputFile, "%d %d\n", encodedByteHigh, encodedByteLow);
         } else{
-
             //In case something goes wrong.
             printf("ERROR: input byte, %d, could not be encoded", inputByte);
         }
