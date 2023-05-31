@@ -18,7 +18,7 @@ int main(int argc, char const *argv[])
     printf("Name of output file: %s\n\n", argv[2]);
 
     //Open both files.
-    inputFile = fopen(argv[1], "rb");
+    inputFile = fopen(argv[1], "r");
     outputFile = fopen(argv[2], "wb");
 
     //NULL pointer; return failure.
