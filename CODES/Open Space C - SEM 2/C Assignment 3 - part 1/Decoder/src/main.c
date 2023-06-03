@@ -22,6 +22,9 @@ int main(int argc, char const *argv[])
         exit(EXIT_FAILURE);
     }
 
+    //algortihm goes here
+    
+
     //close both files.
     fclose(inputFile);
     fclose(outputFile);
