@@ -1,11 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "decoder.h"
 
 int main(int argc, char const *argv[])
 {
     //variables
     FILE * inputFile = NULL;
     FILE * outputFile = NULL;
+
+    // Variables for decoding
+    uint8_t transmittedByteHigh;
+    uint8_t transmittedByteLow;
+    uint8_t decodedByte;
 
     printf("\nNumber of arguments: %d\n", argc);
 	printf("Executable file: %s\n", argv[0]);
@@ -22,8 +28,17 @@ int main(int argc, char const *argv[])
         exit(EXIT_FAILURE);
     }
 
-    //algortihm goes here
-    
+    //If scanned bytes are unequal to the EOF macro, perform the algorithm.
+    while((transmittedByteHigh = fgetc(inputFile)) != EOF && (transmittedByteLow = fgetc(inputFile)) != EOF){
+        //Decode bytes if function is true
+        if (decodeByte(transmittedByteHigh, transmittedByteLow, &decodedByte)){
+            //print decoded byte to output file.
+            fputc(decodedByte, outputFile);
+        } else{
+            //in case something goes wrong.
+            printf("ERROR: failed to encode Byte");
+        }
+    }
 
     //close both files.
     fclose(inputFile);

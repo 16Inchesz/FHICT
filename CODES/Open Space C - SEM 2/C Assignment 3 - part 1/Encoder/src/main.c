@@ -9,7 +9,7 @@ int main(int argc, char const *argv[])
     FILE * outputFile = NULL;
 
     //Variables for encoding.
-    char c;
+    char character;
     uint8_t encodedByteHigh = 0;
     uint8_t encodedByteLow = 0;
 
@@ -30,15 +30,15 @@ int main(int argc, char const *argv[])
     }
 
     //If scanned byte is unequal to the EOF macro, perform the algorithm.
-    while((c = fgetc(inputFile)) != EOF){
+    while((character = fgetc(inputFile)) != EOF){
         //Encode byte if function returns true. (c is already a unint8_t)
-            if(encodeByte(c, &encodedByteHigh, &encodedByteLow)){
+        if(encodeByte(character, &encodedByteHigh, &encodedByteLow)){
             //Print the encoded data to the output file.
             fputc(encodedByteHigh, outputFile);
             fputc(encodedByteLow, outputFile);
         } else{
             //In case something goes wrong.
-            printf("ERROR: input byte, %d, could not be encoded", c);
+            printf("ERROR: input byte, %d, could not be encoded", character);
         }
     }
 

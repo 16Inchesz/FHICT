@@ -18,3 +18,37 @@ uint8_t CalculateParity(uint8_t nibble){
     return result;
 }
 
+bool decodeByte(uint8_t transmittedByteHigh, uint8_t transmittedByteLow, uint8_t *decodedByte){
+    if (decodedByte == NULL){
+        return false;
+    }
+
+    //Get the nibbles from the transmitted data.
+    uint8_t highNibble = transmittedByteHigh & 0x0F;
+    uint8_t lowNibble = transmittedByteLow & 0x0F;
+
+    //Calculate parity bits for comparison.
+    uint8_t parityHigh = CalculateParity(highNibble);
+    uint8_t parityLow = CalculateParity(lowNibble);
+
+    //Compare the parity bits of recently calculated and transmitted parity bits.
+    bool errorHigh = (transmittedByteHigh >> 4) != parityHigh;
+    bool errorLow = (transmittedByteLow >> 4) != parityLow
+
+    //correction algorithm.
+    if (errorHigh && errorLow){  //if 2 parity bits are corrupt
+
+        //two or more parity bits corrupt i.e. data error.
+        //determine the position and correct it.
+        //easiliy done with circle
+
+    } else if(errorHigh || errorLow){ //if 1 parity bit is corrupt
+        //need for correction?
+        //if yes, correct parity bit depending on which error variable is true.
+    }
+
+    *decodedByte = (highNibble << 4) | lowNibble;
+
+    return true;
+    
+}
