@@ -4,14 +4,16 @@
 
 int main(int argc, char const *argv[])
 {
-    //Variables
+    //File pointers ariables
     FILE * inputFile = NULL;
     FILE * outputFile = NULL;
 
-    uint8_t inputByte;
-    uint8_t encodedByteHigh;
-    uint8_t encodedByteLow;
+    //Variables for encoding.
+    char c;
+    uint8_t encodedByteHigh = 0;
+    uint8_t encodedByteLow = 0;
 
+    //printing name of input and output file.
     printf("\nNumber of arguments: %d\n", argc);
 	printf("Executable file: %s\n", argv[0]);
 	printf("Name of input file: %s\n", argv[1]);
@@ -27,15 +29,16 @@ int main(int argc, char const *argv[])
         exit(EXIT_FAILURE);
     }
 
-    //If scanned byte is equal to the EOF macro, perform the algorithm.
-    while(fscanf(inputFile, "%c", &inputByte) != EOF){
-        //Encode byte if function returns true.
-        if(encodeByte(&inputByte, &encodedByteHigh, &encodedByteLow)){
+    //If scanned byte is unequal to the EOF macro, perform the algorithm.
+    while((c = fgetc(inputFile)) != EOF){
+        //Encode byte if function returns true. (c is already a unint8_t)
+            if(encodeByte(c, &encodedByteHigh, &encodedByteLow)){
             //Print the encoded data to the output file.
-            fprintf(outputFile, "%d %d\n", encodedByteHigh, encodedByteLow);
+            fputc(encodedByteHigh, outputFile);
+            fputc(encodedByteLow, outputFile);
         } else{
             //In case something goes wrong.
-            printf("ERROR: input byte, %d, could not be encoded", inputByte);
+            printf("ERROR: input byte, %d, could not be encoded", c);
         }
     }
 

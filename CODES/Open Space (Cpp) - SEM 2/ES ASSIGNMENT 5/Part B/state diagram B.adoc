@@ -1,0 +1,21 @@
+[plantuml, state-diagram, svg]
+-----
+skinparam handwritten true
+skinparam defaultFontName "Ink Free"
+skinparam defaultTextAlignment center
+
+state Interrupt{
+    [*] --> READ_BUTTON_STATE
+    READ_BUTTON_STATE --> LED_1_ON : HandleButtonPress(LED_1_PIN)
+    READ_BUTTON_STATE --> LED_2_ON : HandleButtonPress(LED_2_PIN)
+    READ_BUTTON_STATE --> BLINK_LEDS : CheckBothButtonsPressed()
+    READ_BUTTON_STATE --> LEDS_OFF : HandleNoButtonsPressed()
+
+    LED_1_ON --> READ_BUTTON_STATE
+    LED_2_ON --> READ_BUTTON_STATE
+    BLINK_LEDS --> READ_BUTTON_STATE
+    LEDS_OFF --> READ_BUTTON_STATE
+
+    
+}
+-----
