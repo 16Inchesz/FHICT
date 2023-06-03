@@ -1,0 +1,25 @@
+[plantuml, state-diagram, svg]
+-----
+skinparam handwritten true
+skinparam defaultFontName "Ink Free"
+skinparam defaultTextAlignment center
+
+state LOOP{
+    [*] --> RECEIVE_BUTTON_STATE : DebounceButton1 \nDebounceButton2
+
+    RECEIVE_BUTTON_STATE --> NO_BUTTONS_PRESSED : ButtonState1 == LOW \nButtonState2 == LOW
+    RECEIVE_BUTTON_STATE --> BUTTON_1_PRESSED : ButtonState1 == LOW \nButtonState2 == HIGH
+    RECEIVE_BUTTON_STATE --> BUTTON_2_PRESSED : ButtonState1 == HIGH \nButtonState2 == LOW
+    RECEIVE_BUTTON_STATE --> BOTH_BUTTONS_PRESSED : ButtonState1 == LOW \nButtonState2 == LOW
+
+    BUTTON_1_PRESSED --> RECEIVE_BUTTON_STATE : ButtonState1 == LOW \nButtonState2 == LOW
+    BUTTON_2_PRESSED --> RECEIVE_BUTTON_STATE : ButtonState1 == LOW \nButtonState2 == LOW
+    BOTH_BUTTONS_PRESSED --> RECEIVE_BUTTON_STATE : ButtonState1 == LOW \nButtonState2 == LOW
+
+    BUTTON_1_PRESSED --> BUTTON_1_PRESSED : LED1 ON 
+    BUTTON_2_PRESSED --> BUTTON_2_PRESSED : LED2 ON
+    BOTH_BUTTONS_PRESSED --> BOTH_BUTTONS_PRESSED : BlinkLed()
+    NO_BUTTONS_PRESSED --> NO_BUTTONS_PRESSED : LED1 OFF \n LED2 OFF
+
+}
+-----

@@ -18,23 +18,12 @@
 volatile bool prevButton1State = HIGH;
 volatile bool prevButton2State = HIGH;
 volatile bool bothButtonsPressed = LOW;
-volatile int lastButton1State = HIGH;
-volatile int lastButton2State = HIGH;
 
 // Variables for non-blocking delay
 volatile unsigned long previousMillis1 = 0;
 volatile unsigned long previousMillis2 = 0;
 volatile unsigned long previousBothButtonsMillis = 0;
 const long interval = 500;
-
-// Enum for button states
-enum ButtonState
-{
-  NO_BUTTON_PRESSED,
-  BUTTON_1_PRESSED,
-  BUTTON_2_PRESSED,
-  BOTH_BUTTONS_PRESSED
-};
 
 void setup()
 {
@@ -53,6 +42,10 @@ void setup()
   sei();
 }
 
+/// @brief Function to handle the different button inputs and LED outputs.
+/// @param ledPin 
+/// @param previousMillis 
+/// @param prevButtonState 
 void handleButtonPress(int ledPin, volatile unsigned long &previousMillis, volatile bool &prevButtonState)
 {
   if (prevButtonState)
@@ -72,6 +65,7 @@ void handleButtonPress(int ledPin, volatile unsigned long &previousMillis, volat
   }
 }
 
+/// @brief Function that checks if both buttons are pressed or not.
 void checkBothButtonsPressed()
 {
   if (!(PINB & BUTTON_1_MASK) && !(PINB & BUTTON_2_MASK))
@@ -84,7 +78,7 @@ void checkBothButtonsPressed()
   }
 }
 
-// If both buttons are not pressed, turn off the LEDs
+/// @brief Function that turns off all LEDs.
 void handleNoButtonsPressed()
 {
   // We use the bitwise AND operator (&) to clear the bit in the PORTD register
@@ -94,7 +88,29 @@ void handleNoButtonsPressed()
   prevButton2State = HIGH;
 }
 
-// Interrupt service routines for the buttons
+/// @brief Function that blinks the LEDs based on the interval.
+void blinkLEDs()
+{
+  unsigned long currentMillis = millis();
+  if (currentMillis - previousBothButtonsMillis >= interval)
+  {
+    // Toggle the bit in the PORTD register that corresponds to LED_1_PIN.
+    if (PORTD & LED_1_MASK)
+    {
+      PORTD &= ~LED_1_MASK;
+      PORTD |= LED_2_MASK;
+    }
+    else
+    {
+      PORTD &= ~LED_2_MASK;
+      PORTD |= LED_1_MASK;
+    }
+    previousBothButtonsMillis = currentMillis;
+  }
+}
+
+/// @brief Interrupt service routines for the buttons
+/// @param  PCINT0_vect
 ISR(PCINT0_vect)
 {
   // Debug output
@@ -118,26 +134,6 @@ ISR(PCINT0_vect)
 
   // Both buttons are not pressed
   handleNoButtonsPressed();
-}
-
-void blinkLEDs()
-{
-  unsigned long currentMillis = millis();
-  if (currentMillis - previousBothButtonsMillis >= interval)
-  {
-    // Toggle the bit in the PORTD register that corresponds to LED_1_PIN.
-    if (PORTD & LED_1_MASK)
-    {
-      PORTD &= ~LED_1_MASK;
-      PORTD |= LED_2_MASK;
-    }
-    else
-    {
-      PORTD &= ~LED_2_MASK;
-      PORTD |= LED_1_MASK;
-    }
-    previousBothButtonsMillis = currentMillis;
-  }
 }
 
 void loop()

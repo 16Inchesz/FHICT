@@ -18,8 +18,6 @@
 volatile bool prevButton1State = HIGH;
 volatile bool prevButton2State = HIGH;
 volatile bool bothButtonsPressed = LOW;
-volatile int lastButton1State = HIGH;
-volatile int lastButton2State = HIGH;
 unsigned long debounceTimeButton1 = 0;
 
 // Variables for non-blocking delay
@@ -28,15 +26,6 @@ volatile unsigned long previousMillis2 = 0;
 volatile unsigned long previousBothButtonsMillis = 0;
 const long interval = 500;
 const long DEBOUNCE_DELAY = 40;
-
-// Enum for button states
-enum ButtonState
-{
-  NO_BUTTON_PRESSED,
-  BUTTON_1_PRESSED,
-  BUTTON_2_PRESSED,
-  BOTH_BUTTONS_PRESSED
-};
 
 void setup()
 {
@@ -55,6 +44,10 @@ void setup()
   sei();
 }
 
+/// @brief Function to handle the different button inputs and LED outputs.
+/// @param ledPin 
+/// @param previousMillis 
+/// @param prevButtonState 
 void handleButtonPress(int ledPin, volatile unsigned long &previousMillis, volatile bool &prevButtonState)
 {
   if (prevButtonState)
@@ -74,6 +67,7 @@ void handleButtonPress(int ledPin, volatile unsigned long &previousMillis, volat
   }
 }
 
+/// @brief Function that turns off all LEDs.
 void handleNoButtonsPressed() {
   PORTD &= ~_BV(LED_1_PIN);
   PORTD &= ~_BV(LED_2_PIN);
@@ -81,6 +75,11 @@ void handleNoButtonsPressed() {
   prevButton2State = HIGH;
 }
 
+/// @brief Debounce function for buttons.
+/// @param buttonNumber 
+/// @param debounceTime 
+/// @param buttonMask 
+/// @return the buttonstate
 int DebounceButton(int buttonNumber, volatile unsigned long& debounceTime, int buttonMask) {
   int buttonState = LOW;
   if (millis() - debounceTime > DEBOUNCE_DELAY) {
@@ -90,8 +89,31 @@ int DebounceButton(int buttonNumber, volatile unsigned long& debounceTime, int b
   return buttonState;
 }
 
-// Interrupt service routines for the buttons
+/// @brief Function that blinks the LEDs based on the interval.
+void blinkLEDs()
+{
+  unsigned long currentMillis = millis();
+  if (currentMillis - previousBothButtonsMillis >= interval)
+  {
+    // Toggle the bit in the PORTD register that corresponds to LED_1_PIN.
+    if (PORTD & LED_1_MASK)
+    {
+      PORTD &= ~LED_1_MASK;
+      PORTD |= LED_2_MASK;
+    }
+    else
+    {
+      PORTD &= ~LED_2_MASK;
+      PORTD |= LED_1_MASK;
+    }
+    previousBothButtonsMillis = currentMillis;
+  }
+}
+
+/// @brief Interrupt service routines for the buttons
+/// @param  PCINT0_vect
 ISR(PCINT0_vect) {
+
   // Button 1 is pressed
   int button1State = DebounceButton(1, debounceTimeButton1, BUTTON_1_MASK);
   if (button1State == HIGH && prevButton1State == LOW) {
@@ -116,27 +138,6 @@ ISR(PCINT0_vect) {
   // Both buttons are not pressed
   if (button1State == LOW && button2State == LOW) {
     handleNoButtonsPressed();
-  }
-}
-
-
-void blinkLEDs()
-{
-  unsigned long currentMillis = millis();
-  if (currentMillis - previousBothButtonsMillis >= interval)
-  {
-    // Toggle the bit in the PORTD register that corresponds to LED_1_PIN.
-    if (PORTD & LED_1_MASK)
-    {
-      PORTD &= ~LED_1_MASK;
-      PORTD |= LED_2_MASK;
-    }
-    else
-    {
-      PORTD &= ~LED_2_MASK;
-      PORTD |= LED_1_MASK;
-    }
-    previousBothButtonsMillis = currentMillis;
   }
 }
 
