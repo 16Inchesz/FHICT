@@ -19,7 +19,7 @@ int main(int argc, char const *argv[])
     printf("Name of output file: %s\n\n", argv[2]);
 
     //open files.
-    inputFile = fopen(argv[1], "r");
+    inputFile = fopen(argv[1], "rb");
     outputFile = fopen(argv[2], "w");
 
     //NULL pointer; return failure.

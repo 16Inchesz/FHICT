@@ -33,7 +33,7 @@ bool decodeByte(uint8_t transmittedByteHigh, uint8_t transmittedByteLow, uint8_t
 
     //Compare the parity bits of recently calculated and transmitted parity bits.
     bool errorHigh = (transmittedByteHigh >> 4) != parityHigh;
-    bool errorLow = (transmittedByteLow >> 4) != parityLow
+    bool errorLow = (transmittedByteLow >> 4) != parityLow;
 
     //correction algorithm.
     if (errorHigh && errorLow){  //if 2 parity bits are corrupt
@@ -41,6 +41,7 @@ bool decodeByte(uint8_t transmittedByteHigh, uint8_t transmittedByteLow, uint8_t
         //two or more parity bits corrupt i.e. data error.
         //determine the position and correct it.
         //easiliy done with circle
+        //new high and low nibbles are corrected and assigned.
 
     } else if(errorHigh || errorLow){ //if 1 parity bit is corrupt
         //need for correction?
