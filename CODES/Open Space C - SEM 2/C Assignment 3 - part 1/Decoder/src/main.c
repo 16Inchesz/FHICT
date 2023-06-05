@@ -9,8 +9,8 @@ int main(int argc, char const *argv[])
     FILE * outputFile = NULL;
 
     // Variables for decoding
-    uint8_t transmittedByteHigh;
-    uint8_t transmittedByteLow;
+    int transmittedByteHigh;
+    int transmittedByteLow;
     uint8_t decodedByte;
 
     printf("\nNumber of arguments: %d\n", argc);
@@ -29,10 +29,10 @@ int main(int argc, char const *argv[])
     }
 
     //If scanned bytes are unequal to the EOF macro, perform the algorithm.
-    //fix: this issue
+    //must use casting. uint8_t does not process value of -1.
     while((transmittedByteHigh = fgetc(inputFile)) != EOF && (transmittedByteLow = fgetc(inputFile)) != EOF){
         //Decode bytes if function is true
-        if (decodeByte(transmittedByteHigh, transmittedByteLow, &decodedByte)){
+        if (decodeByte((uint8_t)transmittedByteHigh, (uint8_t)transmittedByteLow, &decodedByte)){
             //print decoded byte to output file.
             fputc(decodedByte, outputFile);
         } else{
