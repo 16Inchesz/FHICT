@@ -29,6 +29,7 @@ int main(int argc, char const *argv[])
     }
 
     //If scanned bytes are unequal to the EOF macro, perform the algorithm.
+    //fix: this issue
     while((transmittedByteHigh = fgetc(inputFile)) != EOF && (transmittedByteLow = fgetc(inputFile)) != EOF){
         //Decode bytes if function is true
         if (decodeByte(transmittedByteHigh, transmittedByteLow, &decodedByte)){

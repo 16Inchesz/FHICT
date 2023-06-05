@@ -36,16 +36,12 @@ bool decodeByte(uint8_t transmittedByteHigh, uint8_t transmittedByteLow, uint8_t
     bool errorLow = (transmittedByteLow >> 4) != parityLow;
 
     //correction algorithm.
-    if (errorHigh && errorLow){  //if 2 parity bits are corrupt
-
+    if (errorHigh && errorLow){ //and or or operator.
+        //check if 2 or more parity bits are corrupt.
         //two or more parity bits corrupt i.e. data error.
         //determine the position and correct it.
         //easiliy done with circle
         //new high and low nibbles are corrected and assigned.
-
-    } else if(errorHigh || errorLow){ //if 1 parity bit is corrupt
-        //need for correction?
-        //if yes, correct parity bit depending on which error variable is true.
     }
 
     *decodedByte = (highNibble << 4) | lowNibble;
