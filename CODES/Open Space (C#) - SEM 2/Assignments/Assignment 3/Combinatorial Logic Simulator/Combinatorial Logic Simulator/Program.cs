@@ -26,6 +26,7 @@ class Program
                     andGate.SetInput(0, input0 == 1);
                     andGate.SetInput(1, input1 == 1);
 
+
                     orGate.SetInput(0, input0 == 1);
                     orGate.SetInput(1, input1 == 1);
 
@@ -48,9 +49,9 @@ class Program
                 {
                     Console.WriteLine($"Error: {ex.Message}");  //exception in case of wrong input pin.
                 }
-
             }
         }
+
         Console.WriteLine("\nHalf Adder:");
         Console.WriteLine("A    B    Sum    Carry");
 
