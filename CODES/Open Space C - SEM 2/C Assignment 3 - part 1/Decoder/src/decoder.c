@@ -1,9 +1,13 @@
 #include "decoder.h"
 
+bool TestBitInByte(uint8_t byte, uint8_t position){
+    uint8_t mask = 1 << position;               //shift the bit to the position you want to test.
+    bool testedBit = ((byte & mask) != 0);      //returns the 0 if tested bit isn't set and 1 if it is set. 
+    return testedBit;
+}
+
 uint8_t CalculateParity(uint8_t nibble){
-    
     //calculate the data bit.
-    //Room for optimization
     uint8_t d3 = (nibble >> 3) & 0x01;
     uint8_t d2 = (nibble >> 2) & 0x01;
     uint8_t d1 = (nibble >> 1) & 0x01;
@@ -36,12 +40,64 @@ bool decodeByte(uint8_t transmittedByteHigh, uint8_t transmittedByteLow, uint8_t
     bool errorLow = (transmittedByteLow >> 4) != parityLow;
 
     //correction algorithm.
-    if (errorHigh && errorLow){ //and or or operator.
-        //check if 2 or more parity bits are corrupt.
-        //two or more parity bits corrupt i.e. data error.
-        //determine the position and correct it.
-        //easiliy done with circle
-        //new high and low nibbles are corrected and assigned.
+    if (errorHigh){
+        //calculate difference between calculated and transmitted parity bits.
+        uint8_t diffHigh = parityHigh ^ (transmittedByteHigh >> 4);
+
+        // find number of bits that are flipped.
+        int flippedBits = 0;
+        if ((diffHigh >> 2) & 0x01){
+            flippedBits++;
+        }
+        if ((diffHigh >> 1) & 0x01){
+            flippedBits++;
+        }
+        if (diffHigh & 0x01){
+            flippedBits++;
+        }
+
+        //difference is 2 (1 corrupt data bit)
+        if(flippedBits == 2){
+            if ((diffHigh & 0x06) == 0x06){ //data bit 2 is corrupt (p1 + p2)
+                highNibble ^= 0x04;
+            } else if ((diffHigh & 0x05) == 0x05){  //data bit 3 is corrupt (p2 + p0)
+                highNibble ^= 0x08;
+            } else if ((diffHigh & 0x03) == 0x03){  //data bit 1 is corrupt (p0 + p1)
+                highNibble ^= 0x02;
+            }
+        } else if (flippedBits == 3){   //data bit 0 is corrupt. (p0 + p1 + p2)
+            highNibble ^= 0x01;
+        }
+    }
+
+    if(errorLow){
+        //calculate difference between calculated and transmitted parity bits.
+        uint8_t diffLow = parityLow ^ (transmittedByteLow >> 4);
+
+        // find number of bits that are flipped.
+        int flippedBits = 0;
+        if ((diffLow >> 2) & 0x01){
+            flippedBits++;
+        }
+        if ((diffLow >> 1) & 0x01){
+            flippedBits++;
+        }
+        if (diffLow & 0x01){
+            flippedBits++;
+        }
+
+        //difference is 2 (1 corrupt data bit)
+        if(flippedBits == 2){
+            if ((diffLow & 0x06) == 0x06){ //data bit 2 is corrupt (p1 + p2)
+                lowNibble ^= 0x04;
+            } else if ((diffLow & 0x05) == 0x05){  //data bit 3 is corrupt (p2 + p0)
+                lowNibble ^= 0x08;
+            } else if ((diffLow & 0x03) == 0x03){  //data bit 1 is corrupt (p0 + p1)
+                lowNibble ^= 0x02;
+            }
+        } else if (flippedBits == 3){   //data bit 0 is corrupt. (p0 + p1 + p2)
+            lowNibble ^= 0x01;
+        }
     }
 
     *decodedByte = (highNibble << 4) | lowNibble;
