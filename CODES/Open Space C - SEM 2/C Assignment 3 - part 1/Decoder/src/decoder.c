@@ -1,11 +1,5 @@
 #include "decoder.h"
 
-bool TestBitInByte(uint8_t byte, uint8_t position){
-    uint8_t mask = 1 << position;               //shift the bit to the position you want to test.
-    bool testedBit = ((byte & mask) != 0);      //returns the 0 if tested bit isn't set and 1 if it is set. 
-    return testedBit;
-}
-
 uint8_t CalculateParity(uint8_t nibble){
     //calculate the data bit.
     uint8_t d3 = (nibble >> 3) & 0x01;
