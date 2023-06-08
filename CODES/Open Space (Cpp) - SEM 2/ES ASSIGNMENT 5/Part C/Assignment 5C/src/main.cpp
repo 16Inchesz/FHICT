@@ -7,8 +7,9 @@
 #define BUTTON_FAST_PIN PB3
 #define LED_0_PIN PD5
 #define LED_1_PIN PD6
-#define LED_2_PIN PD8
-#define LED_3_PIN PD9
+#define LED_2_PIN PB0
+#define LED_3_PIN PB1
+#define LED_4_PIN PB5
 
 // Digital pin masks for buttons and LEDs
 #define BUTTON_SLOW_MASK _BV(BUTTON_SLOW_PIN)
@@ -17,14 +18,16 @@
 #define LED_1_MASK _BV(LED_1_PIN)
 #define LED_2_MASK _BV(LED_2_PIN)
 #define LED_3_MASK _BV(LED_3_PIN)
+#define LED_4_MASK _BV(LED_4_PIN)
 
 // Counter variable
 volatile uint8_t counter = 0;
-volatile uint8_t compareValue = 6250;
-volatile uint8_t maxCompareValue = 62500;
+volatile uint16_t compareValue = 6250;
+volatile uint16_t maxCompareValue = 62500;
 
 // millis counter interval
 const long interval = 500;
+volatile unsigned long singleSecond = 1000;
 
 // Variables for button states
 volatile bool buttonSlowState = HIGH;
@@ -36,10 +39,14 @@ volatile uint16_t timerCompareValue = 62500;
 
 void setup()
 {
-  // Set input (buttons) and output (LEDs) pins
-  DDRD |= B11100100;
+  Serial.begin(9600);
+  // Set input (buttons) pins
   DDRB &= ~BUTTON_SLOW_MASK;
   DDRB &= ~BUTTON_FAST_MASK;
+
+  // Set the LEDs as outputs.
+  DDRD |= LED_0_MASK | LED_1_MASK;
+  DDRB |= LED_2_MASK | LED_3_MASK | LED_4_MASK;
 
   // Enable pin change interrupt on button pins
   PCICR |= _BV(PCIE0);
@@ -50,7 +57,7 @@ void setup()
   // Clear TCCR1A register
   TCCR1A = 0; 
   // Set WGM12 for CTC mode, CS11 and CS10 for prescaler 64
-  TCCR1B = _BV(WGM12) | _BV(CS11) | _BV(CS10); 
+  TCCR1B |= _BV(WGM12) | _BV(CS11) | _BV(CS10); 
 
   // Set output compare match value for desired timer speed
   OCR1A = timerCompareValue;
@@ -84,10 +91,24 @@ void handleButtonFast()
   buttonFastState = LOW;
 }
 
-/// @brief Function to display the counter on the LEDs.
+/// @brief Function to display the counter on the LEDs using binary logic.
 void displayCounter()
 {
-  PORTD = (PORTD & B11100011) | (counter << 2); // Display counter on LED pins (PD5, PD6, PD8, PD9)
+    PORTD &= ~(LED_0_MASK | LED_1_MASK);
+    PORTB &= ~(LED_2_MASK | LED_3_MASK);
+
+    if (counter & 0b0001){
+      PORTD |= LED_0_MASK;
+    }
+    if (counter & 0b0010){
+      PORTD |= LED_1_MASK;
+    }
+    if (counter & 0b0100){
+      PORTB |= LED_2_MASK;
+    }
+    if (counter & 0b1000){
+      PORTB |= LED_3_MASK;
+    }
 }
 
 /// @brief This interrupt serivce acts as the button handler for this system.
@@ -107,7 +128,7 @@ ISR(PCINT0_vect)
   }
 }
 
-/// @brief This interrupts service acts as timer we use in order to display the values on the LEDs and blinik the built in LED.
+/// @brief This interrupts service acts as the timer we use in order to display the values on the LEDs and blinik the built in LED.
 /// @param  TIMER1_COMPA_vect
 ISR(TIMER1_COMPA_vect)
 {
@@ -121,11 +142,13 @@ ISR(TIMER1_COMPA_vect)
   displayCounter();
 
   //turn on built in LED.
-  if (millis() % 1000 < interval){
-    PORTD |= _BV(PD4);
+  if (millis() % singleSecond  > interval){
+    PORTB |= LED_4_MASK;
+    PORTB |= LED_4_MASK;
   }
   else{
-    PORTD &= ~_BV(PD4);
+    PORTB &= ~LED_4_MASK;
+    PORTB &= ~LED_4_MASK;
   }
 
   cli();  //Disable interrupts.
