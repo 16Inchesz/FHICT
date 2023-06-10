@@ -37,7 +37,7 @@ int main(int argc, char const *argv[])
             fputc(decodedByte, outputFile);
         } else{
             //in case something goes wrong.
-            printf("ERROR: failed to encode Byte");
+            printf("ERROR: failed to decode Byte");
         }
     }
 

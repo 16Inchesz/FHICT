@@ -1,52 +1,99 @@
-CC		:= gcc
+#
+# 'make'        build executable file 'main'
+# 'make clean'  removes all .o and executable files
+#
+
+# define the C compiler to use
+CC = gcc
+
+# define any compile-time flags
 CFLAGS	:= -Wall -Wextra -g
 
-BIN		:= output
+# define library paths in addition to /usr/lib
+#   if I wanted to include libraries not in /usr/lib I'd specify
+#   their path using -Lpath, something like:
+LFLAGS =
+
+# define output directory
+OUTPUT	:= output
+
+# define source directory
 SRC		:= src
+
+# define include directory
 INCLUDE	:= include
+
+# define lib directory
 LIB		:= lib
 
-LIBRARIES	:=
-
 ifeq ($(OS),Windows_NT)
-EXECUTABLE	:= main.exe
+MAIN	:= main.exe
+SOURCEDIRS	:= $(SRC)
+INCLUDEDIRS	:= $(INCLUDE)
+LIBDIRS		:= $(LIB)
+FIXPATH = $(subst /,\,$1)
+RM			:= rm -f
+MD	:= mkdir
 else
-EXECUTABLE	:= main
-endif
-
+MAIN	:= main
 SOURCEDIRS	:= $(shell find $(SRC) -type d)
 INCLUDEDIRS	:= $(shell find $(INCLUDE) -type d)
 LIBDIRS		:= $(shell find $(LIB) -type d)
+FIXPATH = $1
+RM = rm -f
+MD	:= mkdir -p
+endif
 
-CINCLUDES	:= $(patsubst %,-I%, $(INCLUDEDIRS:%/=%))
-CLIBS		:= $(patsubst %,-L%, $(LIBDIRS:%/=%))
+# define any directories containing header files other than /usr/include
+INCLUDES	:= $(patsubst %,-I%, $(INCLUDEDIRS:%/=%))
 
+# define the C libs
+LIBS		:= $(patsubst %,-L%, $(LIBDIRS:%/=%))
+
+# define the C source files
 SOURCES		:= $(wildcard $(patsubst %,%/*.c, $(SOURCEDIRS)))
-ALLOBJECTS  := $(SOURCES:.c=.o)
-TESTOBJECTS :=  $(filter-out src/main.o, $(ALLOBJECTS))
-RELEASEOBJECTS := $(filter-out src/main_test.o, $(ALLOBJECTS))
 
-INCLUDETEST	:= -I/c/Repositories/FHICT/CODES/Unity-master/src
-LIBUNITY := /c/Repositories/FHICT/CODES/Unity-master/src/libunity.a
+# define the C object files 
+OBJECTS		:= $(SOURCES:.c=.o)
 
-.SUFFIXES=.c .h
+# define the dependency output files
+DEPS		:= $(OBJECTS:.o=.d)
 
-all: $(BIN)/$(EXECUTABLE) $(BIN)/main_test
+#
+# The following part of the makefile is generic; it can be used to 
+# build any executable just by changing the definitions above and by
+# deleting dependencies appended to the file from 'make depend'
+#
+
+OUTPUTMAIN	:= $(call FIXPATH,$(OUTPUT)/$(MAIN))
+
+all: $(OUTPUT) $(MAIN)
+	@echo Executing 'all' complete!
+
+$(OUTPUT):
+	$(MD) $(OUTPUT)
+
+$(MAIN): $(OBJECTS) 
+	$(CC) $(CFLAGS) $(INCLUDES) -o $(OUTPUTMAIN) $(OBJECTS) $(LFLAGS) $(LIBS)
+
+# include all .d files
+-include $(DEPS)
+
+# this is a suffix replacement rule for building .o's and .d's from .c's
+# it uses automatic variables $<: the name of the prerequisite of
+# the rule(a .c file) and $@: the name of the target of the rule (a .o file) 
+# -MMD generates dependency output files same name as the .o file
+# (see the gnu make manual section about automatic variables)
+.c.o:
+	$(CC) $(CFLAGS) $(INCLUDES) -c -MMD $<  -o $@
 
 .PHONY: clean
 clean:
-	-$(RM) $(BIN)/$(EXECUTABLE) $(BIN)/main_test
-	-$(RM) $(ALLOBJECTS)
-
+	$(RM) $(OUTPUTMAIN)
+	$(RM) $(call FIXPATH,$(OBJECTS))
+	$(RM) $(call FIXPATH,$(DEPS))
+	@echo Cleanup complete!
 
 run: all
-	./$(BIN)/$(EXECUTABLE)
-
-src/%.o: src/%.c
-	$(CC) $(CFLAGS) $(CINCLUDES) $(INCLUDETEST) -c $^ -o $@ $(LIBRARIES)
-
-$(BIN)/$(EXECUTABLE): $(RELEASEOBJECTS)
-	$(CC) $(CFLAGS) $(CINCLUDES) $(CLIBS) $^ -o $@ $(LIBRARIES)
-
-$(BIN)/main_test: $(TESTOBJECTS)
-	$(CC) $(CFLAGS) $(CINCLUDES) $^ -o $@ $(LIBRARIES) $(LIBUNITY)
+	./$(OUTPUTMAIN)
+	@echo Executing 'run: all' complete!

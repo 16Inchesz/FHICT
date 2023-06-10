@@ -1,0 +1,25 @@
+[plantuml, state-diagram, svg]
+-----
+skinparam handwritten true
+skinparam defaultFontName "Ink Free"
+skinparam defaultTextAlignment center
+
+state TimerInterrupt{
+    [*] --> READ_BUTTON_STATE
+    READ_BUTTON_STATE --> HandleButtonSLow : button 1 pressed
+    READ_BUTTON_STATE --> HandleButtonFast : button 2 pressed
+}
+
+state ButtonInterrupt{
+    [*] --> COUNTER : counter++
+    COUNTER --> COUNTER : counter != 15
+    COUNTER --> DISPLAY_COUNTER : DisplayCounter()
+
+    [*] --> BLINK_LED : blink built-in LED
+
+    [*] --> DISABLE : cli() 
+    DISABLE --> ADJUST_TIMER : adjust timer compare value
+    ADJUST_TIMER --> ENABLE : sei()
+}
+
+-----
