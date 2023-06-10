@@ -5,11 +5,11 @@ bool TransmitByte(uint8_t encodedByte, uint8_t *transmittedByte, int *FlippedBit
         return false;
     }
 
-    // Flipping a random bit position
+    //Flipping a random bit position
     int bitPosition = rand() % NUMBER_OF_BITS;
     *transmittedByte = encodedByte ^ (1 << bitPosition);
 
-    // Update the array of flipped bits.
+    //Update the amount bit position in the array.
     FlippedBits[bitPosition]++;
 
     return true;

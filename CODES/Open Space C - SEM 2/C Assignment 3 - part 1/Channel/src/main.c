@@ -33,11 +33,14 @@ int main(int argc, char const *argv[])
     srand(time(NULL));
 
     //Bit Flipping algorithm
+    //Must use casting. uint8_t does not process value of -1
     while((encodedByte = fgetc(inputFile)) != EOF){
-        
+        //apply interference to encodedByte if function is true.
         if(TransmitByte((uint8_t)encodedByte, &transmittedByte, FlippedBits)){
+            //print transmitted to output file.
             fputc(transmittedByte, outputFile);
         } else {
+            //in case something goes wrong.
             printf("ERROR: failed to transmit Byte");
         }
     }
