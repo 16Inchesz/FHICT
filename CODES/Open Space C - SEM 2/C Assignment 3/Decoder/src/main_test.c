@@ -52,7 +52,7 @@ void TestDecodeByteNoInterference(void){
 /// @param  void
 void TestDecodeByteWithInterference1(void){
     //assign
-    uint8_t transmittedByteHigh = 0x57; //0b01010111
+    uint8_t transmittedByteHigh = 0x57; //0b01010110
     uint8_t transmittedByteLow = 0x56;  //0b01010110
     uint8_t expectedByte = 0x66;        //0b01100110
     bool expectedResult = true;

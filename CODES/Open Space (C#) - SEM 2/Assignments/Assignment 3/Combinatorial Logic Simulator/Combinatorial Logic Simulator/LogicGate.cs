@@ -69,7 +69,14 @@ namespace Combinatorial_Logic_Simulator
         /// <param name="inputPin"></param>
         public void ConnectOutput(int outputPin, ILogicComponent other, int inputPin)
         {
-            Connection connection = new Connection(this, outputPin, other, inputPin);
+            foreach(Connection c in connections)
+            {
+                if(c.OutputPin == outputPin)
+                {
+                    throw new ConnectionAlreadyCreated("Connection already created");
+                }
+            }
+            Connection connection = new Connection(outputPin, inputPin);
             connections.Add(connection);    
         }
     }

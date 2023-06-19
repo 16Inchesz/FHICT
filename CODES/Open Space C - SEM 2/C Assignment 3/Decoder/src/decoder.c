@@ -66,7 +66,7 @@ bool decodeByte(uint8_t transmittedByteHigh, uint8_t transmittedByteLow, uint8_t
 
     if(errorLow){
         //calculate difference between calculated and transmitted parity bits.
-        uint8_t diffLow = parityLow ^ (transmittedByteLow >> 4);
+        uint8_t diffLow = parityLow ^ (transmittedByteLow >> 4);    //use and operator.
 
         // find number of bits that are flipped.
         int flippedBits = 0;

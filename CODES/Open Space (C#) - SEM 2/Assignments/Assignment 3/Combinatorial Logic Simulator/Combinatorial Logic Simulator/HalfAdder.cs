@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Combinatorial_Logic_Simulator
 {
-    public class HalfAdder : ILogicComponent
+    public class HalfAdder
     {
         //composition: make instances of these classes without directly inheriting.
         private LogicGate andGate;
@@ -83,7 +83,7 @@ namespace Combinatorial_Logic_Simulator
             {
                 return xorGate.GetOutput(0);
             }
-            else if(pin == 1)
+            else if (pin == 1)
             {
                 return andGate.GetOutput(0);
             }
@@ -110,18 +110,6 @@ namespace Combinatorial_Logic_Simulator
             {
                 throw new InvalidPinException($"{pin} is not a valid input pin for {GetType().Name}");
             }
-        }
-
-        /// <summary>
-        /// method used to connect components output with another components input.
-        /// </summary>
-        /// <param name="outputPin"></param>
-        /// <param name="other"></param>
-        /// <param name="inputPin"></param>
-        /// <exception cref="NotImplementedException"></exception>
-        public void ConnectOutput(int outputPin, ILogicComponent other, int inputPin)
-        {
-            throw new NotImplementedException("ConnectOutput method is not implemented for HalfAdder.");
         }
     }
 }

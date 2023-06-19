@@ -6,7 +6,7 @@ class Program
     static void Main(string[] args)
     {
         // Create instances of the logic gates and half adder.
-        AndGate andGate = new AndGate();
+        LogicGate andGate = new AndGate();
         OrGate orGate = new OrGate();
         NotGate notGate = new NotGate();
         XorGate xorGate = new XorGate();
@@ -81,6 +81,56 @@ class Program
                     Console.WriteLine($"Error: {ex.Message}");  //exception in case of wrong input pin.
                 }
             }
+        }
+        Console.WriteLine("\nLogic Test Circuit:");
+        Console.WriteLine("input_A      input_B      input_C      input_D      output");
+
+        //create the inputs.
+        bool A = false;
+        bool B = true;
+        bool C = false;
+        bool D = false;
+
+        try
+        {
+            //create instances of gates.
+            AndGate andGate1 = new AndGate();
+            AndGate andGate2 = new AndGate();
+            OrGate orGate1 = new OrGate();
+            NotGate notGate1 = new NotGate();
+
+            //set inputs
+            andGate1.SetInput(0, A);
+            andGate1.SetInput(1, B);
+            notGate1.SetInput(0, C);
+            andGate2.SetInput(1, D);
+
+            //----------------------Connections--------------------------------
+            //connection between andGate1 and orGate
+            Connection connection1 = new Connection(Convert.ToInt16(andGate1.GetOutput(0)), Convert.ToInt16(orGate1.GetInput(0)));
+            orGate1.SetInput(connection1.InputPin, Convert.ToBoolean(connection1.OutputPin));
+
+            //connection between notGate and orGate.
+            Connection connection2 = new Connection(Convert.ToInt16(notGate1.GetOutput(0)), Convert.ToInt16(orGate1.GetInput(1)));
+            orGate1.SetInput(connection2.InputPin, Convert.ToBoolean(connection2.OutputPin));
+
+            //connection between orGate and andGate2
+            Connection connection3 = new Connection(Convert.ToInt16(orGate1.GetOutput(0)), Convert.ToInt16(andGate2.GetInput(0)));
+            andGate2.SetInput(connection3.InputPin, D);
+
+            //results
+            try
+            {
+                Console.WriteLine($"{A}        {B}        {C}        {D}        {andGate2.GetOutput(0)} ");
+            }
+            catch (InvalidPinException ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+            }
+        }
+        catch (InvalidPinException ex)
+        {       
+            Console.WriteLine($"Error: {ex.Message}");
         }
     }
 }

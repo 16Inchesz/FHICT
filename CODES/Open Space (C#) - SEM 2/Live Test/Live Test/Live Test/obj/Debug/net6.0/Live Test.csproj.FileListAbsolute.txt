@@ -1,0 +1,15 @@
+C:\Repositories\FHICT\CODES\Open Space (C#) - SEM 2\Live Test\Live Test\Live Test\bin\Debug\net6.0\Live Test.exe
+C:\Repositories\FHICT\CODES\Open Space (C#) - SEM 2\Live Test\Live Test\Live Test\bin\Debug\net6.0\Live Test.deps.json
+C:\Repositories\FHICT\CODES\Open Space (C#) - SEM 2\Live Test\Live Test\Live Test\bin\Debug\net6.0\Live Test.runtimeconfig.json
+C:\Repositories\FHICT\CODES\Open Space (C#) - SEM 2\Live Test\Live Test\Live Test\bin\Debug\net6.0\Live Test.dll
+C:\Repositories\FHICT\CODES\Open Space (C#) - SEM 2\Live Test\Live Test\Live Test\bin\Debug\net6.0\Live Test.pdb
+C:\Repositories\FHICT\CODES\Open Space (C#) - SEM 2\Live Test\Live Test\Live Test\obj\Debug\net6.0\Live Test.csproj.AssemblyReference.cache
+C:\Repositories\FHICT\CODES\Open Space (C#) - SEM 2\Live Test\Live Test\Live Test\obj\Debug\net6.0\Live Test.GeneratedMSBuildEditorConfig.editorconfig
+C:\Repositories\FHICT\CODES\Open Space (C#) - SEM 2\Live Test\Live Test\Live Test\obj\Debug\net6.0\Live Test.AssemblyInfoInputs.cache
+C:\Repositories\FHICT\CODES\Open Space (C#) - SEM 2\Live Test\Live Test\Live Test\obj\Debug\net6.0\Live Test.AssemblyInfo.cs
+C:\Repositories\FHICT\CODES\Open Space (C#) - SEM 2\Live Test\Live Test\Live Test\obj\Debug\net6.0\Live Test.csproj.CoreCompileInputs.cache
+C:\Repositories\FHICT\CODES\Open Space (C#) - SEM 2\Live Test\Live Test\Live Test\obj\Debug\net6.0\Live Test.dll
+C:\Repositories\FHICT\CODES\Open Space (C#) - SEM 2\Live Test\Live Test\Live Test\obj\Debug\net6.0\refint\Live Test.dll
+C:\Repositories\FHICT\CODES\Open Space (C#) - SEM 2\Live Test\Live Test\Live Test\obj\Debug\net6.0\Live Test.pdb
+C:\Repositories\FHICT\CODES\Open Space (C#) - SEM 2\Live Test\Live Test\Live Test\obj\Debug\net6.0\Live Test.genruntimeconfig.cache
+C:\Repositories\FHICT\CODES\Open Space (C#) - SEM 2\Live Test\Live Test\Live Test\obj\Debug\net6.0\ref\Live Test.dll
