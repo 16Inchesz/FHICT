@@ -2,18 +2,19 @@
 #include <WiFi.h>
 #include <WebSocketsClient.h>
 
-// WiFi credentials
+//wiFi credentials
 const char* ssid = "Generaal de Kockstraat 1a";
 const char* password = "12345678";
 
-// WebSocket server address
+//webSocket server address
 const char* serverAddress = "127.0.0.1";
 const uint16_t serverPort = 1880;
 const char* serverPath = "/ws/challenge";
 
-// Create a WebSocket client object
+//create a WebSocket client object
 WebSocketsClient webSocket;
 
+//function to keep track if the server is alive and receive messages.
 void onWebSocketEvent(WStype_t type, uint8_t* payload, size_t length) {
   switch (type) {
     case WStype_CONNECTED:
@@ -32,7 +33,7 @@ void onWebSocketEvent(WStype_t type, uint8_t* payload, size_t length) {
 void setup() {
   Serial.begin(115200);
 
-  // Connect to Wi-Fi
+  //connect to Wi-Fi
   WiFi.begin(ssid, password);
   while (WiFi.status() != WL_CONNECTED) {
     delay(5000);
@@ -40,7 +41,7 @@ void setup() {
   }
   Serial.println("Connected to WiFi");
 
-  // Set up WebSocket event handler
+  //set up WebSocket event handler
   webSocket.begin(serverAddress, serverPort, serverPath);
   webSocket.onEvent(onWebSocketEvent);
 }
@@ -48,9 +49,9 @@ void setup() {
 void loop() {
   webSocket.loop();
 
-  // Send a message to the WebSocket server
+  //send a message to the WebSocket server
   if (webSocket.isConnected()) {
     webSocket.sendTXT("Hello from ESP32!");
-    delay(5000);  // Send a message every 5 seconds
+    delay(5000);  //send a message every 5 seconds
   }
 }

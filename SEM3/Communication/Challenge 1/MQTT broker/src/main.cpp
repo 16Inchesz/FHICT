@@ -2,16 +2,17 @@
 #include <WiFi.h>
 #include <PubSubClient.h>
 
-const char* ssid = "Generaal de Kockstraat 1a";
-const char* password = "12345678";
+const char* ssid = "network id";
+const char* password = "network password";
 const char* mqttServer = "test.mosquitto.org";
 const int mqttPort = 1883;
-const char* mqttTopic = "nr_workshop_greetings";
+const char* mqttTopic = "nr_workshop_greetings";  //topic to subscribe to
 const char* mqttClientId = "ESP32Client";
 
 WiFiClient espClient;
 PubSubClient client(espClient);
 
+//fucntion to connect to the wifi.
 void setup_wifi() {
   delay(10);
   Serial.println();
@@ -31,6 +32,7 @@ void setup_wifi() {
   Serial.println(WiFi.localIP());
 }
 
+//fucntion to connect/reconnect to mqtt.
 void reconnect() {
   while (!client.connected()) {
     Serial.print("Attempting MQTT connection...");
@@ -45,6 +47,7 @@ void reconnect() {
   }
 }
 
+
 void setup() {
   Serial.begin(115200);
   setup_wifi();
@@ -58,11 +61,11 @@ void loop() {
   
   client.loop();
 
-  // Publish a message to the MQTT topic
+  //publish a message to the MQTT topic
   String message = "Hello from ESP32!";
   client.publish(mqttTopic, message.c_str());
 
-  // Publish every 10 seconds
+  //publish every 10 seconds, see screenshot in document.
   delay(10000);
 }
 
