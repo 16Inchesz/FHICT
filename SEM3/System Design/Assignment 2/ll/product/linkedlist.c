@@ -14,15 +14,18 @@
 int add_first(ITEM **list, int value)
 {
 	//insert node.
-	ITEM* temp = (ITEM*)malloc(sizeof(struct ITEM));	
+	ITEM* node = (ITEM*)malloc(sizeof(struct ITEM));	
 
-	temp->value = value;
-	temp->next = NULL;
+	//assign values
+	node->value = value;
+	node->next = NULL;
+
+	//if linked list is empty.
 	if (*list == NULL) {
-		*list = temp;
+		*list = node;
 	} else {
-		temp->next = *list;
-		*list = temp;
+		node->next = *list;
+		*list = node;
 	}
 	return 0;
 }
@@ -36,10 +39,24 @@ int add_first(ITEM **list, int value)
 
 int add_last(ITEM **list, int value)
 {
+	//insert node
+	ITEM* node = (ITEM*)malloc(sizeof(struct ITEM));
+
+	//assign values.	
+	node->value = value;
+	node->next = NULL;
+
+	struct ITEM* last_node = *list;
+
+	//if linked list is empty.
 	if (*list == NULL) {
-
+		*list = node;
 	} else {
-
+		//iterate through the linked list.
+		while(last_node->next != NULL){
+			last_node = last_node->next;
+		}
+		last_node->next = node;
 	}
 	return 0;
 }
@@ -69,7 +86,7 @@ int add_after(ITEM *list, ITEM *c_item, int value)
 int rem_first(ITEM **list)
 {
 	if (*list == NULL) {
-
+		return 0;
 	}
 	return 0;
 }
