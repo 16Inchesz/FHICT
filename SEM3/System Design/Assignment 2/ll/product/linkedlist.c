@@ -104,7 +104,7 @@ int add_after(ITEM *list, ITEM *c_item, int value)
 	//iterate through list
 	while (current_node != NULL) {
 		//current item found
-		if (current_node = c_item) {
+		if (current_node == c_item) {
 			node->next = c_item->next;
 			c_item->next = node;
 			return 0;
@@ -178,10 +178,29 @@ int rem_last(ITEM **list)
 
 int rem_after(ITEM *list, ITEM *c_item)
 {
-	if (list == NULL) {
+	if (list == NULL) {	//add c_item->next == NULL here?
 		return -1;
 	}
-	return 0;
+
+	ITEM* current_node = list;
+	
+	//iterate through list
+	while (current_node != NULL) {
+		if (current_node == c_item){
+			if (current_node->next == NULL){	//c_item->next == NULL
+				return -1;
+			} else {
+				ITEM* temp = current_node->next->next;
+				free(current_node->next);
+				current_node->next = temp;
+				return 0;
+			}
+		}
+		current_node = current_node->next;
+	}
+
+	//loop didn't find the current item
+	return -1;
 }
 
 /*********************************************************/
@@ -191,6 +210,14 @@ int rem_after(ITEM *list, ITEM *c_item)
 
 void clean(ITEM **list)
 {
+	ITEM* current = *list;
+	ITEM* next;
+
+	while (current != NULL) {
+		next = current->next;
+		free(current);
+		current = next;
+	}
 	return;
 }
 
