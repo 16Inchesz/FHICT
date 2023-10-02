@@ -1,6 +1,10 @@
 /* SD exercise 1: simple linked list API */
 /* Author : R. Frenken                   */
-/* Version : 1.0			 */
+/* Version : 1.0			 			 */
+/* Johnson Domacasse					 */
+/* referenece: geeksforgeeks, 			 */
+/* renata frenken YT channel, 			 */
+/* mycodeschool YT channel				 */
 #include "linkedlist.h"
 #include <stdlib.h>
 
@@ -15,6 +19,11 @@ int add_first(ITEM **list, int value)
 {
 	//insert node.
 	ITEM* node = (ITEM*)malloc(sizeof(struct ITEM));	
+
+	//check if the node was succesfully created
+	if (node == NULL) {
+		return -1;
+	}
 
 	//assign values
 	node->value = value;
@@ -41,6 +50,11 @@ int add_last(ITEM **list, int value)
 {
 	//insert node
 	ITEM* node = (ITEM*)malloc(sizeof(struct ITEM));
+
+	//check if the node was succesfully created(enough memory)
+	if (node == NULL) {
+		return -1;
+	}
 
 	//assign values.	
 	node->value = value;
@@ -69,12 +83,38 @@ int add_last(ITEM **list, int value)
 
 int add_after(ITEM *list, ITEM *c_item, int value)
 {
-	if (list == NULL) {
-
-	} else {
-
+	if (list == NULL || c_item == NULL) {
+		return -1;
 	}
-	return 0;
+	
+	//insert new node.
+	ITEM* node = (ITEM*)malloc(sizeof(struct ITEM));
+	
+	//check if node was succesfully created. (enough memory)
+	if (node == NULL) {
+		return -1;
+	}
+	
+	//assign node values.
+	node->value = value;
+	node->next = NULL;
+
+	ITEM* current_node = list;
+	
+	//iterate through list
+	while (current_node != NULL) {
+		//current item found
+		if (current_node = c_item) {
+			node->next = c_item->next;
+			c_item->next = node;
+			return 0;
+		}
+		current_node = current_node->next;
+	}
+
+	//loop didn't find the current item.
+	free(node);
+	return -1;
 }
 
 
@@ -86,7 +126,12 @@ int add_after(ITEM *list, ITEM *c_item, int value)
 int rem_first(ITEM **list)
 {
 	if (*list == NULL) {
-		return 0;
+		return -1;
+	} else {
+		//make temp variable to delte first element.
+		ITEM* temp = *list;
+		*list = temp->next;
+		free(temp);
 	}
 	return 0;
 }
@@ -100,8 +145,28 @@ int rem_first(ITEM **list)
 int rem_last(ITEM **list)
 {
 	if (*list == NULL) {
-		
+		return -1;
 	}
+	
+	ITEM* temp = *list;
+	//1 item in list
+	if (temp->next == NULL) {
+		free(temp);
+		return 0;
+	}
+
+	ITEM* before_last = *list;
+	//iterate through list
+	while (before_last->next->next != NULL) {
+		before_last = before_last->next;
+	}
+
+	//free last item
+	free(before_last->next);
+
+	//assign new last item.
+	before_last->next = NULL;
+
 	return 0;
 }
 
@@ -114,7 +179,7 @@ int rem_last(ITEM **list)
 int rem_after(ITEM *list, ITEM *c_item)
 {
 	if (list == NULL) {
-		
+		return -1;
 	}
 	return 0;
 }
@@ -126,7 +191,6 @@ int rem_after(ITEM *list, ITEM *c_item)
 
 void clean(ITEM **list)
 {
-	free(*list);
 	return;
 }
 
