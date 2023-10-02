@@ -2,7 +2,7 @@
 #define LINKEDLISTH
 /* SD exercise 1: simple linked list API */
 /* Author : R. Frenken                   */
-/* Version : 1.0			 */
+/* Version : 1.0						 */
 
 typedef struct ITEM {
 	int value;

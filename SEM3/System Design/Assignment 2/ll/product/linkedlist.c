@@ -13,7 +13,17 @@
 
 int add_first(ITEM **list, int value)
 {
-	/* Implement */
+	//insert node.
+	ITEM* temp = (ITEM*)malloc(sizeof(struct ITEM));	
+
+	temp->value = value;
+	temp->next = NULL;
+	if (*list == NULL) {
+		*list = temp;
+	} else {
+		temp->next = *list;
+		*list = temp;
+	}
 	return 0;
 }
 
@@ -26,7 +36,11 @@ int add_first(ITEM **list, int value)
 
 int add_last(ITEM **list, int value)
 {
-	/* Implement */
+	if (*list == NULL) {
+
+	} else {
+
+	}
 	return 0;
 }
 
@@ -38,7 +52,11 @@ int add_last(ITEM **list, int value)
 
 int add_after(ITEM *list, ITEM *c_item, int value)
 {
-	/* Implement */
+	if (list == NULL) {
+
+	} else {
+
+	}
 	return 0;
 }
 
@@ -50,7 +68,9 @@ int add_after(ITEM *list, ITEM *c_item, int value)
 
 int rem_first(ITEM **list)
 {
-	/* Implement */
+	if (*list == NULL) {
+
+	}
 	return 0;
 }
 
@@ -62,7 +82,9 @@ int rem_first(ITEM **list)
 
 int rem_last(ITEM **list)
 {
-	/* Implement */
+	if (*list == NULL) {
+		
+	}
 	return 0;
 }
 
@@ -74,7 +96,9 @@ int rem_last(ITEM **list)
 
 int rem_after(ITEM *list, ITEM *c_item)
 {
-	/* Implement */
+	if (list == NULL) {
+		
+	}
 	return 0;
 }
 
@@ -85,7 +109,7 @@ int rem_after(ITEM *list, ITEM *c_item)
 
 void clean(ITEM **list)
 {
-	/* Implement */
+	free(*list);
 	return;
 }
 

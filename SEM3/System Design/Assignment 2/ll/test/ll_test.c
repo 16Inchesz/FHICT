@@ -27,10 +27,9 @@ void test_add_first(void)
 
 int main (int argc, char * argv[])
 {
-    UnityBegin();
-
-    /* Put your UTs here */
-    MY_RUN_TEST(test_add_first);
-
-    return UnityEnd();
+  UnityBegin();
+  
+  //tests
+  MY_RUN_TEST(test_add_first);
+  return UnityEnd();
 }
