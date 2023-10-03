@@ -86,7 +86,7 @@ void test_add_last_multiple_elements(void){
   clean(&list);
 }
 
-void test_add_after_no_elements(void){
+void test_add_after_NULL_list(void){
   int ret;
   ITEM* list = NULL;
   ITEM* c_item = list;
@@ -151,6 +151,155 @@ void test_add_after_multiple_elements(void){
   clean(&list);
 }
 
+void test_rem_first_multiple_elements(void){
+  int ret;
+  ITEM* list = NULL;
+  add_first(&list, 3);
+  add_first(&list, 2);
+  add_first(&list, 1);
+
+  //verify behaviour
+  ret = rem_first(&list);
+  TEST_ASSERT_EQUAL(0, ret);
+
+  //verify order
+  TEST_ASSERT_EQUAL(2, list->value);
+  TEST_ASSERT_EQUAL(3, list->next->value);
+
+  clean(&list);
+}
+
+void test_rem_first_single_element(void){
+  int ret;
+  ITEM* list = NULL;
+  add_first(&list, 3);
+
+  //verify behaviour
+  ret = rem_first(&list);
+  TEST_ASSERT_EQUAL(0, ret);
+
+  clean(&list);
+}
+
+void test_rem_first_NULL_list(void){
+  int ret;
+  ITEM* list = NULL;
+
+  //verify behaviour
+  ret = rem_first(&list);
+  TEST_ASSERT_EQUAL(-1, ret);
+
+  clean(&list);
+}
+
+void test_rem_last_multiple_elements(void){
+  int ret;
+  ITEM* list = NULL;
+  add_first(&list, 3);
+  add_first(&list, 2);
+  add_first(&list, 1);
+
+  //verify behaviour
+  ret = rem_last(&list);
+  TEST_ASSERT_EQUAL(0, ret);
+
+  //verify order
+  TEST_ASSERT_EQUAL(1, list->value);
+  TEST_ASSERT_EQUAL(2, list->next->value);
+
+  clean(&list);
+}
+
+void test_rem_last_single_element(void){
+  int ret;
+  ITEM* list = NULL;
+  add_first(&list, 3);
+
+  //verify behaviour
+  ret = rem_last(&list);
+  TEST_ASSERT_EQUAL(0, ret);
+}
+
+void test_rem_last_NULL_list(void){
+  int ret;
+  ITEM* list = NULL;
+
+  //verify behaviour
+  ret = rem_last(&list);
+  TEST_ASSERT_EQUAL(-1, ret);
+
+  clean(&list);
+}
+
+void test_rem_after_NULL_list(void){
+  int ret;
+  ITEM* list = NULL;
+  ITEM* c_item = list;
+
+  //verify behaviour
+  ret = rem_after(list, c_item);
+  TEST_ASSERT_EQUAL(-1, ret);
+
+  clean(&list);
+}
+
+void test_rem_after_c_item_not_found(void){
+  int ret;
+  ITEM* list = NULL;
+
+  add_first(&list, 3);
+  add_first(&list, 2);
+
+  ITEM* c_item = list->next->next;  //list of 2 elements, c_item points to NULL.
+
+  //verify behaviour
+  ret = rem_after(list, c_item);
+  TEST_ASSERT_EQUAL(-1, ret);
+
+  clean(&list);
+}
+
+void test_rem_after_c_item_last_element(void){
+  int ret;
+  ITEM* list = NULL;
+
+  add_first(&list, 3);
+  add_first(&list, 2);
+
+  ITEM* c_item = list->next;  //list of 2 elements c_item is the last element.
+
+  //verify behaviour
+  ret = rem_after(list, c_item);
+  TEST_ASSERT_EQUAL(-1, ret);
+
+  //verify order
+  TEST_ASSERT_EQUAL(2, list->value);
+  TEST_ASSERT_EQUAL(3, list->next->value);
+
+  clean(&list);
+}
+
+void test_rem_after_multiple_elements(void){
+  int ret;
+  ITEM* list = NULL;
+
+  add_first(&list, 3);
+  add_first(&list, 2);
+  add_first(&list, 1);
+  
+  ITEM* c_item = list->next;  //list of 3 elements c_item is the second element.
+
+  //verify behaviour
+  ret = rem_after(list, c_item);
+  TEST_ASSERT_EQUAL(0, ret);
+
+  //verify order
+  TEST_ASSERT_EQUAL(1, list->value);
+  TEST_ASSERT_EQUAL(2, list->next->value);
+
+  clean(&list);
+}
+
 int main (int argc, char * argv[])
 {
   UnityBegin();
@@ -164,17 +313,27 @@ int main (int argc, char * argv[])
   MY_RUN_TEST(test_add_last_multiple_elements);
 
   //add_after
-  MY_RUN_TEST(test_add_after_no_elements);
+  MY_RUN_TEST(test_add_after_NULL_list);
   MY_RUN_TEST(test_add_after_c_item_NULL);
   MY_RUN_TEST(test_add_after_c_item_not_found);
   MY_RUN_TEST(test_add_after_multiple_elements);
 
   //rem_first
+  MY_RUN_TEST(test_rem_first_multiple_elements);
+  MY_RUN_TEST(test_rem_first_single_element);
+  MY_RUN_TEST(test_rem_first_NULL_list);
 
   //rem last
-
+  MY_RUN_TEST(test_rem_last_multiple_elements);
+  MY_RUN_TEST(test_rem_last_single_element);
+  MY_RUN_TEST(test_rem_last_NULL_list);
+  
   //rem_after
-
+  MY_RUN_TEST(test_rem_after_NULL_list);
+  MY_RUN_TEST(test_rem_after_c_item_not_found);
+  MY_RUN_TEST(test_rem_after_c_item_last_element);
+  MY_RUN_TEST(test_rem_after_multiple_elements);
+  
   //clean
 
 
