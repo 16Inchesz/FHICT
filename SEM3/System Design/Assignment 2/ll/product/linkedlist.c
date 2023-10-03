@@ -20,7 +20,7 @@ int add_first(ITEM **list, int value)
 	//insert node.
 	ITEM* node = (ITEM*)malloc(sizeof(struct ITEM));	
 
-	//check if the node was succesfully created
+	//check if the node was succesfully created (enough memory)
 	if (node == NULL) {
 		return -1;
 	}
