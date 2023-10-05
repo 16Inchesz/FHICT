@@ -1,4 +1,5 @@
 #include <string.h>
+#include <stdlib.h>
 
 #include "linkedlist.h"
 #include "unity.h"
@@ -52,6 +53,46 @@ void test_add_first_multiple_elements(void){
   clean(&list);
 }
 
+void test_add_first_negative_element(void){
+  int ret;
+  ITEM* list = NULL;
+
+  //verify behaviour
+  ret = add_first(&list, 3);
+  TEST_ASSERT_EQUAL(0, ret);
+  ret = add_first(&list, -1);
+  TEST_ASSERT_EQUAL(0, ret);
+  ret = add_first(&list, 1);
+  TEST_ASSERT_EQUAL(0, ret);
+
+  //verify order.
+  TEST_ASSERT_EQUAL(1, list->value);
+  TEST_ASSERT_EQUAL(-1, list->next->value);
+  TEST_ASSERT_EQUAL(3, list->next->next->value);
+
+  clean(&list);
+}
+
+void test_add_first_big_element(void){
+  int ret;
+  ITEM* list = NULL;
+
+  //verify behaviour
+  ret = add_first(&list, 3);
+  TEST_ASSERT_EQUAL(0, ret);
+  ret = add_first(&list, 100000);
+  TEST_ASSERT_EQUAL(0, ret);
+  ret = add_first(&list, 1);
+  TEST_ASSERT_EQUAL(0, ret);
+
+  //verify order.
+  TEST_ASSERT_EQUAL(1, list->value);
+  TEST_ASSERT_EQUAL(100000, list->next->value);
+  TEST_ASSERT_EQUAL(3, list->next->next->value);
+
+  clean(&list);
+}
+
 void test_add_last_no_elements(void){
   int ret;
   ITEM *list = NULL;
@@ -86,6 +127,46 @@ void test_add_last_multiple_elements(void){
   clean(&list);
 }
 
+void test_add_last_negative_element(void){
+  int ret;
+  ITEM* list = NULL;
+
+  //verify behaviour
+  ret = add_last(&list, 3);
+  TEST_ASSERT_EQUAL(0, ret);
+  ret = add_last(&list, -111111);
+  TEST_ASSERT_EQUAL(0, ret);
+  ret = add_last(&list, 1);
+  TEST_ASSERT_EQUAL(0, ret);
+
+  //verify order. 
+  TEST_ASSERT_EQUAL(3, list->value);
+  TEST_ASSERT_EQUAL(-111111, list->next->value);
+  TEST_ASSERT_EQUAL(1, list->next->next->value);
+
+  clean(&list);
+}
+
+void test_add_last_big_element(void){
+  int ret;
+  ITEM* list = NULL;
+
+  //verify behaviour
+  ret = add_last(&list, 3);
+  TEST_ASSERT_EQUAL(0, ret);
+  ret = add_last(&list, 111111);
+  TEST_ASSERT_EQUAL(0, ret);
+  ret = add_last(&list, 1);
+  TEST_ASSERT_EQUAL(0, ret);
+
+  //verify order. 
+  TEST_ASSERT_EQUAL(3, list->value);
+  TEST_ASSERT_EQUAL(111111, list->next->value);
+  TEST_ASSERT_EQUAL(1, list->next->next->value);
+
+  clean(&list);
+}
+
 void test_add_after_NULL_list(void){
   int ret;
   ITEM* list = NULL;
@@ -94,6 +175,7 @@ void test_add_after_NULL_list(void){
   //verify behaviour
   ret = add_after(list, c_item, 1);
   TEST_ASSERT_EQUAL(-1, ret);
+  TEST_ASSERT_NULL(list);
 
   clean(&list);
 }
@@ -188,6 +270,7 @@ void test_rem_first_NULL_list(void){
   //verify behaviour
   ret = rem_first(&list);
   TEST_ASSERT_EQUAL(-1, ret);
+  TEST_ASSERT_NULL(list);
 
   clean(&list);
 }
@@ -227,6 +310,7 @@ void test_rem_last_NULL_list(void){
   //verify behaviour
   ret = rem_last(&list);
   TEST_ASSERT_EQUAL(-1, ret);
+  TEST_ASSERT_NULL(list);
 
   clean(&list);
 }
@@ -239,6 +323,7 @@ void test_rem_after_NULL_list(void){
   //verify behaviour
   ret = rem_after(list, c_item);
   TEST_ASSERT_EQUAL(-1, ret);
+  TEST_ASSERT_NULL(list);
 
   clean(&list);
 }
@@ -300,17 +385,46 @@ void test_rem_after_multiple_elements(void){
   clean(&list);
 }
 
+void test_clean(void){
+  int ret;
+  ITEM* list = NULL;
+
+  add_first(&list, 11);
+  add_last(&list, 2);
+
+  ITEM* c_item = list;  //after first element
+
+  //verify behaviour
+  ret = add_after(list, c_item, 1);
+  TEST_ASSERT_EQUAL(0, ret);
+
+  //verify order
+  TEST_ASSERT_EQUAL(11, list->value);
+  TEST_ASSERT_EQUAL(1, list->next->value);
+  TEST_ASSERT_EQUAL(2, list->next->next->value);
+
+  //clean function
+  clean(&list);
+
+  TEST_ASSERT_NULL(list);
+}
+
 int main (int argc, char * argv[])
 {
   UnityBegin();
+
   
   //add_first
   MY_RUN_TEST(test_add_first_no_elements);
   MY_RUN_TEST(test_add_first_multiple_elements);
+  MY_RUN_TEST(test_add_first_negative_element);
+  MY_RUN_TEST(test_add_first_big_element);
 
   //add_last
   MY_RUN_TEST(test_add_last_no_elements);
   MY_RUN_TEST(test_add_last_multiple_elements);
+  MY_RUN_TEST(test_add_last_negative_element);
+  MY_RUN_TEST(test_add_last_big_element);
 
   //add_after
   MY_RUN_TEST(test_add_after_NULL_list);
@@ -334,7 +448,8 @@ int main (int argc, char * argv[])
   MY_RUN_TEST(test_rem_after_c_item_last_element);
   MY_RUN_TEST(test_rem_after_multiple_elements);
   
-  //clean
+  //clean tests
+  MY_RUN_TEST(test_clean);
 
 
   return UnityEnd();

@@ -8,6 +8,7 @@
 #include "linkedlist.h"
 #include <stdlib.h>
 
+
 /***************************************************/
 /* If *list == NULL, a new list should be created, */
 /* otherwise prepend a new ITEM with value value   */
@@ -178,7 +179,7 @@ int rem_last(ITEM **list)
 
 int rem_after(ITEM *list, ITEM *c_item)
 {
-	if (list == NULL) {	//add c_item->next == NULL here?
+	if (list == NULL) {
 		return -1;
 	}
 
@@ -187,7 +188,7 @@ int rem_after(ITEM *list, ITEM *c_item)
 	//iterate through list
 	while (current_node != NULL) {
 		if (current_node == c_item){
-			if (current_node->next == NULL){	//c_item->next == NULL
+			if (current_node->next == NULL){	//c_item is last item
 				return -1;
 			} else {
 				ITEM* temp = current_node->next->next;
@@ -218,6 +219,10 @@ void clean(ITEM **list)
 		free(current);
 		current = next;
 	}
+	*list = NULL;
+	
 	return;
 }
+
+
 
