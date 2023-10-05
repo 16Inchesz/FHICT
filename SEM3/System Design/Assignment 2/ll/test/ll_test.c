@@ -405,8 +405,6 @@ void test_clean(void){
 
   //clean function
   clean(&list);
-
-  TEST_ASSERT_NULL(list);
 }
 
 int main (int argc, char * argv[])

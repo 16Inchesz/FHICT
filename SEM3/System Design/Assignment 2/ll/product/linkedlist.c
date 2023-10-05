@@ -218,9 +218,7 @@ void clean(ITEM **list)
 		next = current->next;
 		free(current);
 		current = next;
-	}
-	*list = NULL;
-	
+	}	
 	return;
 }
 
