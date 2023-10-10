@@ -25,17 +25,9 @@ void executeScene(const char* scene[], int sceneLength);
 void toggleLED(int ledPin, int state);
 
 //scenes
-const char* scene1[] = {
-  "sp1 on", "wait 5", "sp1 off", "sp2 on", "wait 5", "sp2 off"
-};
-
-const char* scene2[] = {
-  "sp2 on", "wait 5", "sp2 off", "sp3 on", "wait 5", "sp3 off"
-};
-
-const char* scene3[] = {
-  "sp3 on", "wait 5", "sp3 off", "sp4 on", "wait 5", "sp4 off"
-};
+const char* scene1[] = { "sp1 on", "wait 5", "sp1 off", "sp2 on", "wait 5", "sp2 off" };
+const char* scene2[] = { "sp2 on", "wait 5", "sp2 off", "sp3 on", "wait 5", "sp3 off" };
+const char* scene3[] = { "sp3 on", "wait 5", "sp3 off", "sp4 on", "wait 5", "sp4 off" };
 
 void setup() {
   Serial.begin(9600);
@@ -86,6 +78,8 @@ void executeScene(const char* scene[], int sceneLength) {
   }
 }
 
+/// @brief task to call the executeScene function based on received value.
+/// @param pvParameters 
 void sceneExecutionTask(void *pvParameters) {
   Serial.println("\nInside sceneExecutionTask");
   int sceneNumber = *((int*)pvParameters);
