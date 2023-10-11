@@ -82,28 +82,30 @@ void executeScene(const char* scene[], int sceneLength) {
 /// @param pvParameters 
 void sceneExecutionTask(void *pvParameters) {
   Serial.println("\nInside sceneExecutionTask");
-  int sceneNumber = *((int*)pvParameters);
-  const char** scene = nullptr;
+  while(1){
+    int sceneNumber = *((int*)pvParameters);
+    const char** scene = nullptr;
 
-  Serial.println(sceneNumber);
-  switch (sceneNumber) {
-    case 1:
-      scene = scene1;
-      break;
-    case 2:
-      scene = scene2;
-      break;
-    case 3:
-      scene = scene3;
-      break;
-    default:
-      break;
+    Serial.println(sceneNumber);
+    switch (sceneNumber) {
+      case 1:
+        scene = scene1;
+        break;
+      case 2:
+        scene = scene2;
+        break;
+      case 3:
+        scene = scene3;
+        break;
+      default:
+        break;
+    }
+    
+    if (scene != nullptr) {
+      executeScene(scene, sizeof(scene) / sizeof(scene[0]));
+    }
+    vTaskDelete(NULL);
   }
-  
-  if (scene != nullptr) {
-    executeScene(scene, sizeof(scene) / sizeof(scene[0]));
-  }
-  vTaskDelete(NULL);
 }
 
 /// @brief task to continuously read from the serial monitor
