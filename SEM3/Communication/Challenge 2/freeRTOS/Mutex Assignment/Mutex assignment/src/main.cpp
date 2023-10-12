@@ -3,7 +3,6 @@
 #include <freertos/semphr.h>
 #include <string.h>
 
-
 //led constants
 #define LED_1_PIN 14  //Sprinkler 1
 #define LED_2_PIN 26  //Sprinkler 2
