@@ -3,7 +3,6 @@
 #include <freertos/semphr.h>
 #include <string.h>
 
-
 //led constants
 #define LED_1_PIN 14  //Sprinkler 1
 #define LED_2_PIN 26  //Sprinkler 2
@@ -85,24 +84,28 @@ void sceneExecutionTask(void *pvParameters) {
   while(1){
     int sceneNumber = *((int*)pvParameters);
     const char** scene = nullptr;
+    int sceneLength = 0;
 
     Serial.println(sceneNumber);
     switch (sceneNumber) {
       case 1:
         scene = scene1;
+        sceneLength = sizeof(scene1) / sizeof(scene1[0]);
         break;
       case 2:
         scene = scene2;
+        sceneLength = sizeof(scene1) / sizeof(scene2[0]);
         break;
       case 3:
         scene = scene3;
+        sceneLength = sizeof(scene1) / sizeof(scene3[3]);
         break;
       default:
         break;
     }
     
     if (scene != nullptr) {
-      executeScene(scene, sizeof(scene) / sizeof(scene[0]));
+      executeScene(scene, sceneLength);
     }
     vTaskDelete(NULL);
   }
