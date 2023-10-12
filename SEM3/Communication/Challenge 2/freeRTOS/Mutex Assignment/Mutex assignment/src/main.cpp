@@ -111,6 +111,50 @@ void executeScene(const char* scene[], int sceneLength) {
   }
 }
 
+/// @brief task to call the executeScene function based on received value.
+/// @param pvParameters 
+void sceneExecutionTask(void *pvParameters) {
+  Serial.println("\nInside sceneExecutionTask");
+  while(1){
+    if (xSemaphoreTake(sceneExecutionSemaphore, portMAX_DELAY)){
+        int sceneNumber = *((int*)pvParameters);
+        const char** scene = nullptr;
+        SemaphoreHandle_t sceneMutex = nullptr;
+        int sceneLength = 0;
+
+        Serial.println(sceneNumber);
+        switch (sceneNumber) {
+            case 1:
+            scene = scene1;
+            sceneMutex = mutexScene1;
+            sceneLength = sizeof(scene1) / sizeof(scene1[0]);
+            break;
+            case 2:
+            scene = scene2;
+            sceneMutex = mutexScene2;
+            sceneLength = sizeof(scene2) / sizeof(scene2[0]);
+            break;
+            case 3:
+            scene = scene3;
+            sceneMutex = mutexScene3;
+            sceneLength = sizeof(scene3) / sizeof(scene3[3]);
+            break;
+            default:
+            break;
+        }
+        
+        if (scene != nullptr) {
+            xSemaphoreTake(sceneMutex, portMAX_DELAY);
+            executeScene(scene, sceneLength);
+            xSemaphoreGive(sceneMutex);
+        }
+        vTaskDelay(pdMS_TO_TICKS(100));
+        xSemaphoreGive(sceneExecutionSemaphore);
+    }
+    vTaskDelete(NULL);
+  }
+}
+
 /// @brief task to continuously read from the serial monitor
 /// @param pvParameters 
 void uartReaderTask(void *pvParameters) {
@@ -139,46 +183,6 @@ void uartReaderTask(void *pvParameters) {
   }
 }
 
-/// @brief task to call the executeScene function based on received value.
-/// @param pvParameters 
-void sceneExecutionTask(void *pvParameters) {
-    
-  Serial.println("\nInside sceneExecutionTask");
-  while(1){
-    if (xSemaphoreTake(sceneExecutionSemaphore, portMAX_DELAY)){
-        int sceneNumber = *((int*)pvParameters);
-        const char** scene = nullptr;
-        SemaphoreHandle_t sceneMutex = nullptr;
-
-        Serial.println(sceneNumber);
-        switch (sceneNumber) {
-            case 1:
-            scene = scene1;
-            sceneMutex = mutexScene1;
-            break;
-            case 2:
-            scene = scene2;
-            sceneMutex = mutexScene2;
-            break;
-            case 3:
-            scene = scene3;
-            sceneMutex = mutexScene3;
-            break;
-            default:
-            break;
-        }
-        
-        if (scene != nullptr) {
-            xSemaphoreTake(sceneMutex, portMAX_DELAY);
-            executeScene(scene, sizeof(scene) / sizeof(scene[0]));
-            xSemaphoreGive(sceneMutex);
-        }
-        vTaskDelay(pdMS_TO_TICKS(100));
-        xSemaphoreGive(sceneExecutionSemaphore);
-    }
-    vTaskDelete(NULL);
-  }
-}
 
 
 void loop() {

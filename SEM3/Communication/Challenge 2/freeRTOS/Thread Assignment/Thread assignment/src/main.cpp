@@ -94,11 +94,11 @@ void sceneExecutionTask(void *pvParameters) {
         break;
       case 2:
         scene = scene2;
-        sceneLength = sizeof(scene1) / sizeof(scene2[0]);
+        sceneLength = sizeof(scene2) / sizeof(scene2[0]);
         break;
       case 3:
         scene = scene3;
-        sceneLength = sizeof(scene1) / sizeof(scene3[3]);
+        sceneLength = sizeof(scene3) / sizeof(scene3[3]);
         break;
       default:
         break;
