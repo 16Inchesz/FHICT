@@ -78,7 +78,6 @@ void toggleLED(int ledPin, int state) {
 /// @param scene 
 /// @param sceneLength 
 void executeScene(const char* scene[], int sceneLength) {
-  Serial.println("inside the execute scene function");
   for (int i = 0; i < sceneLength; i++) {
     if (strcmp(scene[i], "sp1 on") == 0) {
       xSemaphoreTake(mutexLED1, portMAX_DELAY);
@@ -113,43 +112,42 @@ void executeScene(const char* scene[], int sceneLength) {
 /// @brief task to call the executeScene function based on received value.
 /// @param pvParameters 
 void sceneExecutionTask(void *pvParameters) {
-  Serial.println("\nInside sceneExecutionTask");
   while(1){
-    if (xSemaphoreTake(sceneExecutionSemaphore, portMAX_DELAY)){
-        int sceneNumber = *((int*)pvParameters);
-        const char** scene = nullptr;
-        SemaphoreHandle_t sceneMutex = nullptr;
-        int sceneLength = 0;
+    //variables to assign to "to-be-run" scene
+    int sceneNumber = *((int*)pvParameters);
+    const char** scene = nullptr;
+    SemaphoreHandle_t sceneMutex = nullptr;
+    int sceneLength = 0;
 
-        Serial.println(sceneNumber);
-        switch (sceneNumber) {
-            case 1:
-            scene = scene1;
-            sceneMutex = mutexScene1;
-            sceneLength = sizeof(scene1) / sizeof(scene1[0]);
-            break;
-            case 2:
-            scene = scene2;
-            sceneMutex = mutexScene2;
-            sceneLength = sizeof(scene2) / sizeof(scene2[0]);
-            break;
-            case 3:
-            scene = scene3;
-            sceneMutex = mutexScene3;
-            sceneLength = sizeof(scene3) / sizeof(scene3[3]);
-            break;
-            default:
-            break;
-        }
-        
-        if (scene != nullptr) {
-            xSemaphoreTake(sceneMutex, portMAX_DELAY);
-            executeScene(scene, sceneLength);
-            xSemaphoreGive(sceneMutex);
-        }
-        vTaskDelay(pdMS_TO_TICKS(100));
-        xSemaphoreGive(sceneExecutionSemaphore);
+    //switch case to handle assigning of scenes.
+    switch (sceneNumber) {
+        case 1:
+        scene = scene1;
+        sceneMutex = mutexScene1;
+        sceneLength = sizeof(scene1) / sizeof(scene1[0]);
+        break;
+        case 2:
+        scene = scene2;
+        sceneMutex = mutexScene2;
+        sceneLength = sizeof(scene2) / sizeof(scene2[0]);
+        break;
+        case 3:
+        scene = scene3;
+        sceneMutex = mutexScene3;
+        sceneLength = sizeof(scene3) / sizeof(scene3[3]);
+        break;
+        default:
+        break;
     }
+    
+    //execute scene function
+    if (scene != nullptr) {
+        xSemaphoreTake(sceneMutex, portMAX_DELAY);
+        executeScene(scene, sceneLength);
+        xSemaphoreGive(sceneMutex);
+    }
+    //delay task (cpu purposes) & delete thread after.
+    vTaskDelay(pdMS_TO_TICKS(100));
     vTaskDelete(NULL);
   }
 }
