@@ -143,11 +143,11 @@ void sceneExecutionTask(void *pvParameters) {
     }
 
     if (sceneQueue != nullptr) {
-      // Receive scene steps from the queue
+      //receive scene steps from the queue
       xQueueReceive(sceneQueue, &sceneSteps, portMAX_DELAY);
       sceneLength = sizeof(scene1) / sizeof(scene1[0]);
 
-      // Execute scene steps
+      //execute scene steps
       if (sceneSteps != nullptr) {
         xSemaphoreTake(sceneMutex, portMAX_DELAY);
         executeScene(sceneSteps, sceneLength);
@@ -186,7 +186,7 @@ void uartReaderTask(void *pvParameters) {
           }
 
           if (sceneSteps != nullptr) {
-            // Send scene steps to the appropriate queue
+            //s scene steps to the appropriate queue
             switch (sceneNumber) {
               case 1:
                 xQueueSend(scene1Queue, &sceneSteps, portMAX_DELAY);
