@@ -16,11 +16,6 @@ const uint32_t stackDepth = 1052;
 void sceneExecutionTask(void *pvParameters);
 void uartReaderTask(void *pvParameters);
 
-
-//define semaphores for both threads.
-SemaphoreHandle_t uartReaderSemaphore;
-SemaphoreHandle_t sceneExecutionSemaphore;
-
 //define mutexes for LEDs
 SemaphoreHandle_t mutexLED1;
 SemaphoreHandle_t mutexLED2;
@@ -49,9 +44,6 @@ void setup() {
   pinMode(LED_3_PIN, OUTPUT);
   pinMode(LED_4_PIN, OUTPUT);
 
-  uartReaderSemaphore = xSemaphoreCreateMutex();
-  sceneExecutionSemaphore = xSemaphoreCreateMutex();
-
   mutexLED1 = xSemaphoreCreateMutex();
   mutexLED2 = xSemaphoreCreateMutex();
   mutexLED3 = xSemaphoreCreateMutex();
@@ -61,8 +53,9 @@ void setup() {
   mutexScene2 = xSemaphoreCreateMutex();
   mutexScene3 = xSemaphoreCreateMutex();
 
-  if ((uartReaderSemaphore == NULL) || (sceneExecutionSemaphore == NULL)){
-    Serial.println("Mutex can not be created");
+  if ((mutexLED1 == NULL) || (mutexLED2 == NULL) || (mutexLED3 == NULL) || (mutexLED4 == NULL) ||
+      (mutexScene1 == NULL) || (mutexScene2 == NULL) || (mutexScene3 == NULL)) {
+    Serial.println("Mutex couldn't be created");
   }
   xTaskCreate(uartReaderTask, "UART Reader Task", stackDepth, NULL, 2, NULL);
 }
