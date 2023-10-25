@@ -42,7 +42,7 @@ int mystack_push(StackMeta_t *stack, void* obj)
 		return -1;
 	}
 
-	//create a new stack object.
+	//create a new stack object/element.
 	StackObject_t *new_stack_element = (StackObject_t *)malloc(sizeof(StackObject_t));
 	
 	//memory failure
@@ -54,15 +54,14 @@ int mystack_push(StackMeta_t *stack, void* obj)
 	new_stack_element->obj = malloc(stack->objsize);
 	//memory failure.
 	if (new_stack_element->obj == NULL){
-		//memory failure.
 		free(new_stack_element);
 		return -1;
 	}
 
 	//pass the data into the stack by copying it. 
 	memcpy(new_stack_element->obj, obj, stack->objsize);
-	new_stack_element->next = stack->stack;	//set new element in stack
-	stack->stack = new_stack_element;	//new stack top
+	new_stack_element->next = stack->stack;	//set new element in stack ("link" it with the stack)
+	stack->stack = new_stack_element;	//new object is the top
 	stack->numelem++;
 	
 	return 0;
@@ -75,7 +74,7 @@ int mystack_pop(StackMeta_t *stack, void* obj)
 		return -1;
 	}
 
-	//nothing to pop
+	//nothing to pop (stack is empty)
 	if (stack->numelem == 0){
 		return -1;
 	}
@@ -85,7 +84,7 @@ int mystack_pop(StackMeta_t *stack, void* obj)
 
 	//make next element new top
 	stack->stack = top->next;
-	memcpy(obj, top->obj, stack->objsize);
+	// memcpy(obj, top->obj, stack->objsize); //??
 	free(top->obj);
 	free(top);
 	stack->numelem--;
@@ -100,6 +99,7 @@ void mystack_destroy(StackMeta_t *stack)
 	// 	return -1;
 	// }
 
+	//delete all stack objects
 	while(stack->stack != NULL){
 		StackObject_t *top = stack->stack;
 		stack->stack = top->next;
@@ -117,6 +117,7 @@ int mystack_nofelem(StackMeta_t *stack)
 	if (stack == NULL){
 		return -1;
 	}
-
+	
+	//num of elems
 	return stack->numelem;
 }
