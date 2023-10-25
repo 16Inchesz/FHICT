@@ -82,6 +82,8 @@ int mystack_pop(StackMeta_t *stack, void* obj)
 
 	//define top of stack
 	StackObject_t *top = stack->stack;
+
+	//make next element new top
 	stack->stack = top->next;
 	memcpy(obj, top->obj, stack->objsize);
 	free(top->obj);
