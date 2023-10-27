@@ -17,6 +17,10 @@ void tearDown(void)
     // This is run after EACH test
 }
 
+void test_stack_destroy_NULL(void){
+	mystack_destroy(NULL);
+}
+
 void run_my_test()
 {
 	printf("Please specify your tests\n");
@@ -24,5 +28,6 @@ void run_my_test()
 int main (int argc, char * argv[]) {
 	UnityBegin();
 	MY_RUN_TEST(run_my_test);
+	MY_RUN_TEST(test_stack_destroy_NULL);
 	return UnityEnd();
 }

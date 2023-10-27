@@ -84,7 +84,7 @@ int mystack_pop(StackMeta_t *stack, void* obj)
 
 	//make next element new top
 	stack->stack = top->next;
-	// memcpy(obj, top->obj, stack->objsize); //??
+	memcpy(obj, top->obj, stack->objsize);
 	free(top->obj);
 	free(top);
 	stack->numelem--;
@@ -94,10 +94,10 @@ int mystack_pop(StackMeta_t *stack, void* obj)
 
 void mystack_destroy(StackMeta_t *stack)
 {
-	// //invalid stack pointer.
-	// if (stack == NULL){
-	// 	return -1;
-	// }
+	//invalid stack pointer.
+	if (stack == NULL){
+		return;
+	}
 
 	//delete all stack objects
 	while(stack->stack != NULL){

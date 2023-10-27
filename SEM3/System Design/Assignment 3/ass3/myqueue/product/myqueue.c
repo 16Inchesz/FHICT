@@ -17,7 +17,7 @@ void myqueue_delete(QueueMeta_t *queue)
 	return;
 }
 
-int myqueue_enqueue(QueueMeta_t *que, void *obj)
+int myqueue_enqueue(QueueMeta_t *queue, void *obj)
 {
 	return 0;
 }
