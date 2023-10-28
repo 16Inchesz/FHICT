@@ -37,7 +37,7 @@ StackMeta_t *mystack_create(size_t objsize)
 
 int mystack_push(StackMeta_t *stack, void* obj)
 {
-	//invalid stack pointer
+	//invalid stack and object pointer
 	if (stack == NULL || obj == NULL){
 		return -1;
 	}
@@ -69,7 +69,7 @@ int mystack_push(StackMeta_t *stack, void* obj)
 
 int mystack_pop(StackMeta_t *stack, void* obj)
 {
-	//invalid stack pointer
+	//invalid stack and object pointer
 	if (stack == NULL || obj == NULL){
 		return -1;
 	}

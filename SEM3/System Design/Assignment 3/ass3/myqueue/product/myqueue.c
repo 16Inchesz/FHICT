@@ -25,6 +25,7 @@ QueueMeta_t *myqueue_create(int item_size)
 
 void myqueue_delete(QueueMeta_t *queue)
 {
+	//invalid pointer
 	if (queue == NULL){
 		return;
 	}
@@ -37,8 +38,8 @@ void myqueue_delete(QueueMeta_t *queue)
 
 int myqueue_enqueue(QueueMeta_t *queue, void *obj)
 {
-	//memory failure
-	if (queue == NULL){
+	//invalid queue and object pointer
+	if (queue == NULL || obj == NULL){
 		return -1;
 	}
 
@@ -51,8 +52,8 @@ int myqueue_enqueue(QueueMeta_t *queue, void *obj)
 
 int myqueue_dequeue(QueueMeta_t *queue, void *obj)
 {
-	//memory failure
-	if (queue == NULL){
+	//invalid queue and object pointer
+	if (queue == NULL || obj == NULL){
 		return -1;
 	}
 
