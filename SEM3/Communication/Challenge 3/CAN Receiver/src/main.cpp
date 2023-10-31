@@ -1,18 +1,98 @@
 #include <Arduino.h>
+#include <SPI.h>
+#include <mcp_can.h>
 
-// put function declarations here:
-int myFunction(int, int);
+//PINS
+#define SPICSPIN 10
+#define LED1PIN 3
+#define LED2PIN 4
 
-void setup() {
-  // put your setup code here, to run once:
-  int result = myFunction(2, 3);
+//create CAN object
+MCP_CAN CAN(SPICSPIN);
+
+//variables for message handling
+long unsigned int rxId;
+unsigned char len = 0;
+unsigned char rxBuf[1];
+char msgString[128];
+
+//LED variables
+unsigned long currentTime = 0;
+unsigned long previousTime = 0;
+const long INTERVAL = 500;
+bool ledstate = 0;
+
+//blink function
+void BlinkLED(int ledPin){
+  if (currentTime - previousTime >= INTERVAL){
+    previousTime = currentTime;
+    digitalWrite(ledPin, ledstate);
+    ledstate = !ledstate;
+  }
 }
 
-void loop() {
-  // put your main code here, to run repeatedly:
+void setup()
+{
+  Serial.begin(9600);
+  pinMode(SPICSPIN, OUTPUT);
+
+  while (CAN_OK != CAN.begin(MCP_ANY, CAN_500KBPS, MCP_8MHZ))
+  {
+    Serial.println("CAN BUS Init Failed");
+    delay(100);
+  }
+  CAN.setMode(MCP_NORMAL);   // Set operation mode to normal so the MCP2515 sends acks to received data.
+
+  Serial.println("CAN BUS  Init OK!");
 }
 
-// put function definitions here:
-int myFunction(int x, int y) {
-  return x + y;
+void loop()
+{
+  currentTime = millis();
+
+  if(CAN_MSGAVAIL == CAN.checkReceive())
+  {
+    //read & printthe message received
+    CAN.readMsgBuf(&rxId, &len, rxBuf);
+    Serial.println("-----------------------------");
+    Serial.print("Data from ID: \t");
+    Serial.print(rxBuf[0]);
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //Part A: toggle LED based on message
+    // if (rxBuf[0] == 1){
+    //   digitalWrite(LED1PIN, true);
+    // } else if(rxBuf[0] == 0){
+    //   digitalWrite(LED1PIN, false);
+    // }
+    // Serial.println();
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    //part B: toggling different LED states using button
+    switch (rxBuf[0])
+    {
+    case 1:
+      //all LEDs off
+      digitalWrite(LED1PIN, LOW);
+      digitalWrite(LED2PIN, LOW);
+      break;
+    case 2:
+      //left LED blink
+      digitalWrite(LED1PIN, LOW);
+      BlinkLED(LED1PIN);
+      break;
+    case 3:
+      //right LED blink
+      digitalWrite(LED2PIN, LOW);
+      BlinkLED(LED2PIN);
+      break;
+    case 4:
+      //both LEDS on
+      digitalWrite(LED1PIN, HIGH);
+      digitalWrite(LED2PIN, HIGH);
+    default:
+      Serial.println("ERROR: unrecognized state");
+      break;
+    }
+  }
 }
