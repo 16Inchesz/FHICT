@@ -21,6 +21,7 @@ MCP_CAN CAN(SPICSPIN);
 //buffer for sending messages.
 byte data[1] = {dataByte};
 
+//Function to change the state with a button
 void StateChangeButton();
 
 void setup()
@@ -69,24 +70,12 @@ void loop()
   } else {
     Serial.println("Error Sending Message...");
   }
-  delay(1000);
-  /////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  //Part A: state machine for LED state
-  // if (!currentState){
-  //   currentState = !currentState;
-  //   data[0] = 0x00;
-  // } else {
-  //   currentState = !currentState;
-  //   data[0] = 0x01;
-  // }
-  // delay(1000);
-  /////////////////////////////////////////////////////////////////////////////////////////////////////////////  
+  delay(1000);  
 }
 
 void StateChangeButton() {
   int buttonState = digitalRead(BUTTONPIN);
   unsigned long currentMillis = millis();
-
   if (currentMillis - lastDebounceTime >= DEBOUNCETIME) {
     if (buttonState != lastButtonState) {
       lastDebounceTime = currentMillis;

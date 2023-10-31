@@ -22,7 +22,7 @@ unsigned long previousTime = 0;
 const long INTERVAL = 500;
 bool ledstate = 0;
 
-//blink function
+//function to blink an LED 
 void BlinkLED(int ledPin){
   if (currentTime - previousTime >= INTERVAL){
     previousTime = currentTime;
@@ -54,21 +54,12 @@ void loop()
 
   if(CAN_MSGAVAIL == CAN.checkReceive())
   {
-    //read & printthe message received
+    //read & print the message received
     CAN.readMsgBuf(&rxId, &len, rxBuf);
     Serial.println("-----------------------------");
     Serial.print("Data from ID: \t");
     Serial.print(rxBuf[0]);
     Serial.println();
-    /////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    //Part A: toggle LED based on message
-    // if (rxBuf[0] == 1){
-    //   digitalWrite(LED1PIN, true);
-    // } else if(rxBuf[0] == 0){
-    //   digitalWrite(LED1PIN, false);
-    // }
-    // Serial.println();
-    /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     //part B: toggling different LED states using button
     switch (rxBuf[0])
