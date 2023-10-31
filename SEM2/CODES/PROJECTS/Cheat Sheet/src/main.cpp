@@ -20,10 +20,11 @@ void millis_delay(){
 //button debouncing for more readble button.
 #define BUTTON 6
 unsigned long debounce_time = 0;
+const int DEBOUNCETIME = 40;
 void button_debounce(){
   int buttonState;
   int lastButtonState;
-  if (millis() - debounce_time > 40){   //ideal delay for debounce is around  40ms.
+  if (millis() - debounce_time > DEBOUNCETIME){   //ideal delay for debounce is around  40ms.
     buttonState = digitalRead(BUTTON);
     if (buttonState != lastButtonState){
       debounce_time = millis();

@@ -35,6 +35,8 @@ void setup()
 {
   Serial.begin(9600);
   pinMode(SPICSPIN, OUTPUT);
+  pinMode(LED1PIN, OUTPUT);
+  pinMode(LED2PIN, OUTPUT);
 
   while (CAN_OK != CAN.begin(MCP_ANY, CAN_500KBPS, MCP_8MHZ))
   {
@@ -57,7 +59,7 @@ void loop()
     Serial.println("-----------------------------");
     Serial.print("Data from ID: \t");
     Serial.print(rxBuf[0]);
-
+    Serial.println();
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //Part A: toggle LED based on message
     // if (rxBuf[0] == 1){
@@ -78,18 +80,19 @@ void loop()
       break;
     case 2:
       //left LED blink
-      digitalWrite(LED1PIN, LOW);
+      digitalWrite(LED2PIN, LOW);
       BlinkLED(LED1PIN);
       break;
     case 3:
       //right LED blink
-      digitalWrite(LED2PIN, LOW);
+      digitalWrite(LED1PIN, LOW);
       BlinkLED(LED2PIN);
       break;
     case 4:
       //both LEDS on
       digitalWrite(LED1PIN, HIGH);
       digitalWrite(LED2PIN, HIGH);
+      break;
     default:
       Serial.println("ERROR: unrecognized state");
       break;
