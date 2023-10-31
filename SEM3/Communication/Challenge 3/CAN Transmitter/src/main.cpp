@@ -6,6 +6,12 @@
 #define SPICSPIN 10
 #define BUTTONPIN 3
 
+//constants
+byte LEDsOff = 0x01;
+byte blinkLeft = 0x02;
+byte blinkRight = 0x03;
+byte LEDsOn = 0x04;
+
 //data variables
 byte dataByte = 0x01;
 int state = 1;
@@ -44,16 +50,16 @@ void loop()
   switch (state)
   {
   case 1:
-    dataByte = 0x01;
+    dataByte = LEDsOff;
     break;
   case 2:
-    dataByte = 0x02;
+    dataByte = blinkLeft;
     break;
     case 3:
-    dataByte = 0x03;
+    dataByte = blinkRight;
     break;
   case 4:
-    dataByte = 0x04;
+    dataByte = LEDsOn;
     break;
   default:
     Serial.println("ERROR: unrecognized state");
