@@ -57,7 +57,7 @@ int myqueue_dequeue(QueueMeta_t *queue, void *obj)
 		return -1;
 	}
 
-	//create temp object to store memory fail safe.
+	//create temp object to store memory fail safe. (only when the stack out is empty)
 	void *temp_obj = malloc(queue->item_size);
 	if (temp_obj == NULL){
 		return -1;
