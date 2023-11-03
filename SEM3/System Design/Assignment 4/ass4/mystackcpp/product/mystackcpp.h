@@ -7,10 +7,11 @@
 class Stack
 {
 public:
-    //empty constructor
+    //constructor + destructor
     Stack(size_t objsize);
     ~Stack();
 
+    //methods
     int mystack_push(void* obj);
     int mystack_pop(void* obj);
     int mystack_nofelem();
@@ -22,8 +23,9 @@ private:
         StackObject_t *next;
     };
 
+    //variables needed for stack creation
     StackObject_t* stack;
-    size_t objSize;
+    size_t obj_size;
     int numelem;
 };
 
