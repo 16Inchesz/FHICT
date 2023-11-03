@@ -1,34 +1,30 @@
 #ifndef __MYSTACKCPP_H__
-#define __MYSTACKCPP_H__
+#define __MYSTACKCPP_H__ 
 
-#include <stddef.h>
-#include <stdlib.h>
-#include <string.h> 
+#include <stdio.h>
+#include <cstring>
 
-struct StackObject_t
-{
-    void* obj;
-    StackObject_t *next;
-};
-
-struct StackMeta_t
-{
-    StackObject_t *stack;
-    size_t objsize;
-    int numelem;
-};
-
-class stack
+class Stack
 {
 public:
     //empty constructor
-    stack(){}
+    Stack(size_t objsize);
+    ~Stack();
 
-    StackMeta_t *mystack_create(size_t objsize);
-    int mystack_push(StackMeta_t *stack, void* obj);
-    int mystack_pop(StackMeta_t *stack, void* obj);
-    void mystack_destroy(StackMeta_t *stack);
-    int mystack_nofelem(StackMeta_t *stack);
+    int mystack_push(void* obj);
+    int mystack_pop(void* obj);
+    int mystack_nofelem();
+
+private:
+    struct StackObject_t
+    {
+        void* obj;
+        StackObject_t *next;
+    };
+
+    StackObject_t* stack;
+    size_t objsize;
+    int numelem;
 };
 
 #endif
