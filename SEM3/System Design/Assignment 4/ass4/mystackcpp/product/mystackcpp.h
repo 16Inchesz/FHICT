@@ -23,7 +23,7 @@ private:
     };
 
     StackObject_t* stack;
-    size_t objsize;
+    size_t objSize;
     int numelem;
 };
 
