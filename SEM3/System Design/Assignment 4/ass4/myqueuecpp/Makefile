@@ -1,10 +1,14 @@
-PRODUCT=myqueuecpp
+BASE_DIR = ..
 
-CPPFLAGS=-Iproduct -Itest
+PRODUCT=MyQueue
+
+CPPFLAGS = -Iproduct -Itest -I$(BASE_DIR)/mystackcpp/product
 CXXFLAGS=-Wall -Werror -Wextra -pedantic -ggdb -O0 $(CPPFLAGS)
 
 SOURCES=$(wildcard product/*.cpp) \
-        $(wildcard test/*.cpp)
+        $(wildcard test/*.cpp) \
+		$(wildcard ../mystackcpp/product/*.cpp)
+		
 
 HEADERS=$(wildcard product/*.h) \
         $(wildcard test/*.h)

@@ -3,7 +3,6 @@
 
 #include "mystackcpp.h"
 
-
 class Queue 
 {
 public:
@@ -15,7 +14,6 @@ public:
     int myqueue_enqueue(void *obj);
     int myqueue_dequeue(void* obj);
 
-private:
     Stack stack_in;
     Stack stack_out;
     int item_size;

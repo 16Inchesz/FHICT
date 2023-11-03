@@ -3,10 +3,7 @@
 
 using namespace std;
 
-Queue::Queue(size_t itemSize){
-    stack_in = itemSize;
-    stack_out = itemSize;
-}
+Queue::Queue(size_t itemSize) : stack_in(itemSize), stack_out(itemSize) {}
 
 Queue::~Queue(){}
 
