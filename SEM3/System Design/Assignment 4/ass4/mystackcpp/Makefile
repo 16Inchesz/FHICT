@@ -1,4 +1,4 @@
-PRODUCT=mystack
+PRODUCT=mystackcpp
 
 CPPFLAGS=-Iproduct -Itest
 CXXFLAGS=-Wall -Werror -Wextra -pedantic -ggdb -O0 $(CPPFLAGS)
