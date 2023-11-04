@@ -1,6 +1,6 @@
 BASE_DIR = ..
 
-PRODUCT=MyQueue
+PRODUCT= myqueuecpp
 
 CPPFLAGS = -Iproduct -Itest -I$(BASE_DIR)/mystackcpp/product
 CXXFLAGS=-Wall -Werror -Wextra -pedantic -ggdb -O0 $(CPPFLAGS)
