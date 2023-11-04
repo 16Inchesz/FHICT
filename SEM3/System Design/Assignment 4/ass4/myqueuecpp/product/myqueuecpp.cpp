@@ -3,7 +3,7 @@
 
 using namespace std;
 
-Queue::Queue(size_t itemSize) : stack_in(itemSize), stack_out(itemSize) {}
+Queue::Queue(size_t itemSize) : stack_in(itemSize), stack_out(itemSize), item_size(itemSize) {}
 
 Queue::~Queue(){}
 
@@ -29,6 +29,7 @@ int Queue::myqueue_dequeue(void* obj){
     //algorithm from previous assignment
     if ((stack_out.mystack_nofelem()) == 0){
         void* temp_obj = malloc(item_size);
+        //memory failure
         if (temp_obj == nullptr){
 			return -1;
 		}
