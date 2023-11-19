@@ -75,7 +75,7 @@ void loop() {
   }
 
   //all LEDs off.
-  if (x == 89 || y == 89 || y == DOWN){
+  if ((x == CENTRE && y == CENTRE) || y == DOWN){
     data[0] = LEDsOff;
     CAN.sendMsgBuf(CANID, 0, 1, data);
   }
