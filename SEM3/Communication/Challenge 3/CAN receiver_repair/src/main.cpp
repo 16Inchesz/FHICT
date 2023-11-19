@@ -4,8 +4,8 @@
 
 //PINS
 #define SPICSPIN 10
-#define LED1PIN 3
-#define LED2PIN 4
+#define LED1PIN 7
+#define LED2PIN 6
 
 //create CAN object
 MCP_CAN CAN(SPICSPIN);
