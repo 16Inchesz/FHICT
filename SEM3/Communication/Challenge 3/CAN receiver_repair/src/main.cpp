@@ -57,36 +57,41 @@ void loop()
     //read & print the message received
     CAN.readMsgBuf(&rxId, &len, rxBuf);
     Serial.println("-----------------------------");
-    Serial.print("Data from ID: \t");
-    Serial.print(rxId);
+    Serial.print("Data: \t");
+    Serial.print(rxBuf[0]);
     Serial.println();
     
-    //part B: toggling different LED states using button
-    switch (rxBuf[0])
-    {
-    case 1:
-      //all LEDs off
-      digitalWrite(LED1PIN, LOW);
-      digitalWrite(LED2PIN, LOW);
-      break;
-    case 2:
-      //left LED blink
-      digitalWrite(LED2PIN, LOW);
-      BlinkLED(LED1PIN);
-      break;
-    case 3:
-      //right LED blink
-      digitalWrite(LED1PIN, LOW);
-      BlinkLED(LED2PIN);
-      break;
-    case 4:
-      //both LEDS on
-      digitalWrite(LED1PIN, HIGH);
-      digitalWrite(LED2PIN, HIGH);
-      break;
-    default:
-      Serial.println("ERROR: unrecognized state");
-      break;
+    if (rxId == 0x100){ // correct ID.
+      //part B: toggling different LED states using button
+      switch (rxBuf[0])
+      {
+      case 1:
+        //all LEDs off
+        digitalWrite(LED1PIN, LOW);
+        digitalWrite(LED2PIN, LOW);
+        break;
+      case 2:
+        //left LED blink
+        digitalWrite(LED2PIN, LOW);
+        BlinkLED(LED1PIN);
+        break;
+      case 3:
+        //right LED blink
+        digitalWrite(LED1PIN, LOW);
+        BlinkLED(LED2PIN);
+        break;
+      case 4:
+        //both LEDS on
+        digitalWrite(LED1PIN, HIGH);
+        digitalWrite(LED2PIN, HIGH);
+        break;
+      default:
+        Serial.println("ERROR: unrecognized state");
+        break;
+      }
+    }
+    else {
+      Serial.print("error: incorrect ID\n");
     }
   }
 }
