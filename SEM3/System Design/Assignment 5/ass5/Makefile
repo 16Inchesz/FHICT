@@ -1,5 +1,6 @@
 PRODUCT=MemManager
 TEST_PRODUCT=MemManagerTest
+TEST_OUTPUT=out
 CPPFLAGS=-Iproduct -Itest
 CXXFLAGS=-Wall -Werror -Wextra -pedantic -Wno-unused-parameter -ggdb -O0 $(CPPFLAGS)
 
@@ -28,7 +29,7 @@ $(TEST_PRODUCT): $(TEST_SOURCES) $(HEADERS)
 	$(CXX) $(CXXFLAGS) $(TEST_SOURCES) -o $@ $(LDFLAGS)
 
 clean:
-	@rm -rf $(PRODUCT) $(TEST_PRODUCT) 
+	@rm -rf $(PRODUCT) $(TEST_PRODUCT) $(TEST_OUTPUT)
 
 test: $(TEST_PRODUCT)
 	@./$(TEST_PRODUCT)
