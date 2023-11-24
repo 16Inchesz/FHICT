@@ -18,6 +18,8 @@ MemoryManager::MemoryManager(int memStart, int maxSize)
 /* Code correct destructor to cleanup all memory */
 MemoryManager::~MemoryManager()
 {
+	delete allocList;
+	delete freeList;
 }
 
 /* pre : size > 0
@@ -30,6 +32,35 @@ MemoryManager::~MemoryManager()
  */
 int MemoryManager::ClaimMemory(int size)
 {
+	//size check
+	if (size > maxSize || size <= 0){
+		return -1;
+	}
+
+	//memory chunk
+	ITEM* freeChunk = freeList->GetHead();
+
+	//iterate through free list.
+	while (freeChunk != nullptr){
+
+		//enough memory found.
+		if(freeChunk->size >= size){
+			int allocatedAddr = freeChunk->addr;
+			int newSize = freeChunk->size - size;
+
+			//new free list.
+			if (newSize > 0){
+				freeList->addAfter(freeChunk, (allocatedAddr + size), newSize);
+			}
+			freeList->remove(freeChunk);
+
+			//new alloc list.
+			allocList->addLast(allocatedAddr, size);
+
+			return allocatedAddr;
+		}
+		freeChunk = freeChunk->next;
+	}
 	return -1;
 }
 
@@ -43,6 +74,38 @@ int MemoryManager::ClaimMemory(int size)
  */
 int MemoryManager::FreeMemory(int addr)
 {
+	if (addr < memStart || addr >= memStart + maxSize){
+		return -1;
+	}
+
+	ITEM* allocatedChunk = allocList->GetHead();
+	
+	while(allocatedChunk != nullptr){
+		if (allocatedChunk != nullptr){
+			int chunkSize = allocatedChunk->size;
+
+			allocList->remove(allocatedChunk);
+
+			ITEM* freeChunk = freeList->GetHead();
+			while (freeChunk != nullptr){
+				if ((freeChunk->addr + freeChunk->size) == addr){
+					freeChunk->size = freeChunk->size + chunkSize;
+					return chunkSize;
+				} 
+				else if (addr + chunkSize == freeChunk->addr){
+					freeChunk->addr = addr;
+					freeChunk->size = freeChunk->size + chunkSize;
+					return chunkSize;
+				}
+				freeChunk = freeChunk->next;
+			}
+
+			freeList->addLast(addr, chunkSize);
+			return chunkSize;
+		}
+		allocatedChunk = allocatedChunk->next;
+	}
+
 	return -1;
 }
 
