@@ -13,4 +13,6 @@ public:
     FreeList() = delete;
     FreeList(int memStart, int maxSize);
     ~FreeList();
+
+    void mergeMemory();
 };

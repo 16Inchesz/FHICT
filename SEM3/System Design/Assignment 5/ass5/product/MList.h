@@ -27,6 +27,7 @@ class MList {
         int removeFirst();
         int removeLast();
         int removeAfter(ITEM* currentItem);
+        int addInOrder(int addr, int size);
         void CleanList();
         ITEM* GetHead();
         ITEM* GetTail();

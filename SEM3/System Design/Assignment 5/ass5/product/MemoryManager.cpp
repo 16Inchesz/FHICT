@@ -80,33 +80,27 @@ int MemoryManager::FreeMemory(int addr)
 
 	ITEM* allocatedChunk = allocList->GetHead();
 	
-	while(allocatedChunk != nullptr){
-		if (allocatedChunk != nullptr){
-			int chunkSize = allocatedChunk->size;
+	while (allocatedChunk != nullptr)
+    {
+        if (allocatedChunk->addr == addr)
+        {
+            int chunkSize = allocatedChunk->size;
 
-			allocList->remove(allocatedChunk);
+            allocList->remove(allocatedChunk);
 
-			ITEM* freeChunk = freeList->GetHead();
-			while (freeChunk != nullptr){
-				if ((freeChunk->addr + freeChunk->size) == addr){
-					freeChunk->size = freeChunk->size + chunkSize;
-					return chunkSize;
-				} 
-				else if (addr + chunkSize == freeChunk->addr){
-					freeChunk->addr = addr;
-					freeChunk->size = freeChunk->size + chunkSize;
-					return chunkSize;
-				}
-				freeChunk = freeChunk->next;
-			}
+            // Add the newly freed memory to the free list
+            freeList->addInOrder(addr, chunkSize);
 
-			freeList->addLast(addr, chunkSize);
-			return chunkSize;
-		}
-		allocatedChunk = allocatedChunk->next;
-	}
+            // Merge with adjacent blocks in the free list
+            freeList->mergeMemory();
 
-	return -1;
+            return chunkSize;
+        }
+
+        allocatedChunk = allocatedChunk->next;
+    }
+
+    return -1;
 }
 
 AllocList* MemoryManager::GetAllocList()

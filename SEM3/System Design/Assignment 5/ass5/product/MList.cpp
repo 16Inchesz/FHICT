@@ -149,6 +149,25 @@ int MList::removeAfter(ITEM* currentItem){
     return 0;
 }
 
+int MList::addInOrder(int addr, int size){
+    // ITEM *newItem = new ITEM(addr, size);
+
+    // Insert at the beginning if the list is empty or the new item should be the new head
+    if (head == nullptr || head->addr > addr) {
+        addFirst(addr, size);
+        return 0;
+    }
+
+    // Iterate to find the correct position
+    ITEM *current = head;
+    while (current->next != nullptr && current->next->addr < addr) {
+        current = current->next;
+    }
+
+    // Insert after the current node
+    addAfter(current, addr, size);
+    return 0;
+}
 
 void MList::CleanList()
 {

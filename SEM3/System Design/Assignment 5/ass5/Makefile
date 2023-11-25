@@ -1,6 +1,6 @@
 PRODUCT=MemManager
 TEST_PRODUCT=MemManagerTest
-TEST_OUTPUT=out
+TEST_OUTPUT=out.txt
 CPPFLAGS=-Iproduct -Itest
 CXXFLAGS=-Wall -Werror -Wextra -pedantic -Wno-unused-parameter -ggdb -O0 $(CPPFLAGS)
 
