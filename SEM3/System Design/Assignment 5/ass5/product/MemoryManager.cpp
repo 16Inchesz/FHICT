@@ -55,7 +55,7 @@ int MemoryManager::ClaimMemory(int size)
 			freeList->remove(freeChunk);
 
 			//new alloc list.
-			allocList->addLast(allocatedAddr, size);
+			allocList->addInOrder(allocatedAddr, size);
 
 			return allocatedAddr;
 		}
