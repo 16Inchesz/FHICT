@@ -21,12 +21,8 @@ class MList {
 
 	    /* all MList methods should come here */
         void addFirst(int addr, int size);
-        void addLast(int addr, int size);
         int addAfter(ITEM* currentItem, int addr, int size);
         int remove(ITEM* currentItem);
-        int removeFirst();
-        int removeLast();
-        int removeAfter(ITEM* currentItem);
         int addInOrder(int addr, int size);
         void CleanList();
         ITEM* GetHead();

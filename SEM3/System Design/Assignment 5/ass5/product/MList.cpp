@@ -31,20 +31,6 @@ void MList::addFirst(int addr, int size){
     head = newItem;
 }
 
-void MList::addLast(int addr, int size){
-	ITEM *newItem = new ITEM(addr, size);
-
-	//nothing in list.
-    if (head == nullptr) {
-        head = newItem;
-        tail = newItem;
-    } else {
-        newItem->prev = tail;
-        tail->next = newItem;
-        tail = newItem;
-    }
-}
-
 int MList::addAfter(ITEM* currentItem, int addr, int size){
 	if (currentItem == nullptr) {
         return -1;
@@ -93,78 +79,20 @@ int MList::remove(ITEM* currentItem){
     return 0;
 }
 
-int MList::removeFirst(){
-	if (head == nullptr) {
-        return -1;
-    }
-
-    ITEM *firstItem = head;
-    head = head->next;
-
-    if (head != nullptr) {
-        head->prev = nullptr;
-    } else {
-        tail = nullptr;
-    }
-
-    delete firstItem;
-    return 0;
-}
-
-int MList::removeLast(){
-	if (tail == nullptr) {
-        return -1;
-    }
-
-    ITEM *lastItem = tail;
-    tail = tail->prev;
-
-    if (tail != nullptr) {
-        tail->next = nullptr;
-    } else {
-        head = nullptr;
-    }
-
-    delete lastItem;
-    return 0;
-}
-
-int MList::removeAfter(ITEM* currentItem){
-	if (currentItem == nullptr || currentItem->next == nullptr) {
-        return -1;
-    }
-
-    ITEM *itemToRemove = currentItem->next;
-
-    currentItem->next = itemToRemove->next;
-    if (itemToRemove->next != nullptr){
-        itemToRemove->next->prev = currentItem;
-	}
-
-    if (itemToRemove == tail){
-        tail = currentItem;
-	}
-
-    delete itemToRemove;
-    return 0;
-}
-
 int MList::addInOrder(int addr, int size){
-    // ITEM *newItem = new ITEM(addr, size);
-
-    // Insert at the beginning if the list is empty or the new item should be the new head
+    //if list is empy or if new node needs to go before another node.
     if (head == nullptr || head->addr > addr) {
         addFirst(addr, size);
         return 0;
     }
 
-    // Iterate to find the correct position
+    //find correct position
     ITEM *current = head;
     while (current->next != nullptr && current->next->addr < addr) {
         current = current->next;
     }
 
-    // Insert after the current node
+    //insert node.
     addAfter(current, addr, size);
     return 0;
 }

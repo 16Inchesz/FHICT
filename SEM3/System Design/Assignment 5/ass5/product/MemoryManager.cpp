@@ -32,7 +32,7 @@ MemoryManager::~MemoryManager()
  */
 int MemoryManager::ClaimMemory(int size)
 {
-	//size check
+	//pre
 	if (size > maxSize || size <= 0){
 		return -1;
 	}

@@ -13,6 +13,7 @@ public:
     FreeList() = delete;
     FreeList(int memStart, int maxSize);
     ~FreeList();
-
+    
+    /// @brief additional function to combine the memory of two memory blocks
     void mergeMemory();
 };
