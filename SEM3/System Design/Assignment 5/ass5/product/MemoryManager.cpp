@@ -37,7 +37,7 @@ int MemoryManager::ClaimMemory(int size)
 		return -1;
 	}
 
-	//memory chunk
+	//free memory chunk
 	ITEM* freeChunk = freeList->GetHead();
 
 	//iterate through free list.
@@ -54,7 +54,7 @@ int MemoryManager::ClaimMemory(int size)
 			}
 			freeList->remove(freeChunk);
 
-			//new alloc list.
+			//add allocated memory in allocList at the correct spot.
 			allocList->addInOrder(allocatedAddr, size);
 
 			return allocatedAddr;
@@ -78,6 +78,7 @@ int MemoryManager::FreeMemory(int addr)
 		return -1;
 	}
 
+	//allocated memory chunk
 	ITEM* allocatedChunk = allocList->GetHead();
 	
 	while (allocatedChunk != nullptr)
@@ -88,15 +89,14 @@ int MemoryManager::FreeMemory(int addr)
 
             allocList->remove(allocatedChunk);
 
-            // Add the newly freed memory to the free list
+            //add the freed memory in freeList at the correct spot
             freeList->addInOrder(addr, chunkSize);
 
-            // Merge with adjacent blocks in the free list
+            //if applicable, merge memories that need to be merged.
             freeList->mergeMemory();
 
             return chunkSize;
         }
-
         allocatedChunk = allocatedChunk->next;
     }
 
