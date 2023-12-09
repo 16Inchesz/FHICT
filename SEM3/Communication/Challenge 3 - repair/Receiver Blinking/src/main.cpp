@@ -24,11 +24,12 @@ char msgString[128];
 //blinking variables
 bool blinkingLeft = false;
 bool blinkingRight = false;
+bool led2State = LOW;
+bool led1State = LOW;
 unsigned long lastBlinkTime = 0;
 const long BLINK_INTERVAL = 500;
-bool led1State = LOW;
-bool led2State = LOW;
 
+/// @brief Function to blink the LEDs
 void BlinkLED();
 
 MCP_CAN CAN(SPICSPIN);
@@ -40,6 +41,7 @@ void setup()
   pinMode(LED1PIN, OUTPUT);
   pinMode(LED2PIN, OUTPUT);
 
+  //CAN initialize
   while (CAN_OK != CAN.begin(MCP_ANY, CAN_500KBPS, MCP_8MHZ))
   {
     Serial.println("CAN BUS Init Failed");
@@ -52,6 +54,7 @@ void setup()
 
 void loop()
 {
+  //check if message has been received
   if(CAN_MSGAVAIL == CAN.checkReceive()) {
     //read & print the message received
     CAN.readMsgBuf(&rxId, &len, rxBuf);

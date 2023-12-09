@@ -26,7 +26,6 @@ unsigned long lastDebounceTime1 = 0;
 unsigned long lastDebounceTime2 = 0;
 unsigned long lastDebounceTime3 = 0;
 unsigned long lastDebounceTime4 = 0;
-
 int currentButtonState1;
 int currentButtonState2;
 int currentButtonState3;
