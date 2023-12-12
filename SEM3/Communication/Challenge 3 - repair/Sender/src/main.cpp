@@ -9,7 +9,7 @@
 #define BUTTON3PIN 4
 #define BUTTON4PIN 5
 
-//IDs
+//IDs (based on messages being sent)
 const long BLINKING_ID = 0x100;
 const long HIGHBEAM_ID = 0x200;
 
