@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -27,7 +28,7 @@ int DFS_Algortihm(NODE* node){
 
 //function to build the tree based on the input file
 NODE* buildTree(int n) {
-    NODE* nodes = new NODE[n + 1];	//0 also counts as our nullptr in the case.
+	vector<NODE> nodes(n + 1);
     NODE* root = nullptr;
 
     for (int i = 0; i < n; i++) {
