@@ -26,16 +26,16 @@ class Graph {
         int FindShortestRoute();
 };
 
-//adding a connection between node X and node Y
+//adding a connection between node X and node Y (bidrectional)
 void Graph::AddConnection(int X, int Y){
     nodes[X].connections.push_back(Y);
     nodes[Y].connections.push_back(X);
 }
 
-//algorithm reference: geeksforgeeks 
+//BFS algorithm reference: geeksforgeeks 
 int Graph::FindShortestRoute(){
-    vector<bool> visited(N + 1, false);
-    vector<int> shortestRoute(N + 1, 0);
+    vector<bool> visited(N + 1, false);     //all nodes are unvisited.
+    vector<int> shortestRoute(N + 1, 0);   
     
     queue<int> q;
     q.push(1);
