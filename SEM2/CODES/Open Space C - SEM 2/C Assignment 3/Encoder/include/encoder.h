@@ -3,6 +3,8 @@
 
 #include <stdbool.h>
 #include <stdint.h>
+#include <stdio.h>
+
 
 /// @brief This function is an encoding algorithm for the input byte.
 /// @param  inputByte

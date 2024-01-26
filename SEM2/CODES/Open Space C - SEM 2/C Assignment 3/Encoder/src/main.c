@@ -1,7 +1,7 @@
-#include <stdio.h>
 #include <stdlib.h>
 #include <encoder.h>
 
+//./out
 int main(int argc, char const *argv[])
 {
     //File pointers ariables
