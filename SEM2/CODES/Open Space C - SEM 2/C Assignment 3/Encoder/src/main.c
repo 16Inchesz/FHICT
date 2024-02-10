@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <encoder.h>
 
-//./out
+//./output.main.exe
 int main(int argc, char const *argv[])
 {
     //File pointers ariables
