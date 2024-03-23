@@ -9,7 +9,7 @@
 #define   DHTPIN          19
 
 //number of this node
-int nodeNumber = 3;
+int nodeNumber = 1;
 
 //instances
 DHTesp dht;
@@ -38,9 +38,6 @@ void sendMessage() {
   mesh.sendBroadcast( msg );
 }
 
-/// @brief Function used to parse the received data into information.
-/// @param from 
-/// @param msg 
 void receivedCallback( uint32_t from, String &msg) {
   Serial.printf("Received from %u msg=%s\n", from, msg.c_str());
   JSONVar data = JSON.parse(msg.c_str());
@@ -56,6 +53,9 @@ void receivedCallback( uint32_t from, String &msg) {
   Serial.print(hum);
   Serial.println(" %");
   Serial.println();
+
+  int amountNodes = mesh.getNodeList().size();
+  Serial.printf("amount of nodes in mesh networks %d\n", amountNodes+1);  //to accomodate the current node
 }
 
 void newConnectionCallback(uint32_t nodeId) {
