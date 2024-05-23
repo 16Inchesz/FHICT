@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Repositories\\FHICT\\CODES\\Open Space (C#) - SEM 2\\Live Test\\Live Test\\Live Test\\Live Test.csproj",
+      "projectUniqueName": "C:\\Repositories\\FHICT\\SEM2\\CODES\\Open Space (C#) - SEM 2\\Live Test\\Live Test\\Live Test\\Live Test.csproj",
       "projectName": "Live Test",
-      "projectPath": "C:\\Repositories\\FHICT\\CODES\\Open Space (C#) - SEM 2\\Live Test\\Live Test\\Live Test\\Live Test.csproj",
+      "projectPath": "C:\\Repositories\\FHICT\\SEM2\\CODES\\Open Space (C#) - SEM 2\\Live Test\\Live Test\\Live Test\\Live Test.csproj",
       "packagesPath": "C:\\Users\\ricky\\.nuget\\packages\\",
-      "outputPath": "C:\\Repositories\\FHICT\\CODES\\Open Space (C#) - SEM 2\\Live Test\\Live Test\\Live Test\\obj\\",
+      "outputPath": "C:\\Repositories\\FHICT\\SEM2\\CODES\\Open Space (C#) - SEM 2\\Live Test\\Live Test\\Live Test\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ricky\\AppData\\Roaming\\NuGet\\NuGet.Config",
