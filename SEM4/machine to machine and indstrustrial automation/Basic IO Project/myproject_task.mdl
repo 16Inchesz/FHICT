@@ -1,0 +1,294 @@
+Model {
+  Name                    "myproject_task"
+  Version                 3.00
+  #RexVersion             "2.50.12 rev. 14711, Date 2022-11-22"
+  SavedCharacterEncoding  "UTF-8"
+  BlockDefaults {
+    ForegroundColor         "black"
+    BackgroundColor         "white"
+    DropShadow              off
+    NamePlacement           "normal"
+    FontName                "Arial"
+    FontSize                10
+    FontWeight              "normal"
+    FontAngle               "normal"
+    ShowName                on
+    Orientation             "right"
+  }
+  AnnotationDefaults {
+    HorizontalAlignment     "center"
+    VerticalAlignment       "middle"
+    ForegroundColor         "black"
+    BackgroundColor         "white"
+    DropShadow              off
+    FontName                "Arial"
+    FontSize                10
+    FontWeight              "normal"
+    FontAngle               "normal"
+  }
+  LineDefaults {
+    FontName                "Arial"
+    FontSize                9
+    FontWeight              "normal"
+    FontAngle               "normal"
+  }
+  System {
+    Name                    "myproject_task"
+    ZoomFactor              194
+    Location                [244, 34, 1461, 718]
+    #GUID                   13a2f1bf-adc5-42ba-9f2b-f576939a6341
+    Block {
+      BlockType               Reference
+      Name                    "AND_"
+      Ports                   [2, 2, 0, 0, 0]
+      Position                [315, 103, 350, 127]
+      SourceBlock             "logiclib/AND_"
+      #GUID                   9bcb8846-e4a5-4656-9ef0-a08c2dfdcb85
+    }
+    Block {
+      BlockType               Reference
+      Name                    "CNB_RUN"
+      Ports                   [0, 1, 0, 0, 0]
+      Position                [475, 238, 495, 252]
+      SourceBlock             "mathlib/CNB"
+      YCN                     on
+      FontSize                10
+      #GUID                   ca83a68a-3155-4f5d-911b-e60332bbea48
+    }
+    Block {
+      BlockType               Reference
+      Name                    "CNB_SWITCH2"
+      Ports                   [0, 1, 0, 0, 0]
+      Position                [80, 128, 100, 142]
+      SourceBlock             "mathlib/CNB"
+      YCN                     off
+      FontSize                10
+      #GUID                   da207cf0-788a-4ecc-a50a-284f4458108a
+    }
+    Block {
+      BlockType               Reference
+      Name                    "CNB_SWITCH4"
+      Ports                   [0, 1, 0, 0, 0]
+      Position                [75, 223, 95, 237]
+      SourceBlock             "mathlib/CNB"
+      YCN                     off
+      FontSize                10
+      #GUID                   35b221cb-0f76-4cd5-ae73-29d6dfb79e47
+    }
+    Block {
+      BlockType               Display
+      Name                    "Display"
+      Position                [545, 53, 625, 77]
+      ShowName                off
+      Format                  "Best fit"
+      Decimation              1
+      Suffix                  ""
+      DispValue               ""
+      #GUID                   e124bf6a-ccd6-431c-b104-94f1ff65d8a9
+    }
+    Block {
+      BlockType               From
+      Name                    "From"
+      Position                [25, 93, 115, 107]
+      ShowName                off
+      GotoTag                 "MNR__DI1"
+      FontSize                10
+      #GUID                   1c8430ff-b234-4ad7-af3c-6450091e1609
+    }
+    Block {
+      BlockType               From
+      Name                    "From1"
+      Position                [25, 168, 115, 182]
+      ShowName                off
+      GotoTag                 "MNR__DI3"
+      FontSize                10
+      #GUID                   b80fa84c-3589-4808-990d-81d235a6edd1
+    }
+    Block {
+      BlockType               Goto
+      Name                    "Goto"
+      Position                [535, 103, 625, 117]
+      ShowName                off
+      GotoTag                 "MNR__DO1"
+      TagVisibility           "local"
+      FontSize                10
+      #GUID                   6dad02f3-43d4-47af-90b3-43d7863b63c2
+    }
+    Block {
+      BlockType               Reference
+      Name                    "OR_A"
+      Ports                   [2, 2, 0, 0, 0]
+      Position                [175, 93, 210, 117]
+      SourceBlock             "logiclib/OR_"
+      FontSize                10
+      #GUID                   71a46408-4d82-4fdc-b722-4d47cf7b4420
+    }
+    Block {
+      BlockType               Reference
+      Name                    "OR_B"
+      Ports                   [2, 2, 0, 0, 0]
+      Position                [175, 168, 210, 192]
+      SourceBlock             "logiclib/OR_"
+      FontSize                10
+      #GUID                   0c6834cd-cbbd-462e-b53c-affd8abe9fa2
+    }
+    Block {
+      BlockType               Reference
+      Name                    "TIMER_"
+      Ports                   [3, 3, 0, 0, 0]
+      Position                [440, 103, 480, 137]
+      SourceBlock             "logiclib/TIMER_"
+      mode                    "2: Delayed ON"
+      pt                      5
+      FontSize                10
+      #GUID                   86695b77-fc37-44bf-8852-3f3047d6addb
+    }
+    Block {
+      BlockType               Reference
+      Name                    "TRND"
+      Ports                   [6, 5, 0, 0, 0]
+      Position                [560, 193, 605, 267]
+      SourceBlock             "arclib/TRND"
+      n                       4
+      l                       2000
+      btype                   "8: Double (F64)"
+      ptype1                  "1: Store"
+      ptype2                  "1: Store"
+      ptype3                  "1: Store"
+      ptype4                  "1: Store"
+      pfac                    1
+      afac                    0
+      arc                     0
+      id                      0
+      Title                   "My timer\n "
+      timesrc                 "1: CORETIMER"
+      ViewConfig              ""
+      FontSize                10
+      #GUID                   e4a62d2d-34bd-4754-aaa3-f1db756106c7
+    }
+    Line {
+      SrcBlock                "AND_"
+      SrcPort                 1
+      DstBlock                "TIMER_"
+      DstPort                 1
+      #GUID                   f7d0c4ab-0aa0-4ff9-bb29-a2a6aa155d8e
+    }
+    Line {
+      SrcBlock                "CNB_RUN"
+      SrcPort                 1
+      DstBlock                "TRND"
+      DstPort                 5
+      #GUID                   eb802669-cdca-45b9-8386-b4fe72cd3243
+    }
+    Line {
+      SrcBlock                "CNB_SWITCH2"
+      SrcPort                 1
+      Points                  [55, 0]
+      DstBlock                "OR_A"
+      DstPort                 2
+      #GUID                   0d239cd5-8dd9-4665-ab40-eafa4dfad161
+    }
+    Line {
+      SrcBlock                "CNB_SWITCH4"
+      SrcPort                 1
+      Points                  [60, 0]
+      DstBlock                "OR_B"
+      DstPort                 2
+      #GUID                   e265d83d-7702-4232-8d8f-768a74269ab4
+    }
+    Line {
+      SrcBlock                "From"
+      SrcPort                 1
+      DstBlock                "OR_A"
+      DstPort                 1
+      #GUID                   2b619e76-8175-4b09-a740-22e0fbfff06a
+    }
+    Line {
+      SrcBlock                "From1"
+      SrcPort                 1
+      DstBlock                "OR_B"
+      DstPort                 1
+      #GUID                   a29fcbe6-dbfd-4519-8947-a962012fe4ed
+    }
+    Line {
+      SrcBlock                "OR_A"
+      SrcPort                 1
+      Points                  [70, 0]
+      #GUID                   cc3dd4a7-f8c7-4c03-b87e-79886409d06d
+      Branch {
+        Points                  [15, 0]
+        DstBlock                "AND_"
+        DstPort                 1
+        #GUID                   1286904e-07d0-4b68-9b7e-e6b822fc57c0
+      }
+      Branch {
+        Points                  [0, 125]
+        DstBlock                "TRND"
+        DstPort                 3
+        #GUID                   fea82c6c-dc2a-4ee5-91fc-0c13069a54c8
+      }
+    }
+    Line {
+      SrcBlock                "OR_B"
+      SrcPort                 1
+      Points                  [55, 0]
+      #GUID                   f95dea7c-6571-4a4c-810c-4ade0f7bbe7c
+      Branch {
+        Points                  [30, 0]
+        DstBlock                "AND_"
+        DstPort                 2
+        #GUID                   55f25b09-acef-4007-bf99-49d88e50259a
+      }
+      Branch {
+        Points                  [0, 60]
+        DstBlock                "TRND"
+        DstPort                 4
+        #GUID                   04f2a9de-75e6-4c86-b1b5-56fc5a307b74
+      }
+    }
+    Line {
+      SrcBlock                "TIMER_"
+      SrcPort                 1
+      Points                  [20, 0]
+      #GUID                   016e6351-1a43-4424-a626-0d3b1b82bd27
+      Branch {
+        Points                  [0, -45]
+        DstBlock                "Display"
+        DstPort                 1
+        #GUID                   a2478123-249b-4476-9ee2-990bd7d3253a
+      }
+      Branch {
+        DstBlock                "Goto"
+        DstPort                 1
+        #GUID                   1f19f9ec-3964-4cbc-8d88-c41d9be4be5c
+      }
+      Branch {
+        Points                  [0, 95]
+        DstBlock                "TRND"
+        DstPort                 1
+        #GUID                   a20c84fd-9e14-41d5-a118-c818c6c00ca0
+      }
+    }
+    Line {
+      SrcBlock                "TIMER_"
+      SrcPort                 3
+      Points                  [15, 0; 0, 85]
+      DstBlock                "TRND"
+      DstPort                 2
+      #GUID                   c016b827-4b59-44cd-9d4f-b73a7a0a5d6e
+    }
+    Annotation {
+      Position                [85, 20]
+      Text                    "Plain project - task"
+      FontWeight              "bold"
+      FontSize                16
+      #GUID                   e3601f30-0093-42de-8c87-47483416558a
+    }
+    Annotation {
+      Position                [170, 45]
+      Text                    "See the README.md file in project folder for de"
+"tailed information."
+      #GUID                   693ee5bc-de59-4cfd-8764-c2fdb5b9c02f
+    }
+  }
+}

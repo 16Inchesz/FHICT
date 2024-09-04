@@ -1,0 +1,255 @@
+Model {
+  Name                    "ultrasonic_task"
+  Version                 3.00
+  #RexVersion             "2.50.12 rev. 14711, Date 2022-11-22"
+  #RexVersion             "2.50.12 rev. 14494, Date 2022-09-19"
+  SavedCharacterEncoding  "UTF-8"
+  BlockDefaults {
+    ForegroundColor         "black"
+    BackgroundColor         "white"
+    DropShadow              off
+    NamePlacement           "normal"
+    FontName                "Arial"
+    FontSize                10
+    FontWeight              "normal"
+    FontAngle               "normal"
+    ShowName                on
+    Orientation             "right"
+  }
+  AnnotationDefaults {
+    HorizontalAlignment     "left"
+    VerticalAlignment       "middle"
+    ForegroundColor         "black"
+    BackgroundColor         "white"
+    DropShadow              off
+    FontName                "Arial"
+    FontSize                10
+    FontWeight              "normal"
+    FontAngle               "normal"
+  }
+  LineDefaults {
+    FontName                "Helvetica"
+    FontSize                9
+    FontWeight              "normal"
+    FontAngle               "normal"
+  }
+  System {
+    Name                    "ultrasonic_task"
+    ZoomFactor              200
+    Location                [371, 32, 1798, 833]
+    #GUID                   8a2ab6fc-b69b-4000-bead-9b376e9e8a2a
+    Block {
+      BlockType               Display
+      Name                    "AI1"
+      Position                [480, 93, 560, 117]
+      Format                  "short"
+      ShowName                on
+      Decimation              1
+      DispValue               ""
+      Suffix                  " V"
+      FontSize                10
+      #GUID                   5dfb46e6-94c8-4d24-9ba6-5b8578c7eb24
+    }
+    Block {
+      BlockType               Reference
+      Name                    "CNB"
+      Ports                   [0, 1, 0, 0, 0]
+      Position                [445, 278, 465, 292]
+      SourceBlock             "mathlib/CNB"
+      YCN                     on
+      #GUID                   e9fed6ab-b9ee-4c6a-91ea-116f5613f135
+    }
+    Block {
+      BlockType               Reference
+      Name                    "CNR_duty_cycle_DOUT2"
+      Ports                   [0, 1, 0, 0, 0]
+      Position                [65, 200, 95, 220]
+      SourceBlock             "mathlib/CNR"
+      ycn                     "0.4"
+      FontSize                10
+      BackgroundColor         "magenta"
+      #GUID                   95a808e1-39c7-4bd0-96bb-b87ad8913abc
+    }
+    Block {
+      BlockType               Reference
+      Name                    "CNR_frequency_hz"
+      Ports                   [0, 1, 0, 0, 0]
+      Position                [225, 140, 255, 160]
+      SourceBlock             "mathlib/CNR"
+      ycn                     40000
+      FontSize                10
+      BackgroundColor         "magenta"
+      #GUID                   baa2545d-2073-4d25-a29c-f6edd57e8731
+    }
+    Block {
+      BlockType               Display
+      Name                    "DISPLAY"
+      Position                [255, 178, 335, 202]
+      Format                  "short"
+      ShowName                on
+      Decimation              1
+      DispValue               ""
+      Suffix                  " V"
+      FontSize                10
+      #GUID                   4e818d45-3d02-4aaa-b63b-26db4e4d7a0c
+    }
+    Block {
+      BlockType               From
+      Name                    "From33"
+      Position                [300, 238, 390, 252]
+      ShowName                off
+      GotoTag                 "MNR__AI1"
+      BackgroundColor         "yellow"
+      #GUID                   3017653c-e510-4ee1-aa69-67c696dc3592
+    }
+    Block {
+      BlockType               Goto
+      Name                    "Goto"
+      Position                [325, 142, 440, 158]
+      ShowName                off
+      GotoTag                 "MNR__PWM1_Frequency"
+      TagVisibility           "local"
+      FontSize                10
+      BackgroundColor         "lightBlue"
+      #GUID                   1b5b29aa-5bd6-45be-8123-ef585cc3032a
+    }
+    Block {
+      BlockType               Goto
+      Name                    "Goto1"
+      Position                [230, 217, 345, 233]
+      ShowName                off
+      GotoTag                 "MNR__PWM1B"
+      TagVisibility           "local"
+      FontSize                10
+      BackgroundColor         "lightBlue"
+      #GUID                   30eebe64-0a97-4c0e-92cf-1b95c1a1521b
+    }
+    Block {
+      BlockType               Reference
+      Name                    "LIN"
+      Ports                   [1, 1, 0, 0, 0]
+      Position                [425, 238, 450, 252]
+      SourceBlock             "mathlib/LIN"
+      u1                      0
+      y1                      3
+      u2                      10
+      y2                      29
+      FontSize                10
+      #GUID                   cb643417-bd9b-4d5f-8be1-928288611f88
+    }
+    Block {
+      BlockType               Reference
+      Name                    "TRND"
+      Ports                   [6, 5, 0, 0, 0]
+      Position                [485, 233, 530, 307]
+      SourceBlock             "arclib/TRND"
+      n                       1
+      l                       5000
+      btype                   "8: Double"
+      ptype1                  "1: Store"
+      ptype2                  "1: Store"
+      ptype3                  "1: Store"
+      ptype4                  "1: Store"
+      pfac                    50
+      afac                    0
+      arc                     0
+      id                      1
+      Title                   "Trend Title"
+      timesrc                 1
+      #GUID                   78bd27a8-f47a-4d14-b6fc-d0f2170330cd
+    }
+    Line {
+      SrcBlock                "CNB"
+      SrcPort                 1
+      DstBlock                "TRND"
+      DstPort                 5
+      #GUID                   7138b30e-cd68-44e8-bf37-d5107513554e
+    }
+    Line {
+      SrcBlock                "CNR_duty_cycle_DOUT2"
+      SrcPort                 1
+      Points                  [90, 0]
+      #GUID                   36eb7d72-8e37-4fb2-903a-341f23ae935e
+      Branch {
+        Points                  [25, 0]
+        #GUID                   0be9bba2-0d86-47a3-af83-c9891dbb6029
+        Branch {
+          Points                  [0, -20]
+          DstBlock                "DISPLAY"
+          DstPort                 1
+          #GUID                   592b751d-82b1-4839-950c-b30e6535c7e1
+        }
+        Branch {
+          DstBlock                "Goto1"
+          DstPort                 1
+          #GUID                   1963ce72-1c55-4b45-8387-9b15a032f11d
+        }
+      }
+      Branch {
+        Points                  [0, 45]
+        DstBlock                "TRND"
+        DstPort                 2
+        #GUID                   c32a2256-bccb-45bf-8867-e5214d0e0287
+      }
+    }
+    Line {
+      SrcBlock                "CNR_frequency_hz"
+      SrcPort                 1
+      DstBlock                "Goto"
+      DstPort                 1
+      #GUID                   ba5429ef-df42-48b6-9f19-c0bb5d1c9dca
+    }
+    Line {
+      SrcBlock                "From33"
+      SrcPort                 1
+      Points                  [10, 0]
+      #GUID                   cfabbb4d-4a5e-486e-a3b5-2c142b4dbd91
+      Branch {
+        Points                  [0, -80; 45, 0; 0, -60]
+        DstBlock                "AI1"
+        DstPort                 1
+        #GUID                   4e2b986e-7e70-47fb-91cf-7286115d1918
+      }
+      Branch {
+        DstBlock                "LIN"
+        DstPort                 1
+        #GUID                   c8542442-0611-47ac-a5f4-bd83a337cb2e
+      }
+    }
+    Line {
+      SrcBlock                "LIN"
+      SrcPort                 1
+      DstBlock                "TRND"
+      DstPort                 1
+      #GUID                   02b75fd2-970d-4b84-a1e1-a2372489fa46
+    }
+    Annotation {
+      Position                [180, 40]
+      Text                    "See the README.md file in project folder for de"
+"tailed information."
+      #GUID                   a8bded88-4d4f-4b73-8121-41807e008d6a
+    }
+    Annotation {
+      Position                [15, 10]
+      Text                    "Monarco HAT - Reading Ultrasonic Sensor"
+      FontWeight              "bold"
+      FontSize                16
+      HorizontalAlignment     "left"
+      VerticalAlignment       "top"
+      #GUID                   c41f0371-372f-4f4f-9260-d30ee495d692
+    }
+    Annotation {
+      Position                [15, 370]
+      Text                    "YouTube video: https://youtu.be/PM-YciPq2FA"
+      HorizontalAlignment     "left"
+      VerticalAlignment       "top"
+      BackgroundColor         "white"
+      ForegroundColor         "black"
+      FontName                "Arial"
+      FontWeight              "bold"
+      FontAngle               "normal"
+      FontSize                14
+      #GUID                   bd19824f-dd32-4130-8a79-eb9fd00a86ad
+    }
+  }
+}

@@ -1,0 +1,151 @@
+Model {
+  Name                    "ultrasonic_exec"
+  Version                 3.00
+  #RexVersion             "2.50.12 rev. 14711, Date 2022-11-22"
+  #RexVersion             "2.50.12 rev. 14494, Date 2022-09-19"
+  #RexVersion             "2.50.12 rev. 14494, Date 2022-09-19"
+  #RexVersion             "2.50.12 rev. 14494, Date 2022-09-19"
+  SavedCharacterEncoding  "UTF-8"
+  BlockDefaults {
+    ForegroundColor         "black"
+    BackgroundColor         "white"
+    DropShadow              off
+    NamePlacement           "normal"
+    FontName                "Arial"
+    FontSize                10
+    FontWeight              "normal"
+    FontAngle               "normal"
+    ShowName                on
+    Orientation             "right"
+  }
+  AnnotationDefaults {
+    HorizontalAlignment     "left"
+    VerticalAlignment       "middle"
+    ForegroundColor         "black"
+    BackgroundColor         "white"
+    DropShadow              off
+    FontName                "Arial"
+    FontSize                10
+    FontWeight              "normal"
+    FontAngle               "normal"
+  }
+  LineDefaults {
+    FontName                "Helvetica"
+    FontSize                9
+    FontWeight              "normal"
+    FontAngle               "normal"
+  }
+  System {
+    Name                    "ultrasonic_exec"
+    Location                [10, 33, 350, 831]
+    #GUID                   5cd52c37-a9a3-4dd2-b985-b43a1d0cb0b5
+    Block {
+      BlockType               Reference
+      Name                    "EXEC"
+      Ports                   [0, 8, 0, 0, 0]
+      Position                [95, 78, 140, 367]
+      SourceBlock             "execlib/EXEC"
+      target                  "Generic target device"
+      tick                    "0.002"
+      ntick0                  1
+      ntick1                  50
+      ntick2                  100
+      ntick3                  1200
+      pri0                    5
+      pri1                    9
+      pri2                    13
+      pri3                    18
+      FontSize                10
+      #GUID                   677e80a7-ab3d-4a1d-966a-4ed73e243365
+    }
+    Block {
+      BlockType               Reference
+      Name                    "HMI"
+      Ports                   [0, 0, 0, 0, 0]
+      Position                [180, 358, 230, 372]
+      SourceBlock             "execlib/HMI"
+      IncludeHMI              on
+      HmiDir                  "hmi"
+      SourceDir               "hmisrc"
+      GenerateWebWatch        off
+      GenerateRexHMI          on
+      RedirectToHMI           on
+      Compression             off
+      FontSize                10
+      #GUID                   e68a11d1-8e42-4787-a905-f5a265fab0ca
+    }
+    Block {
+      BlockType               Reference
+      Name                    "INFO"
+      Ports                   [0, 0, 0, 0, 0]
+      Position                [180, 318, 230, 332]
+      SourceBlock             "execlib/INFO"
+      Title                   "Monarco HAT - Reading Ultrasonic Sensor"
+      Author                  "REX Controls s.r.o."
+      Description             "Demonstration project illlustrating the use of "
+"Monarco HAT"
+      Customer                ""
+      FontSize                10
+      #GUID                   3dd666ae-7208-4827-95b2-97e33bd0e0bd
+    }
+    Block {
+      BlockType               Reference
+      Name                    "MNR"
+      Ports                   [1, 1, 0, 0, 0]
+      Position                [185, 128, 235, 142]
+      SourceBlock             "execlib/IODRV"
+      module                  "MonarcoDrv"
+      classname               "MonarcoHatDrv"
+      cfgname                 "monarcohat.rio"
+      factor                  1
+      stack                   10240
+      pri                     3
+      timer                   off
+      FontSize                10
+      #GUID                   3def6216-5b0d-45e7-877e-216f847418e2
+    }
+    Block {
+      BlockType               Reference
+      Name                    "ultrasonic_task"
+      Ports                   [1, 1, 0, 0, 0]
+      Position                [185, 233, 235, 247]
+      SourceBlock             "execlib/TASK"
+      factor                  1
+      start                   0
+      stop                    1
+      stack                   10240
+      filename                ""
+      MDLOPEN                 on
+      #GUID                   3e6f0764-b8b7-4e67-b35e-f238bc41a8cd
+    }
+    Line {
+      SrcBlock                "EXEC"
+      SrcPort                 2
+      DstBlock                "MNR"
+      DstPort                 1
+      #GUID                   da3bf2ec-4b65-48c2-a8f8-eb454abb2156
+    }
+    Line {
+      SrcBlock                "EXEC"
+      SrcPort                 5
+      DstBlock                "ultrasonic_task"
+      DstPort                 1
+      #GUID                   7f65cea1-4ec5-4eed-8d37-bc390293b044
+    }
+    Annotation {
+      Position                [95, 45]
+      Text                    "See the README.md file in project \nfolder for "
+"detailed information."
+      #GUID                   062d64bf-df82-42f4-b451-c3c464da9b88
+    }
+    Annotation {
+      Position                [10, 10]
+      Text                    "Monarco HAT - Reading Ultrasonic Sensor"
+      FontWeight              "bold"
+      FontSize                16
+      HorizontalAlignment     "left"
+      VerticalAlignment       "top"
+      #GUID                   0356feb4-8a17-4013-999f-6b24b8c8ae34
+    }
+  }
+}

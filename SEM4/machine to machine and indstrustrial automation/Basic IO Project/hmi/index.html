@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<!-- REX HMI Template version=2.50.12-14711 -->
+
+<html class="mdc-typography">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="google" content="notranslate" />
+
+    <meta name="viewport" content="width=device-width">
+    <!-- Allow fullscreen on mobile platforms -->
+    <meta name="mobile-web-app-capable" content="yes"><!-- Chrome -->    
+    <meta name="apple-mobile-web-app-capable" content="yes"><!-- iOS -->    
+
+    <link rel="icon shortcut" sizes="any" href="images/favicon.ico">
+    
+    <link rel="apple-touch-icon" href="/resources/images/homescreen-icon.png">
+    <link rel="icon" sizes="192x192" href="/resources/images/homescreen-icon.png">
+
+
+    <title>
+        <!-- %Title% -->
+    </title>
+
+    <!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="css/jquery-ui/jquery-ui-1.12.1-custom.min.css">
+		<link rel="stylesheet" type="text/css" href="css/rex-hmi.min.css">
+
+
+    <!-- CUSTOM CSS -->
+
+		<!-- JS -->
+		<script type="text/javascript" src="js/rexhmi-vendor.min.js?version=2.50.12-14711"></script>
+		<script type="text/javascript" src="js/rexhmi.min.js?version=2.50.12-14711"></script>
+
+
+    <!-- CUSTOM JS -->
+
+		<script type="text/javascript"> 
+ 			REX.HMI.init = function(){  
+			 
+			    //Indicators and virtual switches - group A  
+			      var switchesA = {  
+			        column: 1,  
+			        title: 'Switches - group A',  
+			        rows: [  
+			          {type: 'DR', alias: 'switch1', desc: 'Switch 1',  
+			            cstring: 'myproject_task.OR_A:U1'},  
+			          {type: 'DW', alias: 'switch2', desc: 'Switch 2',  
+			            cstring: 'myproject_task.CNB_SWITCH2:YCN'},  
+			          {type: 'DR', alias: 'S1orS2', desc: 'S1 OR S2',  
+			            cstring: 'myproject_task.OR_A:Y'},  
+			        ]  
+			      };  
+			      REX.WebBuDi.addSection(switchesA);  
+			     
+			    //Indicators and virtual switches - group A  
+			      var switchesB = {  
+			        column: 1,  
+			        title: 'Switches - group B',  
+			        rows: [  
+			          {type: 'DR', alias: 'switch3', desc: 'Switch 3',  
+			            cstring: 'myproject_task.OR_B:U1'},  
+			          {type: 'DW', alias: 'switch4', desc: 'Switch 4',  
+			            cstring: 'myproject_task.CNB_SWITCH4:YCN'},  
+			          {type: 'DR', alias: 'S3orS4', desc: 'S3 OR S4',  
+			            cstring: 'myproject_task.OR_B:Y'},  
+			        ]  
+			      };  
+			      REX.WebBuDi.addSection(switchesB);  
+			     
+			    //Timer input  
+			      var timerInput = {  
+			        column: 2,  
+			        title: 'Timer input',  
+			        rows: [  
+			          {type: 'DR', alias: 'inputA', desc: 'Group A',  
+			            cstring: 'myproject_task.AND_:U1'},  
+			          {type: 'DR', alias: 'inputB', desc: 'Group B',  
+			            cstring: 'myproject_task.AND_:U2'},  
+			          {type: 'DR', alias: 'AandB', desc: 'A AND B',  
+			            cstring: 'myproject_task.AND_:Y'},  
+			        ]  
+			      };  
+			      REX.WebBuDi.addSection(timerInput);  
+			     
+			    //Timer settings and status  
+			      var timer = {  
+			        column: 2,  
+			        title: 'Timer',  
+			        rows: [  
+			          {type: 'AW', alias: 'interval', desc: 'Timer interval',  
+			            cstring: 'myproject_task.TIMER_:pt'},  
+			          {type: 'AR', alias: 'rt', desc: 'Remaining time',  
+			            cstring: 'myproject_task.TIMER_:rt'},  
+			          {type: 'DR', alias: 'timerQ', desc: 'Timer output',  
+			            cstring: 'myproject_task.TIMER_:Q'},  
+			        ]  
+			      };  
+			      REX.WebBuDi.addSection(timer);  
+			     
+			      //Add real-time trend  
+			      REX.HMI.Graph.addTrend({cstring: 'myproject_task.TRND'});  
+			      REX.HMI.Graph.setMaxBufferSize(200);  
+			     
+			      // Change title of the page  
+			      REX.HMI.setTitle('My timer - HMI example');  
+			    }
+			     
+		 </script>
+
+</head>
+
+<body>
+    <script>
+        window.startTime = new Date();
+    </script>
+    <header id="header">        
+        <a id="logo" href="/"></a>
+        <div id="header-title" class="header-title-with-info-and-hearth-beat">
+            <!-- %Header-Title% -->
+        </div>
+        <time id="heart-beat-clock" class="current-time" style="display:none">XX:XX:XX</time>
+        <div id="heart-beat"></div>
+        <div id="info-btn" class="">            
+            <div id="log-error-counter" class="">0</div>
+            <div id="alarms-error-counter" class="">0</div>
+        </div>
+    </header>
+    <div id="main-block">
+        <aside id="info" class="">
+            <div id="controls">
+                <table class="table-list">
+                    <tr>
+                        <td>User</td>
+                        <td class='info-whoami'>
+                            <span class="whoami">XXXXX</span>&nbsp;
+                            <form id="info-logout" action="/logout" method="POST">
+                                (<button type="submit">logout</button>)
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Version</td>
+                        <td class="info-version">X.X.X-XXXX</td>
+                    </tr>
+                    <tr>
+                        <td>Target time</td>
+                        <td class="current-time">XX:XX:XX</td>
+                    </tr>
+                    <tr>
+                        <td>Refresh rate</td>
+                        <td>
+                            <div class="mdc-text-field mdc-text-field--fullwidth" data-mdc-auto-init="MDCTextField">
+                                <input type="text" id="target-refresh-rate" class="mdc-text-field__input">
+                                <div class="mdc-text-field__bottom-line"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>URL</td>
+                        <td>
+                            <div class="mdc-text-field mdc-text-field--fullwidth" data-mdc-auto-init="MDCTextField">
+                                <input type="text" id="target-url" class="mdc-text-field__input">
+                                <div class="mdc-text-field__bottom-line"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Virtual keyboard</td>
+                    <td>
+                            <div class="mdc-checkbox mdc-checkbox--primary">
+                                <input type="checkbox" id="virtual-keyboard" name="virtual-keyboard" class="mdc-checkbox__native-control">
+                                <div class="mdc-checkbox__background">
+                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                        <path class="mdc-checkbox__checkmark__path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                    </svg>
+                                    <div class="mdc-checkbox__mixedmark"></div>
+                                </div>
+                            </div>
+                    </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="log">
+                <table></table>
+            </div>
+        </aside>        
+        <main id="content" class="">
+            <div class="rex__loading-screen">
+                <div class="spinner"></div>
+            </div>
+            <!-- BEGIN OF CUSTOM CONTENT -->
+            <!-- END OF CUSTOM CONTENT -->
+        </main>
+        <script type="text/javascript" data-mdc="MDC init script">
+            window.mdc.autoInit();
+        </script>
+    </div>
+</body>
+
+</html>
